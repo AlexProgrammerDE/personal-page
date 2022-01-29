@@ -8,10 +8,10 @@ export default function GlobalHead() {
 
     return (
         <Head>
+            <title>{seoTitle}</title>
             <meta charSet="utf-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-            <title>{seoTitle}</title>
             <meta name="description" content={seoDescription} />
             <link rel="icon" href="/favicon.ico" />
 

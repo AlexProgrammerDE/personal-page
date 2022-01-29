@@ -5,7 +5,7 @@ export default function NavBar() {
     const [open, setOpen] = useState(false);
 
     return (
-        <header className="text-xl header text-text font-bold">
+        <header className="text-xl header text-text font-bold h-20">
             <div className="container flex flex-col md:items-center md:justify-between md:flex-row">
                 <div className="flex flex-row items-center justify-between w-full">
                     <p>AlexProgrammerDE</p>

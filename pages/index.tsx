@@ -8,10 +8,39 @@ const Home: NextPage = () => {
     <>
       <GlobalHead/>
 
-      <main className="w-full">
-        <header>
-          AlexProgrammerDE
+      <main className="w-full flex-col">
+        <header className="header-size w-full flex flex flex-col justify-center">
+          <div className="flex flex-row justify-center">
+            <div className="flex flex-col justify-center text-center">
+              <h1 className="text-5xl font-bold mb-4">AlexProgrammerDE</h1>
+              <p className="text-2xl">Hi! I&apos;m Alex. Welcome to my page!</p>
+            </div>
+          </div>
+
         </header>
+        <section className="w-full h-40 bg-section">
+          <div className="container">
+
+          </div>
+        </section>
+
+        <section className="w-full h-40">
+          <div className="container">
+
+          </div>
+        </section>
+
+        <section className="w-full h-40 bg-section">
+          <div className="container">
+
+          </div>
+        </section>
+
+        <section className="w-full h-40">
+          <div className="container">
+
+          </div>
+        </section>
         <h1 className="">
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
@@ -39,31 +68,8 @@ const Home: NextPage = () => {
             <h2>Examples &rarr;</h2>
             <p>Discover and deploy boilerplate example Next.js projects.</p>
           </a>
-
-          <a
-              href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              className=""
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
         </div>
       </main>
-
-      <footer className="">
-        <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className="">
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </>
   )
 }

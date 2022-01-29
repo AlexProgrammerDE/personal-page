@@ -22,3 +22,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.header-size {
+  min-height: calc(100vh - 5rem);
+}
