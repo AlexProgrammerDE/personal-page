@@ -91,18 +91,19 @@ const Home: NextPage = () => {
                 <section className="w-full footer-size">
                     <div className="container min-h-screen flex flex-col justify-center">
                         <div className="flex flex-col md:flex-row justify-center">
-                            <div className="flex flex-col mx-4">
-                                <p className="font-bold text-2xl mb-2">Like my work?</p>
-                                <a href="https://github.com/AlexProgrammerDE"
-                                   className="bg-[#24292E] font-bold rounded-lg px-4 py-2.5 flex flex-row shadow-lg">
-                                    <p className="flex flex-col justify-center mr-2">Follow me on</p>
-                                    <FontAwesomeIcon icon={faGithub} size="2x"/>
-                                </a>
+                            <div className="flex flex-col mx-4 mb-3 md:mb-0">
+                                <p className="font-bold text-3xl mb-2">Like my work?</p>
+                                <div className="flex flex-row">
+                                    <a href="https://github.com/AlexProgrammerDE"
+                                       className="bg-[#24292E] font-bold rounded-lg px-4 py-2.5 flex flex-row shadow-lg">
+                                        <p className="flex flex-col justify-center mr-2">Follow me on</p>
+                                        <FontAwesomeIcon icon={faGithub} size="2x"/>
+                                    </a>
+                                </div>
                             </div>
-                            <div className="w-0.5 border"/>
-                            <div className="mx-4 flex flex-col">
-                                <h5 className="text-xl mb-1">Other stuff:</h5>
-                                <div className="flex flex-wrap gap-2 mb-1">
+                            <div className="mx-4 md:mx-0 w-[90vw] md:w-0.5 border"/>
+                            <div className="mt-3 md:mt-0 mx-4 flex flex-col">
+                                <div className="flex flex-wrap gap-3 mb-1">
                                     <a href="https://twitter.com/AlexProgrammer3"><FontAwesomeIcon icon={faTwitter} size="2x"/></a>
                                     <a href="https://www.reddit.com/user/Sensitive_Host_2515"><FontAwesomeIcon icon={faRedditAlien} size="2x"/></a>
                                     <a href="https://www.youtube.com/channel/UC86szSBHNiuIXC7hIfrMYtg"><FontAwesomeIcon icon={faYoutube} size="2x"/></a>
