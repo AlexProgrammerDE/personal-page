@@ -44,7 +44,7 @@ export default function RepositoryCard({repo}: { repo: Repository }) {
             }}
             className="flex flex-col justify-center">
             <a href={repo.url}>
-                <div className="h-40 rounded-xl bg-sectionDark shadow-2xl flex flex-col">
+                <div className="h-40 rounded-xl bg-sectionDark shadow-lg flex flex-col">
                     <div className="flex flex-row px-3 py-1 rounded-xl bg-sectionDarkest">
                         <ArchiveIcon className="h-6 w-6 mr-2 my-auto"/>
                         <h4 className="text-lg md:text-2xl font-bold">{repo.name}</h4>
