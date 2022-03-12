@@ -31,19 +31,22 @@ export interface UserData {
     name: string,
     repoCount: number,
     followers: number,
-    repositories: Repository[],
-    organizations: Organization[],
 }
 
-export async function getData(username: string): Promise<UserData> {
+export async function getUserData(username: string): Promise<UserData> {
     const userReply = await octokit.request('GET /users/{username}', {
         username: username
     })
 
-    const organizations = await octokit.request('GET /users/{username}/orgs', {
-        username: username
-    })
+    return {
+        avatar: String(userReply.data.avatar_url),
+        name: String(userReply.data.name),
+        repoCount: Number(userReply.data.public_repos),
+        followers: Number(userReply.data.followers),
+    }
+}
 
+export async function getRepositories(username: string): Promise<Repository[]> {
     const repoData: Repository[] = []
 
     for (const repoName of repositories) {
@@ -62,18 +65,19 @@ export async function getData(username: string): Promise<UserData> {
         })
     }
 
-    return {
-        avatar: String(userReply.data.avatar_url),
-        name: String(userReply.data.name),
-        repoCount: Number(userReply.data.public_repos),
-        followers: Number(userReply.data.followers),
-        repositories: repoData,
-        organizations: organizations.data.map(org => {
-            return {
-                login: org.login!,
-                avatar: org.avatar_url!,
-                description: org.description!
-            }
-        })
-    }
+    return repoData
+}
+
+export async function getOrganizations(username: string): Promise<Organization[]> {
+    const organizations = await octokit.request('GET /users/{username}/orgs', {
+        username: username
+    })
+
+    return organizations.data.map(org => {
+        return {
+            login: org.login!,
+            avatar: org.avatar_url!,
+            description: org.description!
+        }
+    })
 }

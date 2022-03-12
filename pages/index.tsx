@@ -1,23 +1,44 @@
 import type {NextPage} from 'next'
 import GlobalHead from "../components/GlobalHead";
-import {getData, UserData} from "../lib/github";
+import {getOrganizations, getRepositories, getUserData, Organization, Repository, UserData} from "../lib/github";
 import {useEffect, useState} from "react";
 import RepositoryCard from "../components/RepositoryCard";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faGithub, faPinterest, faRedditAlien, faTwitter, faYoutube} from '@fortawesome/free-brands-svg-icons'
 import Image from 'next/image';
 import {faCube} from "@fortawesome/free-solid-svg-icons";
+import AboutMeBlock from "../components/AboutMeBlock";
+
+const user = "AlexProgrammerDE"
 
 const Home: NextPage = () => {
     const [userData, setUserData] = useState<UserData>();
+    const [repositories, setRepositories] = useState<Repository[]>();
+    const [organizations, setOrganizations] = useState<Organization[]>();
 
     useEffect(() => {
         if (userData) {
             return;
         }
 
-        getData('AlexProgrammerDE').then(setUserData);
+        getUserData(user).then(setUserData);
     }, [userData]);
+
+    useEffect(() => {
+        if (repositories) {
+            return;
+        }
+
+        getRepositories(user).then(setRepositories);
+    }, [repositories]);
+
+    useEffect(() => {
+        if (organizations) {
+            return;
+        }
+
+        getOrganizations(user).then(setOrganizations);
+    }, [organizations]);
 
     return (
         <>
@@ -53,7 +74,7 @@ const Home: NextPage = () => {
                         <h2 className="text-2xl md:text-5xl font-bold mt-4">Projects</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-6 md:mt-20 mb-4 md:mb-14">
                             {
-                                userData && userData.repositories.map((repo, index) => (
+                                repositories && repositories.map((repo, index) => (
                                     <div key={index} className={index > 3 ? "hidden md:block" : ""}>
                                         <RepositoryCard repo={repo}/>
                                     </div>
@@ -62,19 +83,22 @@ const Home: NextPage = () => {
                         </div>
                         <div className="flex-grow flex flex-row justify-center">
                             <a href="https://github.com/AlexProgrammerDE?tab=repositories"
-                               className="px-4 py-1.5 bg-sectionDark hover:bg-sectionDarkest rounded-lg text-2xl">And
+                               className="px-4 py-1.5 font-bold bg-sectionDark hover:bg-sectionDarkest rounded-lg text-2xl">And
                                 more!</a>
                         </div>
                     </div>
                 </section>
 
                 <section className="w-full min-h-screen bg-content flex flex-col">
-                    <div className="diagonal-shadow absolute justify-self-end z-10">
+                    <div className="diagonal-shadow absolute z-10">
                         <div
                             className="h-screen w-screen bg-section section2-diagonal"/>
                     </div>
-                    <div className="container">
-
+                    <div className="container p-2 flex flex-col z-20 mt-40">
+                        <div className="flex flex-row justify-end mb-6">
+                            <h2 className="text-2xl md:text-5xl font-bold mt-4">About Me</h2>
+                        </div>
+                        <AboutMeBlock/>
                     </div>
                 </section>
 
@@ -99,7 +123,7 @@ const Home: NextPage = () => {
                             </div>
                             <div className="mx-4 md:mx-0 w-[90vw] md:w-0.5 border"/>
                             <div className="mt-3 md:mt-0 mx-4 flex flex-col">
-                                <div className="flex flex-wrap gap-3 mb-1">
+                                <div className="flex flex-wrap gap-3 mb-2">
                                     <a title="Twitter" href="https://twitter.com/AlexProgrammer3"><FontAwesomeIcon icon={faTwitter}
                                                                                                    size="2x"/></a>
                                     <a title="Reddit" href="https://www.reddit.com/user/Sensitive_Host_2515"><FontAwesomeIcon
