@@ -49,27 +49,22 @@ const Home: NextPage = () => {
 
                 <section id="projects" className="w-full min-h-screen bg-section">
                     <div className="container h-full p-2 pt-4 z-20 flex flex-col">
-                        {
-                            userData && <>
-                                <h2 className="text-2xl md:text-5xl font-bold mt-4">Projects</h2>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-6 md:mt-20 mb-4 md:mb-14">
-                                    {
-                                        userData.repositories.map((repo, index) => (
-                                            <div key={index} className={index > 3 ? "hidden md:block" : ""}>
-                                                <RepositoryCard repo={repo}/>
-                                            </div>
-                                        ))
-                                    }
-                                </div>
-                                <div className="flex-grow flex flex-row justify-center">
-                                    <a href="https://github.com/AlexProgrammerDE?tab=repositories"
-                                       className="px-4 py-1.5 bg-sectionDark hover:bg-sectionDarkest rounded-lg text-2xl">And
-                                        more!</a>
-                                </div>
-                            </>
-                        }
+                        <h2 className="text-2xl md:text-5xl font-bold mt-4">Projects</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-6 md:mt-20 mb-4 md:mb-14">
+                            {
+                                userData && userData.repositories.map((repo, index) => (
+                                    <div key={index} className={index > 3 ? "hidden md:block" : ""}>
+                                        <RepositoryCard repo={repo}/>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                        <div className="flex-grow flex flex-row justify-center">
+                            <a href="https://github.com/AlexProgrammerDE?tab=repositories"
+                               className="px-4 py-1.5 bg-sectionDark hover:bg-sectionDarkest rounded-lg text-2xl">And
+                                more!</a>
+                        </div>
                     </div>
-
                 </section>
 
                 <section className="w-full min-h-screen bg-content flex flex-col">
@@ -104,9 +99,12 @@ const Home: NextPage = () => {
                             <div className="mx-4 md:mx-0 w-[90vw] md:w-0.5 border"/>
                             <div className="mt-3 md:mt-0 mx-4 flex flex-col">
                                 <div className="flex flex-wrap gap-3 mb-1">
-                                    <a href="https://twitter.com/AlexProgrammer3"><FontAwesomeIcon icon={faTwitter} size="2x"/></a>
-                                    <a href="https://www.reddit.com/user/Sensitive_Host_2515"><FontAwesomeIcon icon={faRedditAlien} size="2x"/></a>
-                                    <a href="https://www.youtube.com/channel/UC86szSBHNiuIXC7hIfrMYtg"><FontAwesomeIcon icon={faYoutube} size="2x"/></a>
+                                    <a href="https://twitter.com/AlexProgrammer3"><FontAwesomeIcon icon={faTwitter}
+                                                                                                   size="2x"/></a>
+                                    <a href="https://www.reddit.com/user/Sensitive_Host_2515"><FontAwesomeIcon
+                                        icon={faRedditAlien} size="2x"/></a>
+                                    <a href="https://www.youtube.com/channel/UC86szSBHNiuIXC7hIfrMYtg"><FontAwesomeIcon
+                                        icon={faYoutube} size="2x"/></a>
                                     <a href="https://pin.it/2SeSvyM"><FontAwesomeIcon icon={faPinterest} size="2x"/></a>
                                 </div>
                                 <a href="https://discord.gg/CDrcxzH">

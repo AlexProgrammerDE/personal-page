@@ -22,7 +22,7 @@ export default function GlobalHead() {
             <meta name="og:description" content={seoDescription} />
             <meta name="og:image" content={pfp} />
 
-            <meta name="theme-color" content={"#0E6AC7"} />
+            <meta name="theme-color" content={"#C970D9"} />
             <meta name="twitter:card" content="summary" />
             <meta name="twitter:url" content={url} />
             <meta name="twitter:title" content={seoTitle} />
