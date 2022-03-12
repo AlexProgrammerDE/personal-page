@@ -1,0 +1,54 @@
+import {motion} from "framer-motion";
+import {Repository} from "../lib/github";
+import {ArchiveIcon, CodeIcon, StarIcon} from "@heroicons/react/solid";
+import {ForkIcon} from "./icons";
+
+export default function RepositoryCard({repo}: { repo: Repository }) {
+    return (
+        <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+                hidden: {
+                    scale: .8,
+                    opacity: 0
+                },
+                visible: {
+                    scale: 1,
+                    opacity: 1,
+                    transition: {
+                        delay: .4
+                    }
+                },
+            }}
+            className="flex flex-col justify-center">
+            <a href={repo.url}>
+                <div className="h-40 rounded-xl bg-sectionDark shadow-2xl flex flex-col">
+                    <div className="flex flex-row px-3 py-1 rounded-xl bg-sectionDarkest">
+                        <ArchiveIcon className="h-6 w-6 mr-2 my-auto"/>
+                        <h4 className="text-lg md:text-2xl font-bold">{repo.name}</h4>
+                    </div>
+                    <div className="flex-grow p-4 text-sm md:text-xl flex flex-col">
+                        <p>{repo.description}</p>
+                        <div className="flex-grow flex flex-col justify-end">
+                            <div className="flex flex-row mt-2">
+                                <div className="flex flex-row mr-2">
+                                    <StarIcon className="h-6 w-6 my-auto mr-1 text-yellow-300"/>
+                                    <p className="my-auto">{repo.stars}</p>
+                                </div>
+                                <div className="flex flex-row mr-2">
+                                    <ForkIcon/>
+                                    <p className="my-auto">{repo.forks}</p>
+                                </div>
+                                <div className="flex flex-row mr-2">
+                                    <CodeIcon className="h-6 w-6 my-auto mr-1"/>
+                                    <p className="my-auto">{repo.language}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </motion.div>
+    )
+}

@@ -2,6 +2,8 @@ import type {NextPage} from 'next'
 import GlobalHead from "../components/GlobalHead";
 import {getData, UserData} from "../lib/github";
 import {useEffect, useState} from "react";
+import {motion} from 'framer-motion';
+import RepositoryCard from "../components/RepositoryCard";
 
 const Home: NextPage = () => {
     const [userData, setUserData] = useState<UserData>();
@@ -43,25 +45,36 @@ const Home: NextPage = () => {
                     </div>
                 </header>
 
-                <section id="projects" className="w-full h-screen bg-section">
+                <section id="projects" className="w-full min-h-screen bg-section">
+                    <div className="container h-full p-2 pt-4">
+                        {
+                            userData && <>
+                                <h2 className="text-2xl md:text-5xl font-bold mt-4">Projects</h2>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-6 md:mt-20">
+                                        {
+                                            userData.repositories.map((repo, index) => (
+                                                <RepositoryCard key={index} repo={repo}/>
+                                            ))
+                                        }
+                                    </div>
+                            </>
+                        }
+                    </div>
+                </section>
+
+                <section className="w-full min-h-screen">
                     <div className="container">
 
                     </div>
                 </section>
 
-                <section className="w-full h-screen">
+                <section className="w-full min-h-screen bg-section">
                     <div className="container">
 
                     </div>
                 </section>
 
-                <section className="w-full h-screen bg-section">
-                    <div className="container">
-
-                    </div>
-                </section>
-
-                <section className="w-full h-screen">
+                <section className="w-full min-h-screen">
                     <div className="container">
 
                     </div>
