@@ -2,7 +2,6 @@ import type {NextPage} from 'next'
 import GlobalHead from "../components/GlobalHead";
 import {getData, UserData} from "../lib/github";
 import {useEffect, useState} from "react";
-import {motion} from 'framer-motion';
 import RepositoryCard from "../components/RepositoryCard";
 
 const Home: NextPage = () => {
@@ -21,7 +20,7 @@ const Home: NextPage = () => {
             <GlobalHead/>
 
             <main className="w-full flex-col">
-                <header className="header-size w-full flex flex flex-col justify-center">
+                <header className="header-size w-full flex flex-col justify-center">
                     <div className="flex-grow flex justify-center text-center">
                         <div className="flex flex-col justify-center">
                             <h1 className="text-2xl md:text-5xl font-bold mb-4">AlexProgrammerDE</h1>
@@ -39,30 +38,41 @@ const Home: NextPage = () => {
                             </div>
                         </a>
                     </div>
-                    <div className="landing-diagonal-shadow absolute justify-self-end z-10">
+                    <div className="diagonal-shadow absolute justify-self-end z-10">
                         <div
-                            className="header-size w-screen landing-diagonal"/>
+                            className="header-size w-screen bg-section landing-diagonal"/>
                     </div>
                 </header>
 
                 <section id="projects" className="w-full min-h-screen bg-section">
-                    <div className="container h-full p-2 pt-4">
+                    <div className="container h-full p-2 pt-4 z-20 flex flex-col">
                         {
                             userData && <>
                                 <h2 className="text-2xl md:text-5xl font-bold mt-4">Projects</h2>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-6 md:mt-20">
-                                        {
-                                            userData.repositories.map((repo, index) => (
-                                                <RepositoryCard key={index} repo={repo}/>
-                                            ))
-                                        }
-                                    </div>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-6 md:mt-20 mb-4 md:mb-14">
+                                    {
+                                        userData.repositories.map((repo, index) => (
+                                            <div key={index} className={index > 3 ? "hidden md:block" : ""}>
+                                                <RepositoryCard repo={repo}/>
+                                            </div>
+                                        ))
+                                    }
+                                </div>
+                                <div className="flex-grow flex flex-row justify-center">
+                                    <a href="https://github.com/AlexProgrammerDE?tab=repositories"
+                                       className="px-4 py-1.5 bg-sectionDark hover:bg-sectionDarkest rounded-lg text-2xl">And more!</a>
+                                </div>
                             </>
                         }
                     </div>
+
                 </section>
 
-                <section className="w-full min-h-screen">
+                <section className="w-full min-h-screen bg-content flex flex-col">
+                    <div className="diagonal-shadow absolute justify-self-end z-10">
+                        <div
+                            className="h-screen w-screen bg-section section2-diagonal"/>
+                    </div>
                     <div className="container">
 
                     </div>
@@ -76,7 +86,7 @@ const Home: NextPage = () => {
 
                 <section className="w-full min-h-screen">
                     <div className="container">
-
+                        Like my work? Follow me on Github!
                     </div>
                 </section>
             </main>

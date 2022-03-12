@@ -6,7 +6,9 @@ const repositories = [
     'balena-minecraft-server',
     'PistonMOTD',
     'PistonQueue',
-    'PistonBot'
+    'PistonBot',
+    'ServerWrecker',
+    '6b6t-website'
 ]
 
 export interface Organization {

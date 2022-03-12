@@ -6,14 +6,16 @@
     @apply max-w-screen-xl mx-auto;
 }
 
-.landing-diagonal-shadow {
+.diagonal-shadow {
     filter: drop-shadow(25px 50px -12px rgba(0 0 0 / 0.25));
 }
 
 .landing-diagonal {
-    background-color: #c74d5f;
-    clip-path: polygon(100% 52%, 0% 100%, 100% 100%);
-    @apply shadow-2xl;
+    clip-path: polygon(100% 50%, 0% 100%, 100% 100%);
+}
+
+.section2-diagonal {
+    clip-path: polygon(0 0, 0 50%, 100% 0);
 }
 
 html {
