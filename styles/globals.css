@@ -3,26 +3,35 @@
 @tailwind utilities;
 
 .container {
-  @apply max-w-screen-xl mx-auto;
+    @apply max-w-screen-xl mx-auto;
+}
+
+.landing-diagonal-shadow {
+    filter: drop-shadow(25px 50px -12px rgba(0 0 0 / 0.25));
+}
+
+.landing-diagonal {
+    background-color: #c74d5f;
+    clip-path: polygon(100% 52%, 0% 100%, 100% 100%);
+    @apply shadow-2xl;
 }
 
 html {
-  scroll-behavior: smooth;
+    @apply scroll-smooth;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
+    @apply no-underline text-inherit;
 }
 
 .header-size {
-  min-height: calc(100vh - 5rem);
+    min-height: calc(100vh - 5rem);
+}
+
+.push-out {
+    min-width: calc(100vw + 20rem);
 }

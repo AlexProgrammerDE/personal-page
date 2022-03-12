@@ -8,7 +8,7 @@ export default function NavBar() {
         <header className="text-xl header text-text font-bold h-20">
             <div className="container flex flex-col md:items-center md:justify-between md:flex-row">
                 <div className="flex flex-row items-center justify-between w-full">
-                    <p>AlexProgrammerDE</p>
+                    <h2 className="font-bold text-lg md:text-2xl m-4">AlexProgrammerDE</h2>
                     <button aria-label="Expand navigation bar"
                             className="justify-self-end md:hidden rounded-lg focus:outline-none focus:shadow-outline mr-8"
                             onClick={() => setOpen(!open)}>
