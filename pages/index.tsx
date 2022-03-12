@@ -1,7 +1,19 @@
 import type {NextPage} from 'next'
 import GlobalHead from "../components/GlobalHead";
+import {getData, UserData} from "../lib/github";
+import {useEffect, useState} from "react";
 
 const Home: NextPage = () => {
+    const [userData, setUserData] = useState<UserData>();
+
+    useEffect(() => {
+        if (userData) {
+            return;
+        }
+
+        getData('AlexProgrammerDE').then(setUserData);
+    }, [userData]);
+
     return (
         <>
             <GlobalHead/>
@@ -37,31 +49,23 @@ const Home: NextPage = () => {
                     </div>
                 </section>
 
-                <section className="w-full h-40">
+                <section className="w-full h-screen">
                     <div className="container">
 
                     </div>
                 </section>
 
-                <section className="w-full h-40 bg-section">
+                <section className="w-full h-screen bg-section">
                     <div className="container">
 
                     </div>
                 </section>
 
-                <section className="w-full h-40">
+                <section className="w-full h-screen">
                     <div className="container">
 
                     </div>
                 </section>
-                <h1 className="">
-                    Welcome to <a href="https://nextjs.org">Next.js!</a>
-                </h1>
-
-                <p className="">
-                    Get started by editing{' '}
-                    <code className="">pages/index.tsx</code>
-                </p>
             </main>
         </>
     )
