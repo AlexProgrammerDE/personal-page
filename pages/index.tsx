@@ -89,7 +89,7 @@ const Home: NextPage = () => {
                 </section>
 
                 <section className="w-full footer-size">
-                    <div className="container min-h-screen flex flex-col justify-center">
+                    <div className="container footer-size flex flex-col justify-center">
                         <div className="flex flex-col md:flex-row justify-center">
                             <div className="flex flex-col mx-4 mb-3 md:mb-0">
                                 <p className="font-bold text-3xl mb-2">Like my work?</p>
