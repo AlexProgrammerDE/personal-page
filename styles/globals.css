@@ -38,7 +38,7 @@ a {
     min-height: calc(100vh - 3rem);
 }
 
-@responsive {
+@layer components {
     .footer-size-md {
         min-height: calc(100vh - 2.5rem);
     }

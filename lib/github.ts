@@ -29,6 +29,7 @@ export interface Repository {
 export interface UserData {
     avatar: string,
     name: string,
+    bio: string,
     repoCount: number,
     followers: number,
 }
@@ -41,6 +42,7 @@ export async function getUserData(username: string): Promise<UserData> {
     return {
         avatar: String(userReply.data.avatar_url),
         name: String(userReply.data.name),
+        bio: String(userReply.data.bio),
         repoCount: Number(userReply.data.public_repos),
         followers: Number(userReply.data.followers),
     }

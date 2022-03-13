@@ -4,7 +4,9 @@ const removeImports = require("next-remove-imports")();
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['discord.com'],
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    domains: ['discord.com', 'avatars.githubusercontent.com'],
   },
   webpack: (config) => {
     return Object.assign({}, config, {
