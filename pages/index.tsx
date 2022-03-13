@@ -94,7 +94,7 @@ const Home: NextPage = () => {
                         <div
                             className="h-screen w-screen bg-section section2-diagonal"/>
                     </div>
-                    <div className="container h-screen p-2 flex flex-col z-20 mt-40">
+                    <div className="container h-screen p-2 pb-8 flex flex-col z-20 mt-40">
                         <div className="flex flex-row justify-end mb-6">
                             <h2 className="text-2xl md:text-5xl font-bold mt-4">About Me</h2>
                         </div>
@@ -109,7 +109,7 @@ const Home: NextPage = () => {
                 </section>
 
                 <section className="w-full footer-size">
-                    <div className="container footer-size flex flex-col justify-center">
+                    <div className="container footer-size md:footer-size-md flex flex-col justify-center">
                         <div className="flex flex-col md:flex-row justify-center">
                             <div className="flex flex-col mx-4 mb-3 md:mb-0">
                                 <p className="font-bold text-3xl mb-2">Like my work?</p>
@@ -123,15 +123,15 @@ const Home: NextPage = () => {
                             </div>
                             <div className="mx-4 md:mx-0 w-[90vw] md:w-0.5 border"/>
                             <div className="mt-3 md:mt-0 mx-4 flex flex-col">
-                                <div className="flex flex-wrap gap-3 mb-2">
-                                    <a title="Twitter" href="https://twitter.com/AlexProgrammer3"><FontAwesomeIcon icon={faTwitter}
+                                <div className="flex flex-wrap mb-2">
+                                    <a className="mr-2" title="Twitter" href="https://twitter.com/AlexProgrammer3"><FontAwesomeIcon icon={faTwitter}
                                                                                                    size="2x"/></a>
-                                    <a title="Reddit" href="https://www.reddit.com/user/Sensitive_Host_2515"><FontAwesomeIcon
+                                    <a className="mr-2" title="Reddit" href="https://www.reddit.com/user/Sensitive_Host_2515"><FontAwesomeIcon
                                         icon={faRedditAlien} size="2x"/></a>
-                                    <a title="Youtube" href="https://www.youtube.com/channel/UC86szSBHNiuIXC7hIfrMYtg"><FontAwesomeIcon
+                                    <a className="mr-2"title="Youtube" href="https://www.youtube.com/channel/UC86szSBHNiuIXC7hIfrMYtg"><FontAwesomeIcon
                                         icon={faYoutube} size="2x"/></a>
-                                    <a title="Pinterest" href="https://pin.it/2SeSvyM"><FontAwesomeIcon icon={faPinterest} size="2x"/></a>
-                                    <a title="Minecraft" href="https://namemc.com/profile/Pistonmaster.1"><FontAwesomeIcon icon={faCube} size="2x"/></a>
+                                    <a className="mr-2" title="Pinterest" href="https://pin.it/2SeSvyM"><FontAwesomeIcon icon={faPinterest} size="2x"/></a>
+                                    <a className="mr-2" title="Minecraft" href="https://namemc.com/profile/Pistonmaster.1"><FontAwesomeIcon icon={faCube} size="2x"/></a>
                                 </div>
                                 <a href="https://discord.gg/CDrcxzH" title="Discord Server">
                                     <Image width={320} height={76} alt="Discord Server Invite Banner"
