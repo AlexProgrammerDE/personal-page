@@ -6,7 +6,7 @@
 ### Who is this guy?
 
 Hi! I'm Alex aka AlexProgrammerDE and aka Pistonmaster. I have quite a passion for Minecraft and have learned quite some
-languages and frameworks over the years. I am currently a pupil in a german high school.
+languages and frameworks over the years. I am currently a pupil in a German high school.
 
 ### What does describe me?
 
@@ -19,7 +19,7 @@ I am also a big fan of Open Source and my [GitHub profile](https://github.com/Al
 
 I code in Java and TypeScript mainly. I also have a bit of experience with Python and C#. I am very flexible with what I
 do, so I can adapt to most situations. I work well with Minecraft Plugin development and Website Design/Coding, but I'm
-also capable of Sys Admin, Linux and Virtualization with VMs and Docker.
+also capable of Sys Admin, Linux, and Virtualization with VMs and Docker.
 
 I've collected a lot of experience with running and managing Minecraft servers and did set up dedicated machines in
 datacenters and configured DDoS protection. I've also worked on a few projects with Minecraft plugins and websites.
