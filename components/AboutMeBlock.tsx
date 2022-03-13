@@ -1,6 +1,4 @@
 import {useState} from "react";
-import "@uiw/react-md-editor/markdown-editor.css";
-import "@uiw/react-markdown-preview/markdown.css";
 
 import dynamic from "next/dynamic";
 import {CodeIcon, EyeIcon} from "@heroicons/react/solid";
@@ -38,7 +36,7 @@ export default function AboutMeBlock() {
                 </button>
             </div>
             <div className="flex-grow flex flex-row">
-                <div className="flex-grow p-4 pb-0 flex flex-col">
+                <div className="flex-grow p-2 pb-0 md:p-6 md:pb-0 flex flex-col">
                     {
                         isEditing ?
                             <AboutMeEditor text={text} setText={setText}/>
