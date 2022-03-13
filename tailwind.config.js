@@ -18,11 +18,11 @@ module.exports = {
                             marginBottom: "0.5rem",
                         },
                         h2: {
-                            marginTop: "0.5rem",
+                            marginTop: "1rem",
                             marginBottom: "0.5rem",
                         },
                         h3: {
-                            marginTop: "0.5rem",
+                            marginTop: "1rem",
                             marginBottom: "0.5rem",
                         },
                         p: {

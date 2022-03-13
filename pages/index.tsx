@@ -128,7 +128,7 @@ const Home: NextPage = () => {
                                                                                                    size="2x"/></a>
                                     <a className="mr-2" title="Reddit" href="https://www.reddit.com/user/Sensitive_Host_2515"><FontAwesomeIcon
                                         icon={faRedditAlien} size="2x"/></a>
-                                    <a className="mr-2"title="Youtube" href="https://www.youtube.com/channel/UC86szSBHNiuIXC7hIfrMYtg"><FontAwesomeIcon
+                                    <a className="mr-2" title="Youtube" href="https://www.youtube.com/channel/UC86szSBHNiuIXC7hIfrMYtg"><FontAwesomeIcon
                                         icon={faYoutube} size="2x"/></a>
                                     <a className="mr-2" title="Pinterest" href="https://pin.it/2SeSvyM"><FontAwesomeIcon icon={faPinterest} size="2x"/></a>
                                     <a className="mr-2" title="Minecraft" href="https://namemc.com/profile/Pistonmaster.1"><FontAwesomeIcon icon={faCube} size="2x"/></a>

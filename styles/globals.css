@@ -55,3 +55,7 @@ a {
     line-height: 1.5rem;
     counter-increment: line;
 }
+
+.w-md-editor-bar {
+    @apply hidden;
+}
