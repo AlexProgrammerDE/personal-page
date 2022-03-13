@@ -45,3 +45,9 @@ a {
 .push-out {
     min-width: calc(100vw + 20rem);
 }
+
+.counted {
+    @apply block;
+    line-height: 1.5rem;
+    counter-increment: line;
+}
