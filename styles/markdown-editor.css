@@ -155,7 +155,7 @@
 .w-md-editor-content {
     position: relative;
     border-radius: 0 0 3px 0;
-    height: calc(100% - 39px);
+    height: 100%;
 }
 .w-md-editor-input {
     width: 50%;
@@ -193,15 +193,6 @@
 .w-md-editor-show-edit .w-md-editor-preview {
     width: 0;
     padding: 0;
-}
-.w-md-editor-fullscreen {
-    overflow: hidden;
-    position: fixed;
-    z-index: 99999;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
 }
 .w-md-editor-fullscreen .w-md-editor-content {
     height: 100%;

@@ -71,7 +71,6 @@ export default function RepositoryCard({repo}: { repo: Repository }) {
                     </div>
                 </div>
             </div>
-
         </motion.div>
     )
 }

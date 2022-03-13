@@ -94,10 +94,7 @@ const Home: NextPage = () => {
                         <div
                             className="h-screen w-screen bg-section section2-diagonal"/>
                     </div>
-                    <div className="container h-screen p-2 pb-8 flex flex-col z-20 mt-40">
-                        <div className="flex flex-row justify-end mb-6">
-                            <h2 className="text-2xl md:text-5xl font-bold mt-4">About Me</h2>
-                        </div>
+                    <div className="container min-h-screen p-2 pb-8 flex flex-col z-20 mt-32">
                         <AboutMeBlock/>
                     </div>
                 </section>

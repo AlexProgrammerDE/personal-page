@@ -41,7 +41,7 @@ export default function AboutMeBlock() {
                         isEditing ?
                             <AboutMeEditor text={text} setText={setText}/>
                             :
-                            <div className="flex-grow overflow-x-auto">
+                            <div className="flex-grow overflow-x-auto mb-2 md:mb-6">
                                 <div className="prose prose-invert" dangerouslySetInnerHTML={{__html: md.render(text)}}/>
                             </div>
                     }

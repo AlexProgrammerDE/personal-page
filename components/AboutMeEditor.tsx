@@ -7,6 +7,7 @@ export default function AboutMeEditor({text, setText}: { text: string, setText: 
             className="flex-grow w-full h-full mb-2 md:mb-6"
             hideToolbar
             preview="edit"
+            fullscreen
             value={text}
             onChange={value => {
                 if (value) setText(value)
