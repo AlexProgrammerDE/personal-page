@@ -160,7 +160,7 @@ const Home: NextPage = () => {
                     </div>
                 </section>
 
-                <section className="w-full min-h-screen bg-section">
+                <section id="stats" className="w-full min-h-screen bg-section">
                     <div className="container p-6">
                         <div
                             className="flex flex-col gap-4 my-auto mx-auto">
