@@ -150,7 +150,7 @@ const Home: NextPage = () => {
                     </div>
                 </section>
 
-                <section id="about-me" className="w-full min-h-screen bg-content flex flex-col">
+                <section id="about-me" className="w-full min-h-screen bg-content flex flex-col shadow-2xl">
                     <div className="diagonal-shadow absolute z-10">
                         <div
                             className="h-screen w-screen bg-section section2-diagonal"/>
@@ -160,7 +160,7 @@ const Home: NextPage = () => {
                     </div>
                 </section>
 
-                <section id="stats" className="w-full min-h-screen bg-section">
+                <section id="stats" className="w-full min-h-screen bg-section shadow-2xl">
                     <div className="container p-6">
                         <div
                             className="flex flex-col gap-4 my-auto mx-auto">
@@ -179,7 +179,8 @@ const Home: NextPage = () => {
                                          src="https://spotify-recently-played-readme.vercel.app/api?user=songraper"/>
                                 </a>
                                 {userData &&
-                                    <div className="h-full rounded-xl bg-gray-900 flex flex-col p-4 mt-20 md:mt-16 ml-2">
+                                    <div
+                                        className="h-full rounded-xl bg-gray-900 flex flex-col p-4 mt-20 md:mt-16 ml-2">
                                         <div className="flex flex-row -mt-20">
                                             <div className="inline-flex rounded-full border-8 border-gray-900">
                                                 <Image title={userData.bio} src={userData.avatar} width={110}
@@ -201,7 +202,7 @@ const Home: NextPage = () => {
                                     </div>
                                 }
                             </div>
-                            <h3 className="text-2xl font-bold mx-auto mt-4">Me in badges</h3>
+                            <h3 className="text-3xl font-bold mx-auto mt-4">Me in badges</h3>
                             <div className="flex flex-wrap">
                                 {
                                     badges.map((badge, index) => <img key={index}
