@@ -83,13 +83,13 @@ const Home: NextPage = () => {
                         </div>
                         <div className="flex-grow flex flex-row justify-center">
                             <a href="https://github.com/AlexProgrammerDE?tab=repositories"
-                               className="px-4 py-1.5 font-bold bg-sectionDark hover:bg-sectionDarkest rounded-lg text-2xl">And
+                               className="px-4 py-1.5 font-bold shadow-md bg-sectionDark hover:bg-sectionDarkest rounded-lg text-2xl">And
                                 more!</a>
                         </div>
                     </div>
                 </section>
 
-                <section className="w-full min-h-screen bg-content flex flex-col">
+                <section id="about-me" className="w-full min-h-screen bg-content flex flex-col">
                     <div className="diagonal-shadow absolute z-10">
                         <div
                             className="h-screen w-screen bg-section section2-diagonal"/>
@@ -108,7 +108,7 @@ const Home: NextPage = () => {
                     </div>
                 </section>
 
-                <section className="w-full footer-size">
+                <section id="contact" className="w-full footer-size">
                     <div className="container footer-size md:footer-size-md flex flex-col justify-center">
                         <div className="flex flex-col md:flex-row justify-center">
                             <div className="flex flex-col mx-4 mb-3 md:mb-0">
