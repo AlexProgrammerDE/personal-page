@@ -38,8 +38,10 @@ a {
     min-height: calc(100vh - 3rem);
 }
 
-.footer-size-md {
-    min-height: calc(100vh - 2.5rem);
+@responsive {
+    .footer-size-md {
+        min-height: calc(100vh - 2.5rem);
+    }
 }
 
 .emoji {

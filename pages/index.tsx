@@ -105,7 +105,7 @@ const Home: NextPage = () => {
                     </div>
                 </section>
 
-                <section id="contact" className="w-full footer-size">
+                <section id="contact" className="w-full footer-size md:footer-size-md">
                     <div className="container footer-size md:footer-size-md flex flex-col justify-center">
                         <div className="flex flex-col md:flex-row justify-center">
                             <div className="flex flex-col mx-4 mb-3 md:mb-0">
