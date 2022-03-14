@@ -124,10 +124,8 @@ const Home: NextPage = () => {
                             </div>
                         </a>
                     </div>
-                    <div className="diagonal-shadow absolute justify-self-end z-10">
-                        <div
-                            className="header-size w-screen bg-section landing-diagonal"/>
-                    </div>
+                    <div
+                        className="w-screen max-w-full absolute z-10 header-size bg-section landing-diagonal"/>
                 </header>
 
                 <section id="projects" className="w-full min-h-screen bg-section">
@@ -151,10 +149,8 @@ const Home: NextPage = () => {
                 </section>
 
                 <section id="about-me" className="w-full min-h-screen bg-content flex flex-col shadow-2xl">
-                    <div className="diagonal-shadow absolute z-10">
-                        <div
-                            className="h-screen w-screen bg-section section2-diagonal"/>
-                    </div>
+                    <div
+                        className="h-screen w-screen max-w-full fixed z-10 bg-section section2-diagonal"/>
                     <div className="container min-h-screen p-2 pb-8 flex flex-col z-20 mt-32">
                         <AboutMeBlock/>
                     </div>
