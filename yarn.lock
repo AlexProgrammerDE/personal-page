@@ -4251,14 +4251,14 @@ react-markdown@~8.0.0:
     unist-util-visit "^4.0.0"
     vfile "^5.0.0"
 
-react-twemoji@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/react-twemoji/-/react-twemoji-0.4.0.tgz#e081c0034c493524331f816345a74855d71eeff9"
-  integrity sha512-KBEnNY1djhaMBF7iQI8+0BZqazzQO4HDtA3szpoffCgF57N2te2CX3525Z8auJeIGZAHR5HsJdcntHjj7vK9ZA==
+react-twemoji@0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/react-twemoji/-/react-twemoji-0.4.1.tgz#8892690d111c529ee23d73bd94942cdf6637f4f7"
+  integrity sha512-bwq7UJzpKR8qsoEzKDlVCRODaOua7xKDVO5Lqp4UGx8yQ0Ng5ZWMtzS/DtDVL7oyr0gYu9JQ3GwWUxaqfex1ug==
   dependencies:
     lodash.isequal "^4.5.0"
     prop-types "^15.7.2"
-    twemoji "13.1.0"
+    twemoji "13.1.1"
 
 react@17.0.2:
   version "17.0.2"
@@ -5004,10 +5004,10 @@ twemoji-parser@13.1.0:
   resolved "https://registry.npmjs.org/twemoji-parser/-/twemoji-parser-13.1.0.tgz"
   integrity sha512-AQOzLJpYlpWMy8n+0ATyKKZzWlZBJN+G0C+5lhX7Ftc2PeEVdUU/7ns2Pn2vVje26AIZ/OHwFoUbdv6YYD/wGg==
 
-twemoji@13.1.0:
-  version "13.1.0"
-  resolved "https://registry.npmjs.org/twemoji/-/twemoji-13.1.0.tgz"
-  integrity sha512-e3fZRl2S9UQQdBFLYXtTBT6o4vidJMnpWUAhJA+yLGR+kaUTZAt3PixC0cGvvxWSuq2MSz/o0rJraOXrWw/4Ew==
+twemoji@13.1.1:
+  version "13.1.1"
+  resolved "https://registry.yarnpkg.com/twemoji/-/twemoji-13.1.1.tgz#6e31409908bb5383cdb1d09c9c8e7856aa6e2e3b"
+  integrity sha512-IIIoq+n1lk1M1+evBKZD3DO0ud02fDQ4ssbgAv8rp3YBWUeNmskjlisFUPPDacQ50XS3bhrd4Kq9Q2gqhxb0dg==
   dependencies:
     fs-extra "^8.0.1"
     jsonfile "^5.0.0"
