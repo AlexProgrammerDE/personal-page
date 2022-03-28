@@ -5,8 +5,8 @@
 
 ### Who is this guy?
 
-Hi! I'm Alex aka AlexProgrammerDE and aka Pistonmaster. I have quite a passion for Minecraft and have learned quite some
-languages and frameworks over the years. I am currently a pupil in a German high school.
+Hi! I'm Alex aka AlexProgrammerDE and aka Pistonmaster. I have quite a passion for Minecraft and have learned a lot of
+programming languages and frameworks over the years. I am currently a pupil in a German high school.
 
 ### What does describe me?
 
