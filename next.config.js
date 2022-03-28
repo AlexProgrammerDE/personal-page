@@ -6,7 +6,17 @@ const nextConfig = {
   images: {
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    domains: ['discord.com', 'avatars.githubusercontent.com'],
+    domains: ['discord.com', 'avatars.githubusercontent.com']
+  },
+  i18n: {
+    locales: ["en-US"],
+    defaultLocale: "en-US",
+    domains: [
+      {
+        domain: "pistonmaster.net",
+        defaultLocale: "en-US"
+      }
+    ]
   },
   webpack: (config) => {
     return Object.assign({}, config, {
@@ -14,10 +24,10 @@ const nextConfig = {
         rules: config.module.rules.concat([
           {
             test: /\.md$/,
-            loader: 'raw-loader',
+            loader: 'raw-loader'
           }
-        ]),
-      }),
+        ])
+      })
     });
   }
 }

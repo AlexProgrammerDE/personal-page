@@ -10,10 +10,10 @@ languages and frameworks over the years. I am currently a pupil in a German high
 
 ### What does describe me?
 
-I am an enthusiastic and creative person. I like to create and learn new things. I like to work in a team and can
+I am an enthusiastic and creative person. I like to create and learn new things. I can also work well in a team and
 take responsibility.
 
-I am also a big fan of Open Source and my [GitHub profile](https://github.com/AlexProgrammerDE) is quite active.
+I am also a big fan of Open Source and my [GitHub profile](https://github.com/AlexProgrammerDE) is very active.
 
 ### What am I capable of?
 
