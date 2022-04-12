@@ -22,7 +22,7 @@
     "babel-plugin-macros": "3.1.0",
     "framer-motion": "6.2.10",
     "markdown-it": "^12.3.2",
-    "next": "12.1.4",
+    "next": "12.1.5",
     "next-remove-imports": "^1.0.6",
     "next-sitemap": "2.5.19",
     "postcss": "8.4.8",
@@ -37,7 +37,7 @@
     "@types/react": "17.0.44",
     "@types/react-twemoji": "0.4.0",
     "eslint": "8.13.0",
-    "eslint-config-next": "12.1.4",
+    "eslint-config-next": "12.1.5",
     "typescript": "4.6.2"
   }
 }
