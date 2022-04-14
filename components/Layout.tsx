@@ -1,16 +1,13 @@
-import { NextPage } from "next";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
-import Twemoji from 'react-twemoji';
+import {ReactNode} from "react";
 
-const Layout: NextPage = ({ children }) => {
+const Layout = ({ children }: {children: ReactNode}) => {
     return (
         <div className="min-h-screen min-w-screen flex flex-col z-50 bg-background text-text scroller">
-            <Twemoji>
                 <NavBar />
                 {children}
                 <Footer />
-            </Twemoji>
         </div>
     );
 };
