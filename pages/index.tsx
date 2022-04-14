@@ -215,7 +215,7 @@ const Home: NextPage = () => {
                         <div className="flex flex-col md:flex-row justify-center">
                             <div className="flex flex-col mx-4 mb-3 md:mb-0">
                                 <p className="font-bold text-3xl mb-2">Like my work?</p>
-                                <div className="flex flex-row">
+                                <div className="flex flex-row justify-center">
                                     <a href="https://github.com/AlexProgrammerDE"
                                        className="bg-[#24292E] font-bold rounded-lg px-4 py-2.5 flex flex-row shadow-lg">
                                         <p className="flex flex-col justify-center mr-2">Follow me on</p>
