@@ -41,8 +41,13 @@ body {
     filter: drop-shadow(25px 50px -12px rgba(0 0 0 / 0.25));
 }
 
-.landing-diagonal {
-    clip-path: polygon(100% 50%, 0% 100%, 100% 100%);
+@layer utilities {
+    .landing-diagonal-md {
+        clip-path: polygon(100% 50%, 0% 100%, 100% 100%);
+    }
+    .landing-diagonal {
+        clip-path: polygon(100% 80%, 0% 100%, 100% 100%);
+    }
 }
 
 .section2-diagonal {
