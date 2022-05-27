@@ -644,10 +644,10 @@
   resolved "https://registry.yarnpkg.com/@uiw/copy-to-clipboard/-/copy-to-clipboard-1.0.12.tgz#46f563bd6f3007895f95855e5b4bb692c7251933"
   integrity sha512-3tt7FVSbjtBCNBhffy7k26rpnEmk8GQj9QkTGZBIfpHU7mG3Buryt69u6xooYM7/gmv7GIqD4QxxIauIp2HHKg==
 
-"@uiw/react-markdown-preview@~4.0.5":
-  version "4.0.5"
-  resolved "https://registry.yarnpkg.com/@uiw/react-markdown-preview/-/react-markdown-preview-4.0.5.tgz#2605d6d80adb0bb7de12c1df26acb50efe7b7bd6"
-  integrity sha512-/TfkRddqeFdoCAh8o7rtjgQRI1qz1VDapta7YEZjsjyOb1XpZhILca4pIhR9AYh3smhkHnIRuNicTjfm8AjrnA==
+"@uiw/react-markdown-preview@^4.0.10":
+  version "4.0.11"
+  resolved "https://registry.yarnpkg.com/@uiw/react-markdown-preview/-/react-markdown-preview-4.0.11.tgz#7c0e0ff6820f5878c378cf87034195eeb02fe00b"
+  integrity sha512-+vabc1MC/prdaDsrX6dPTx90QtUd63r9R7ZDM/GvCagj+wF7okNop0vxk2HCkU3VjpG7xpDAsQw/A54Pp4IdPg==
   dependencies:
     "@babel/runtime" "^7.17.2"
     "@uiw/copy-to-clipboard" "~1.0.12"
@@ -660,13 +660,13 @@
     rehype-slug "~5.0.1"
     remark-gfm "~3.0.1"
 
-"@uiw/react-md-editor@3.13.0":
-  version "3.13.0"
-  resolved "https://registry.yarnpkg.com/@uiw/react-md-editor/-/react-md-editor-3.13.0.tgz#6475b6bdbdfa4518ea1327284644c3ad9d00730c"
-  integrity sha512-ctJS5pxbdn2KKUcMZuP1t1qqqcidDANC1DCscD1lGF7tgl3bT6HVQ/cLsAPEVcfxBa1/5XEmJ8FNoV/k3C//6Q==
+"@uiw/react-md-editor@3.14.1":
+  version "3.14.1"
+  resolved "https://registry.yarnpkg.com/@uiw/react-md-editor/-/react-md-editor-3.14.1.tgz#754923f8d0fae025be4986c939d6f0f3ddd1c99e"
+  integrity sha512-F0BCKXv3bFte/7WwB4CKTM7VzvBNeJj0LjFDExMFUKr72R8+lC+dbZGAa1RlgGwqeSCqkyi5Wv4aqDu5jYEn0w==
   dependencies:
     "@babel/runtime" "^7.14.6"
-    "@uiw/react-markdown-preview" "~4.0.5"
+    "@uiw/react-markdown-preview" "^4.0.10"
     rehype "~12.0.1"
     rehype-sanitize "~5.0.1"
 
