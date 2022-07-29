@@ -726,10 +726,10 @@
     rehype-slug "~5.0.1"
     remark-gfm "~3.0.1"
 
-"@uiw/react-md-editor@3.15.0":
-  version "3.15.0"
-  resolved "https://registry.yarnpkg.com/@uiw/react-md-editor/-/react-md-editor-3.15.0.tgz#9ef5a6e9e45e1e97a64b03bd42ab3d21943a9e45"
-  integrity sha512-Uf3n1KHUFojUFqUXkTmD2T3bufvRSNtGIXiYNmTPaJwlD85SInvRINzZxvdXfHwwCcl7+AfeJZQSZVgeZvqvgg==
+"@uiw/react-md-editor@3.16.0":
+  version "3.16.0"
+  resolved "https://registry.yarnpkg.com/@uiw/react-md-editor/-/react-md-editor-3.16.0.tgz#30979bb2f69ea210df8653190d6d3ab4b3cd16ed"
+  integrity sha512-6bJ8vrPiddn3ThhQA44Ob+UGfcCQqV7t2aZGj0rJhUT8CPmhgdzuITszERDyLDVgoR8PPJxsU1HtJnKKsAqyng==
   dependencies:
     "@babel/runtime" "^7.14.6"
     "@uiw/react-markdown-preview" "^4.0.22"
