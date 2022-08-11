@@ -20,7 +20,7 @@
     "@uiw/react-md-editor": "3.17.2",
     "autoprefixer": "10.4.8",
     "babel-plugin-macros": "3.1.0",
-    "framer-motion": "7.0.1",
+    "framer-motion": "7.1.0",
     "markdown-it": "13.0.1",
     "next": "12.2.4",
     "next-remove-imports": "^1.0.6",
