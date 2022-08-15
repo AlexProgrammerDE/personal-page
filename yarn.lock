@@ -2858,7 +2858,7 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
 
-next-remove-imports@^1.0.6:
+next-remove-imports@1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/next-remove-imports/-/next-remove-imports-1.0.6.tgz#0280d21ec43afb856450d5b549dc0122b96e1281"
   integrity sha512-HXaFQXnGLVVrZACAn+d2kxBiPTKekmctl7U1Yuy0a81zFmEKlsWkK/K4E+/P/dv7m4CccPbtWwvofvaP2hX/sw==
@@ -3283,7 +3283,7 @@ quick-lru@^5.1.1:
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-5.1.1.tgz#366493e6b3e42a3a6885e2e99d18f80fb7a8c932"
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
 
-raw-loader@^4.0.2:
+raw-loader@4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/raw-loader/-/raw-loader-4.0.2.tgz#1aac6b7d1ad1501e66efdac1522c73e59a584eb6"
   integrity sha512-ZnScIV3ag9A4wPX/ZayxL/jZH+euYb6FcUinPcgiQW0+UBtEv0O6Q3lGd3cqJ+GHH+rksEv3Pj99oxJ3u3VIKA==
