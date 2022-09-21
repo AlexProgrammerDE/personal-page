@@ -38,7 +38,7 @@ export default function RepositoryCard({repo}: { repo: Repository }) {
                     scale: 1,
                     opacity: 1,
                     transition: {
-                        delay: .4
+                        delay: 1
                     }
                 },
             }}

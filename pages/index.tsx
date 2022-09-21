@@ -1,7 +1,6 @@
 import type {NextPage} from 'next'
 import GlobalHead from "../components/GlobalHead";
 import {getOrganizations, getRepositories, getUserData, Organization, Repository, UserData} from "../lib/github";
-import {useEffect, useState} from "react";
 import RepositoryCard from "../components/RepositoryCard";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faGithub, faPinterest, faRedditAlien, faTwitter, faYoutube} from '@fortawesome/free-brands-svg-icons'
@@ -9,98 +8,308 @@ import Image from 'next/image';
 import {faCube} from "@fortawesome/free-solid-svg-icons";
 import AboutMeBlock from "../components/AboutMeBlock";
 
-const badges = [
-  "https://img.shields.io/badge/Firefox-FF7139?style=for-the-badge&logo=Firefox-Browser&logoColor=white",
-  "https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white",
-  "https://img.shields.io/badge/Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white",
-  "https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white",
-  "https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white",
-  "https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white",
-  "https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white",
-  "https://img.shields.io/badge/Gimp-657D8B?style=for-the-badge&logo=gimp&logoColor=FFFFFF",
-  "https://img.shields.io/badge/Krita-203759?style=for-the-badge&logo=krita&logoColor=EEF37B",
-  "https://img.shields.io/badge/StackExchange-%23ffffff.svg?style=for-the-badge&logo=StackExchange&logoColor=white",
-  "https://img.shields.io/badge/-Stackoverflow-FE7A16?style=for-the-badge&logo=stack-overflow&logoColor=white",
-  "https://img.shields.io/badge/Wikipedia-%23000000.svg?style=for-the-badge&logo=wikipedia&logoColor=white",
-  "https://img.shields.io/badge/MDN_Web_Docs-black?style=for-the-badge&logo=mdnwebdocs&logoColor=white",
-  "https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white",
-  "https://img.shields.io/badge/dependabot-025E8C?style=for-the-badge&logo=dependabot&logoColor=white",
-  "https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white",
-  "https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white",
-  "https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white",
-  "https://img.shields.io/badge/Nuxt-black?style=for-the-badge&logo=nuxt.js&logoColor=white",
-  "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB",
-  "https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D",
-  "https://img.shields.io/badge/yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white",
-  "https://img.shields.io/badge/epicgames-%23313131.svg?style=for-the-badge&logo=epicgames&logoColor=white",
-  "https://img.shields.io/badge/PSN-%230070D1.svg?style=for-the-badge&logo=Playstation&logoColor=white",
-  "https://img.shields.io/badge/Playstation%204-003791?style=for-the-badge&logo=playstation-4&logoColor=white",
-  "https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white",
-  "https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white",
-  "https://img.shields.io/badge/webstorm-143?style=for-the-badge&logo=webstorm&logoColor=white&color=black",
-  "https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white",
-  "https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white",
-  "https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white",
-  "https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white",
-  "https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E",
-  "https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white",
-  "https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white",
-  "https://img.shields.io/badge/Spotify-1ED760?style=for-the-badge&logo=spotify&logoColor=white",
-  "https://img.shields.io/badge/shazam-1476FE?style=for-the-badge&logo=shazam&logoColor=white",
-  "https://img.shields.io/badge/Microsoft-0078D4?style=for-the-badge&logo=microsoft&logoColor=white",
-  "https://img.shields.io/badge/Microsoft_Office-D83B01?style=for-the-badge&logo=microsoft-office&logoColor=white",
-  "https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white",
-  "https://img.shields.io/badge/Debian-D70A53?style=for-the-badge&logo=debian&logoColor=white",
-  "https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black",
-  "https://img.shields.io/badge/lineageos-167C80?style=for-the-badge&logo=lineageos&logoColor=white",
-  "https://img.shields.io/badge/Pop!_OS-48B9C7?style=for-the-badge&logo=Pop!_OS&logoColor=white",
-  "https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white",
-  "https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white",
-  "https://img.shields.io/badge/Gradle-02303A.svg?style=for-the-badge&logo=Gradle&logoColor=white",
-  "https://img.shields.io/badge/-RaspberryPi-C51A4A?style=for-the-badge&logo=Raspberry-Pi",
-  "https://img.shields.io/badge/DuckDuckGo-DE5833?style=for-the-badge&logo=DuckDuckGo&logoColor=white",
-  "https://img.shields.io/badge/google-4285F4?style=for-the-badge&logo=google&logoColor=white",
-  "https://img.shields.io/badge/jenkins-%232C5263.svg?style=for-the-badge&logo=jenkins&logoColor=white",
-  "https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white",
-  "https://img.shields.io/badge/Samsung-%231428A0.svg?style=for-the-badge&logo=samsung&logoColor=white",
-  "https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white",
-  "https://img.shields.io/badge/Amazon%20Prime-0F79AF?style=for-the-badge&logo=amazonprime&logoColor=white",
-  "https://img.shields.io/badge/Netflix-E50914?style=for-the-badge&logo=netflix&logoColor=white",
-  "https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white",
-  "https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white",
+const badges =[
+  {
+    badge: 'Firefox-FF7139?style=for-the-badge&logo=Firefox-Browser&logoColor=white',
+    width: 101.75,
+    height: 28
+  },
+  {
+    badge: 'dependabot-025E8C?style=for-the-badge&logo=dependabot&logoColor=white',
+    width: 132.5,
+    height: 28
+  },
+  {
+    badge: 'MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white',
+    width: 106.75,
+    height: 28
+  },
+  {
+    badge: 'webstorm-143?style=for-the-badge&logo=webstorm&logoColor=white&color=black',
+    width: 119,
+    height: 28
+  },
+  {
+    badge: 'css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white',
+    width: 77,
+    height: 28
+  },
+  {
+    badge: 'javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E',
+    width: 126.5,
+    height: 28
+  },
+  {
+    badge: 'sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white',
+    width: 92.5,
+    height: 28
+  },
+  {
+    badge: 'Microsoft_Office-D83B01?style=for-the-badge&logo=microsoft-office&logoColor=white',
+    width: 175,
+    height: 28
+  },
+  {
+    badge: 'Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black',
+    width: 86.25,
+    height: 28
+  },
+  {
+    badge: 'github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white',
+    width: 160.5,
+    height: 28
+  },
+  {
+    badge: 'java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white',
+    width: 57,
+    height: 28
+  },
+  {
+    badge: 'MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white',
+    width: 110.75,
+    height: 28
+  },
+  {
+    badge: 'Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white',
+    width: 144,
+    height: 28
+  },
+  {
+    badge: 'mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white',
+    width: 88.25,
+    height: 28
+  },
+  {
+    badge: 'MDN_Web_Docs-black?style=for-the-badge&logo=mdnwebdocs&logoColor=white',
+    width: 148,
+    height: 28
+  },
+  {
+    badge: 'typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white',
+    width: 126.5,
+    height: 28
+  },
+  {
+    badge: 'Debian-D70A53?style=for-the-badge&logo=debian&logoColor=white',
+    width: 95.5,
+    height: 28
+  },
+  {
+    badge: 'PSN-%230070D1.svg?style=for-the-badge&logo=Playstation&logoColor=white',
+    width: 69.75,
+    height: 28
+  },
+  {
+    badge: 'epicgames-%23313131.svg?style=for-the-badge&logo=epicgames&logoColor=white',
+    width: 121.25,
+    height: 28
+  },
+  {
+    badge: 'Spotify-1ED760?style=for-the-badge&logo=spotify&logoColor=white',
+    width: 101.75,
+    height: 28
+  },
+  {
+    badge: 'html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white',
+    width: 88.25,
+    height: 28
+  },
+  {
+    badge: 'node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white',
+    width: 100.75,
+    height: 28
+  },
+  {
+    badge: 'StackExchange-%23ffffff.svg?style=for-the-badge&logo=StackExchange&logoColor=white',
+    width: 157.25,
+    height: 28
+  },
+  {
+    badge: '-Stackoverflow-FE7A16?style=for-the-badge&logo=stack-overflow&logoColor=white',
+    width: 160.25,
+    height: 28
+  },
+  {
+    badge: 'Gimp-657D8B?style=for-the-badge&logo=gimp&logoColor=FFFFFF',
+    width: 79,
+    height: 28
+  },
+  {
+    badge: 'Next-black?style=for-the-badge&logo=next.js&logoColor=white',
+    width: 78,
+    height: 28
+  },
+  {
+    badge: 'Krita-203759?style=for-the-badge&logo=krita&logoColor=EEF37B',
+    width: 85.25,
+    height: 28
+  },
+  {
+    badge: 'Nuxt-black?style=for-the-badge&logo=nuxt.js&logoColor=white',
+    width: 80,
+    height: 28
+  },
+  {
+    badge: 'react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB',
+    width: 86.25,
+    height: 28
+  },
+  {
+    badge: 'Wikipedia-%23000000.svg?style=for-the-badge&logo=wikipedia&logoColor=white',
+    width: 120.25,
+    height: 28
+  },
+  {
+    badge: 'c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white',
+    width: 61.5,
+    height: 28
+  },
+  {
+    badge: 'markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white',
+    width: 123,
+    height: 28
+  },
+  {
+    badge: 'yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white',
+    width: 80,
+    height: 28
+  },
+  {
+    badge: 'vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D',
+    width: 85.25,
+    height: 28
+  },
+  {
+    badge: 'IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white',
+    width: 138,
+    height: 28
+  },
+  {
+    badge: 'vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white',
+    width: 93.5,
+    height: 28
+  },
+  {
+    badge: 'PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white',
+    width: 94.5,
+    height: 28
+  },
+  {
+    badge: 'NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white',
+    width: 72.75,
+    height: 28
+  },
+  {
+    badge: 'Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white',
+    width: 135.75,
+    height: 28
+  },
+  {
+    badge: 'google-4285F4?style=for-the-badge&logo=google&logoColor=white',
+    width: 97.5,
+    height: 28
+  },
+  {
+    badge: 'jenkins-%232C5263.svg?style=for-the-badge&logo=jenkins&logoColor=white',
+    width: 101.75,
+    height: 28
+  },
+  {
+    badge: 'Gradle-02303A.svg?style=for-the-badge&logo=Gradle&logoColor=white',
+    width: 96.5,
+    height: 28
+  },
+  {
+    badge: '-RaspberryPi-C51A4A?style=for-the-badge&logo=Raspberry-Pi',
+    width: 137.75,
+    height: 28
+  },
+  {
+    badge: 'Amazon%20Prime-0F79AF?style=for-the-badge&logo=amazonprime&logoColor=white',
+    width: 148,
+    height: 28
+  },
+  {
+    badge: 'DuckDuckGo-DE5833?style=for-the-badge&logo=DuckDuckGo&logoColor=white',
+    width: 135.5,
+    height: 28
+  },
+  {
+    badge: 'Netflix-E50914?style=for-the-badge&logo=netflix&logoColor=white',
+    width: 100.75,
+    height: 28
+  },
+  {
+    badge: 'git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white',
+    width: 67.75,
+    height: 28
+  },
+  {
+    badge: 'github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white',
+    width: 95.5,
+    height: 28
+  },
+  {
+    badge: 'docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white',
+    width: 97.5,
+    height: 28
+  },
+  {
+    badge: 'Playstation%204-003791?style=for-the-badge&logo=playstation-4&logoColor=white',
+    width: 150.25,
+    height: 28
+  },
+  {
+    badge: 'lineageos-167C80?style=for-the-badge&logo=lineageos&logoColor=white',
+    width: 120.25,
+    height: 28
+  },
+  {
+    badge: 'Android-3DDC84?style=for-the-badge&logo=android&logoColor=white',
+    width: 106.75,
+    height: 28
+  },
+  {
+    badge: 'shazam-1476FE?style=for-the-badge&logo=shazam&logoColor=white',
+    width: 98.5,
+    height: 28
+  },
+  {
+    badge: 'nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white',
+    width: 88.25,
+    height: 28
+  },
+  {
+    badge: 'Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white',
+    width: 112.75,
+    height: 28
+  },
+  {
+    badge: 'Microsoft-0078D4?style=for-the-badge&logo=microsoft&logoColor=white',
+    width: 122.25,
+    height: 28
+  },
+  {
+    badge: 'Pop!_OS-48B9C7?style=for-the-badge&logo=Pop!_OS&logoColor=white',
+    width: 98.75,
+    height: 28
+  },
+  {
+    badge: 'Samsung-%231428A0.svg?style=for-the-badge&logo=samsung&logoColor=white',
+    width: 108.75,
+    height: 28
+  }
 ]
 
 const user = "AlexProgrammerDE"
 
-const Home: NextPage = () => {
-  const [userData, setUserData] = useState<UserData>();
-  const [repositories, setRepositories] = useState<Repository[]>();
-  const [organizations, setOrganizations] = useState<Organization[]>();
+type PageProps = {
+  userData: UserData
+  repositories: Repository[]
+  organizations: Organization[]
+}
 
-  useEffect(() => {
-    if (userData) {
-      return;
-    }
-
-    getUserData(user).then(setUserData);
-  }, [userData]);
-
-  useEffect(() => {
-    if (repositories) {
-      return;
-    }
-
-    getRepositories(user).then(setRepositories);
-  }, [repositories]);
-
-  useEffect(() => {
-    if (organizations) {
-      return;
-    }
-
-    getOrganizations(user).then(setOrganizations);
-  }, [organizations]);
-
+const Home: NextPage<PageProps> = (props: PageProps) => {
   return (
       <>
         <GlobalHead/>
@@ -133,11 +342,11 @@ const Home: NextPage = () => {
               <h2 className="text-2xl md:text-5xl font-bold mt-4">Projects</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-6 md:mt-20 mb-4 md:mb-14">
                 {
-                    repositories && repositories.map((repo, index) => (
-                        <div key={index} className={index > 3 ? "hidden md:block" : ""}>
-                          <RepositoryCard repo={repo}/>
-                        </div>
-                    ))
+                  props.repositories.map((repo, index) => (
+                      <div key={index} className={index > 3 ? "hidden md:block" : ""}>
+                        <RepositoryCard repo={repo}/>
+                      </div>
+                  ))
                 }
               </div>
               <div className="flex-grow flex flex-row justify-center mb-2">
@@ -174,35 +383,39 @@ const Home: NextPage = () => {
                     <img width={400} height={330} alt="Spotify Recently Played Songs"
                          src="https://spotify-recently-played-readme.vercel.app/api?user=songraper"/>
                   </a>
-                  {userData &&
-                      <div
-                          className="h-full rounded-xl bg-[#24292E] flex flex-row p-2 mt-4 md:mt-0 md:ml-2">
-                          <div className="inline-flex mx-auto rounded-lg border-8 border-[#24292E]">
-                              <Image title={userData.bio} src={userData.avatar} width={110}
-                                     height={110}
-                                     alt={userData.name}
-                                     className="rounded-lg"
-                              />
-                          </div>
+                  <div
+                      className="h-full rounded-xl bg-[#24292E] flex flex-row p-2 mt-4 md:mt-0 md:ml-2">
+                    <div className="inline-flex mx-auto rounded-lg border-8 border-[#24292E]">
+                      <Image title={props.userData.bio} src={props.userData.avatar} width={110}
+                             height={110}
+                             alt={props.userData.name}
+                             className="rounded-lg"
+                      />
+                    </div>
 
-                          <div className="flex flex-col my-auto md:ml-2 mr-2">
-                              <div className="inline-flex flex-row">
-                                  <h4 className="text-lg font-bold">{userData.followers} Followers</h4>
-                              </div>
-
-                              <div className="inline-flex flex-row">
-                                  <h4 className="text-lg font-bold">{userData.repoCount} Repositories</h4>
-                              </div>
-                          </div>
+                    <div className="flex flex-col my-auto md:ml-2 mr-2">
+                      <div className="inline-flex flex-row">
+                        <h4 className="text-lg font-bold">{props.userData.followers} Followers</h4>
                       </div>
-                  }
+
+                      <div className="inline-flex flex-row">
+                        <h4 className="text-lg font-bold">{props.userData.repoCount} Repositories</h4>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <h3 className="text-3xl font-bold mx-auto mt-4">Me in badges</h3>
                 <div className="flex flex-wrap">
                   {
-                    badges.map((badge, index) => <img key={index}
-                                                      className={"mx-auto mt-4" + (index > 25 ? " hidden md:block" : "")}
-                                                      src={badge}/>)
+                    badges.map((badge, index) => (
+                        <div className={"mx-auto mt-4" + (index > 25 ? " hidden md:block" : "")} key={index}>
+                          <Image
+                                 alt="AlexProgrammerDE badge"
+                                 width={badge.width}
+                                 height={badge.height}
+                                 src={`https://img.shields.io/badge/${badge.badge}`}/>
+                        </div>)
+                    )
                   }
                 </div>
               </div>
@@ -252,6 +465,20 @@ const Home: NextPage = () => {
         </main>
       </>
   )
+}
+
+export async function getStaticProps() {
+  const userData = await getUserData(user)
+  const repositories = await getRepositories(user)
+  const organizations = await getOrganizations(user)
+
+  return {
+    props: {
+      userData,
+      repositories,
+      organizations
+    }
+  }
 }
 
 // noinspection JSUnusedGlobalSymbols

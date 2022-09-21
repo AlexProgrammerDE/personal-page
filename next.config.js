@@ -6,7 +6,7 @@ const nextConfig = {
   images: {
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    domains: ['discord.com', 'avatars.githubusercontent.com', 'github-readme-stats.vercel.app', 'spotify-recently-played-readme.vercel.app']
+    domains: ['discord.com', 'avatars.githubusercontent.com', 'github-readme-stats.vercel.app', 'spotify-recently-played-readme.vercel.app', 'img.shields.io']
   },
   i18n: {
     locales: ["en-US"],
