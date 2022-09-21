@@ -1,7 +1,7 @@
 import {useState} from "react";
 
 import dynamic from "next/dynamic";
-import {CodeIcon, EyeIcon} from "@heroicons/react/solid";
+import {CodeBracketIcon, EyeIcon} from "@heroicons/react/24/solid";
 
 import defaultText from '../data/AboutMe.md'
 
@@ -31,7 +31,7 @@ export default function AboutMeBlock() {
                 <button
                     className={"flex flex-row justify-center w-32 md:w-40 text-lg md:text-xl rounded-tr-2xl sm:rounded-tr-none font-bold p-2" + (isEditing ? " bg-gray-900" : "")}
                     onClick={() => setIsEditing(true)}>
-                    <CodeIcon className="h-4 md:h-6 w-4 md:w-6 my-auto mr-2"/>
+                    <CodeBracketIcon className="h-4 md:h-6 w-4 md:w-6 my-auto mr-2"/>
                     <p className="my-auto">Edit File</p>
                 </button>
             </div>

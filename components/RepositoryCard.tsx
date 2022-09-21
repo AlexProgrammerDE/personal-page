@@ -1,6 +1,6 @@
 import {motion} from "framer-motion";
 import {Repository} from "../lib/github";
-import {ArchiveIcon, CodeIcon, StarIcon} from "@heroicons/react/solid";
+import {ArchiveBoxIcon, CodeBracketIcon, StarIcon} from "@heroicons/react/24/solid";
 import {ForkIcon} from "./icons";
 
 function getColorForLanguage(language: string) {
@@ -46,7 +46,7 @@ export default function RepositoryCard({repo}: { repo: Repository }) {
             <div className="h-40 rounded-xl bg-sectionDark shadow-lg flex flex-col">
                 <a href={repo.url}>
                     <div className="flex flex-row px-3 py-1 rounded-xl bg-sectionDarkest">
-                        <ArchiveIcon className="h-6 w-6 mr-2 my-auto"/>
+                        <ArchiveBoxIcon className="h-6 w-6 mr-2 my-auto"/>
                         <h4 className="text-lg md:text-2xl font-bold">{repo.name}</h4>
                     </div>
                 </a>
@@ -63,7 +63,7 @@ export default function RepositoryCard({repo}: { repo: Repository }) {
                                 <p className="my-auto font-bold">{repo.forks}</p>
                             </div>
                             <div className="flex flex-row mr-2">
-                                <CodeIcon className="h-6 w-6 my-auto mr-1"/>
+                                <CodeBracketIcon className="h-6 w-6 my-auto mr-1"/>
                                 <p className="my-auto font-bold"
                                    style={{color: getColorForLanguage(repo.language)}}>{repo.language}</p>
                             </div>
