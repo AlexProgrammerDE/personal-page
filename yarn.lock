@@ -472,7 +472,7 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@octokit/auth-app@^4.0.5":
+"@octokit/auth-app@4.0.5":
   version "4.0.5"
   resolved "https://registry.yarnpkg.com/@octokit/auth-app/-/auth-app-4.0.5.tgz#0e52752c37340ae8686617b7ce188e4cae6d7ba1"
   integrity sha512-fCbi4L/egsP3p4p1SelOFORM/m/5KxROhHdcIW5Lb17DDdW61fGT8y3wGpfiSeYNuulwF5QIfzJ7tdgtHNAymA==
