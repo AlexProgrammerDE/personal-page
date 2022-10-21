@@ -3177,10 +3177,10 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
 
-next-remove-imports@1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/next-remove-imports/-/next-remove-imports-1.0.7.tgz#a2d41e66f727e8bd4fea3def2aac51a4a1db770b"
-  integrity sha512-/DJG20jxIinr7raDSXq8stwF4bB3STXbVwk7Jt2B1GPHdxP8XQQVitUfgf/xLKzw6aN6KnanLQFS3u7AFpJ0Cw==
+next-remove-imports@1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/next-remove-imports/-/next-remove-imports-1.0.8.tgz#c6479109ffccf925595ac5b8f03eed4ad5c36ec0"
+  integrity sha512-nj0FDEmbHif9fTnET/K1gvBKJx1ulpTDcukK3QJus2qjzl5vIheo+0RvkUzwxy8OIdfzpI7mrSBG5Pt6+dLUFQ==
   dependencies:
     "@babel/core" "^7.14.3"
     babel-loader "^8.2.2"
