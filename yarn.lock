@@ -863,10 +863,10 @@
   resolved "https://registry.yarnpkg.com/@uiw/copy-to-clipboard/-/copy-to-clipboard-1.0.12.tgz#46f563bd6f3007895f95855e5b4bb692c7251933"
   integrity sha512-3tt7FVSbjtBCNBhffy7k26rpnEmk8GQj9QkTGZBIfpHU7mG3Buryt69u6xooYM7/gmv7GIqD4QxxIauIp2HHKg==
 
-"@uiw/react-markdown-preview@^4.0.24":
-  version "4.0.24"
-  resolved "https://registry.yarnpkg.com/@uiw/react-markdown-preview/-/react-markdown-preview-4.0.24.tgz#96325926933ff9c644754f22e950d0f53c043bdb"
-  integrity sha512-LMBP8mL+eKdDpjjRlwn3CmS1nfhBQKNhKqR3NppHN5SJZI3IQNr/iRQNVmblsuirdJljvoMLvM0eaVwfKEV1iA==
+"@uiw/react-markdown-preview@^4.1.4":
+  version "4.1.4"
+  resolved "https://registry.yarnpkg.com/@uiw/react-markdown-preview/-/react-markdown-preview-4.1.4.tgz#27949d2b57447959b0099ba151fa3285376a363c"
+  integrity sha512-K99r3Wz7ipZvp4lSMhy1oaq1PYaPCjDDquSZEXlcwaMJhgO+KrjojR6yqaAZjNMS1ol89BCw+n/aazwjVjawEw==
   dependencies:
     "@babel/runtime" "^7.17.2"
     "@uiw/copy-to-clipboard" "~1.0.12"
@@ -874,20 +874,20 @@
     rehype-attr "~2.0.7"
     rehype-autolink-headings "~6.1.1"
     rehype-ignore "^1.0.1"
-    rehype-prism-plus "1.4.1"
-    rehype-raw "~6.1.1"
+    rehype-prism-plus "~1.5.0"
+    rehype-raw "^6.1.1"
     rehype-rewrite "~3.0.6"
     rehype-slug "~5.0.1"
     remark-gfm "~3.0.1"
     unist-util-visit "^4.1.0"
 
-"@uiw/react-md-editor@3.19.1":
-  version "3.19.1"
-  resolved "https://registry.yarnpkg.com/@uiw/react-md-editor/-/react-md-editor-3.19.1.tgz#ee263e537d6d3e91997ad09463fa143884b1adbd"
-  integrity sha512-D4g009GNhmH/uhuYi8EnuO5PEFb3VF5ZhUg7Kq5YRU4+1+kyQgA+WIp46LPFnbEumQ3TVVlFOBYVout0HqZVOw==
+"@uiw/react-md-editor@3.19.3":
+  version "3.19.3"
+  resolved "https://registry.yarnpkg.com/@uiw/react-md-editor/-/react-md-editor-3.19.3.tgz#1f8ba37e6452a42ac0663503578331fddb914413"
+  integrity sha512-SDF5056v0qgDTy5pIXOTVC4ZXvbWKR8fpDPV95WDR8lOwKWSpGIJ2b0cOgNDKOlorRDUGpeBKc9eB3Pv2blAKA==
   dependencies:
     "@babel/runtime" "^7.14.6"
-    "@uiw/react-markdown-preview" "^4.0.24"
+    "@uiw/react-markdown-preview" "^4.1.4"
     rehype "~12.0.1"
 
 acorn-jsx@^5.3.2:
@@ -3770,10 +3770,10 @@ rehype-parse@^8.0.0, rehype-parse@^8.0.2:
     parse5 "^6.0.0"
     unified "^10.0.0"
 
-rehype-prism-plus@1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/rehype-prism-plus/-/rehype-prism-plus-1.4.1.tgz#abe8ab7ccee3a5e912f592dc0991b271ebfaf102"
-  integrity sha512-CRRplleECLeroPuNBsWnzzFAYZz6bBKkwhh5PtWxr2OaJCTy1XLNrpBbyKp71tHgyFwmk9NKYSFzg5gdMbtJ/w==
+rehype-prism-plus@~1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/rehype-prism-plus/-/rehype-prism-plus-1.5.0.tgz#113aae19687c0f8faf6f5fb16964ff1527d130d7"
+  integrity sha512-KNJYMQHqN+53ZbT5Pa/lO7uorMpBIR3x9RjFeG1lPlQherZDZiPqyOFS464L4BniZ4VG5PnG5DXVqjGtwxWJew==
   dependencies:
     hast-util-to-string "^2.0.0"
     parse-numeric-range "^1.3.0"
@@ -3782,7 +3782,7 @@ rehype-prism-plus@1.4.1:
     unist-util-filter "^4.0.0"
     unist-util-visit "^4.0.0"
 
-rehype-raw@~6.1.1:
+rehype-raw@^6.1.1:
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/rehype-raw/-/rehype-raw-6.1.1.tgz#81bbef3793bd7abacc6bf8335879d1b6c868c9d4"
   integrity sha512-d6AKtisSRtDRX4aSPsJGTfnzrX2ZkHQLE5kiUuGOeEoLpbEulFF4hj0mLPbsa+7vmguDKOVVEQdHKDSwoaIDsQ==
