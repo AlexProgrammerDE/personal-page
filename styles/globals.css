@@ -29,10 +29,6 @@ html::-webkit-scrollbar-track-piece {
     background: #222433;
 }
 
-body {
-    font-family: 'Inter', sans-serif;
-}
-
 .container {
     @apply max-w-screen-xl mx-auto;
 }

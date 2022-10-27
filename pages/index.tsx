@@ -313,7 +313,6 @@ const Home: NextPage<PageProps> = (props: PageProps) => {
   return (
       <>
         <GlobalHead/>
-
         <main className="w-full flex-col">
           <header className="header-size w-full flex flex-col justify-center">
             <div className="flex-grow flex justify-center text-center">

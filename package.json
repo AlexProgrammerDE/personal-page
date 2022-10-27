@@ -15,6 +15,7 @@
     "@fortawesome/free-solid-svg-icons": "6.2.0",
     "@fortawesome/react-fontawesome": "0.2.0",
     "@heroicons/react": "2.0.12",
+    "@next/font": "^13.0.0",
     "@octokit/auth-app": "4.0.7",
     "@octokit/core": "4.1.0",
     "@tailwindcss/typography": "0.5.7",
