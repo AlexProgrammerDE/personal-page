@@ -28,10 +28,10 @@ export default function NavBar() {
                 </div>
                 <nav className={`${open ? "flex" : "hidden"} flex-col flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row`}>
                     <div className="text-center p-1 md:p-5">
-                        <Link href="/">
-                            <a className="nav">
+                        <Link href="/" className="nav">
+                            
                                 Home
-                            </a>
+                            
                         </Link>
                     </div>
                     <div className="text-center p-1 md:p-5">
