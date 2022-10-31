@@ -863,10 +863,10 @@
   resolved "https://registry.yarnpkg.com/@uiw/copy-to-clipboard/-/copy-to-clipboard-1.0.12.tgz#46f563bd6f3007895f95855e5b4bb692c7251933"
   integrity sha512-3tt7FVSbjtBCNBhffy7k26rpnEmk8GQj9QkTGZBIfpHU7mG3Buryt69u6xooYM7/gmv7GIqD4QxxIauIp2HHKg==
 
-"@uiw/react-markdown-preview@^4.1.4":
-  version "4.1.4"
-  resolved "https://registry.yarnpkg.com/@uiw/react-markdown-preview/-/react-markdown-preview-4.1.4.tgz#27949d2b57447959b0099ba151fa3285376a363c"
-  integrity sha512-K99r3Wz7ipZvp4lSMhy1oaq1PYaPCjDDquSZEXlcwaMJhgO+KrjojR6yqaAZjNMS1ol89BCw+n/aazwjVjawEw==
+"@uiw/react-markdown-preview@^4.1.5":
+  version "4.1.5"
+  resolved "https://registry.yarnpkg.com/@uiw/react-markdown-preview/-/react-markdown-preview-4.1.5.tgz#d133f7a90f7c0268871f209d90123f388a620d79"
+  integrity sha512-CYiwzrarfg/jCsSHSfLkgxpLiqwZjmXhMJmwMa2SCct/PX/vt9wJJ84aNgUVbSjfQFKgmTlSWpDiN+kGnf8D/w==
   dependencies:
     "@babel/runtime" "^7.17.2"
     "@uiw/copy-to-clipboard" "~1.0.12"
@@ -881,13 +881,13 @@
     remark-gfm "~3.0.1"
     unist-util-visit "^4.1.0"
 
-"@uiw/react-md-editor@3.19.3":
-  version "3.19.3"
-  resolved "https://registry.yarnpkg.com/@uiw/react-md-editor/-/react-md-editor-3.19.3.tgz#1f8ba37e6452a42ac0663503578331fddb914413"
-  integrity sha512-SDF5056v0qgDTy5pIXOTVC4ZXvbWKR8fpDPV95WDR8lOwKWSpGIJ2b0cOgNDKOlorRDUGpeBKc9eB3Pv2blAKA==
+"@uiw/react-md-editor@3.19.5":
+  version "3.19.5"
+  resolved "https://registry.yarnpkg.com/@uiw/react-md-editor/-/react-md-editor-3.19.5.tgz#7cf76c4a84cdb5b9b66f8c59c838136bb5af4b3d"
+  integrity sha512-uhFGLOrKEtADM8QUauTdG5x8wqNS15ry2jCYMBr/E1Or3njvg7jpB0KRv+QTgZDnglevCTjuQxZPH7I7hG2uKw==
   dependencies:
     "@babel/runtime" "^7.14.6"
-    "@uiw/react-markdown-preview" "^4.1.4"
+    "@uiw/react-markdown-preview" "^4.1.5"
     rehype "~12.0.1"
 
 acorn-jsx@^5.3.2:
