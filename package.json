@@ -19,7 +19,7 @@
     "@octokit/auth-app": "4.0.7",
     "@octokit/core": "4.1.0",
     "@tailwindcss/typography": "0.5.7",
-    "@uiw/react-md-editor": "3.19.3",
+    "@uiw/react-md-editor": "3.19.5",
     "autoprefixer": "10.4.13",
     "babel-plugin-macros": "3.1.0",
     "framer-motion": "7.6.2",
