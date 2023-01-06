@@ -16,7 +16,7 @@
     "@fortawesome/react-fontawesome": "0.2.0",
     "@heroicons/react": "2.0.13",
     "@next/font": "^13.0.0",
-    "@octokit/auth-app": "4.0.7",
+    "@octokit/auth-app": "4.0.8",
     "@octokit/core": "4.1.0",
     "@tailwindcss/typography": "0.5.8",
     "@uiw/react-md-editor": "3.20.2",
