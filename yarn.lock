@@ -477,16 +477,16 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@octokit/auth-app@4.0.8":
-  version "4.0.8"
-  resolved "https://registry.yarnpkg.com/@octokit/auth-app/-/auth-app-4.0.8.tgz#73a8c6c087c55473affeedd939ef08ff2cfa9b3d"
-  integrity sha512-miI7y9FfS/fL1bSPsDaAfCGSxQ04iGLyisI2GA8N7P6eB6AkCOt+F1XXapJKRnAubQubvYF0dqxoTZYyKk93NQ==
+"@octokit/auth-app@4.0.9":
+  version "4.0.9"
+  resolved "https://registry.yarnpkg.com/@octokit/auth-app/-/auth-app-4.0.9.tgz#66500c8f66545d970a19123b9b364c678c972d6b"
+  integrity sha512-VFpKIXhHO+kVJtane5cEvdYPtjDKCOI0uKsRrsZfJP+uEu7rcPbQCLCcRKgyT+mUIzGr1IIOmwP/lFqSip1dXA==
   dependencies:
     "@octokit/auth-oauth-app" "^5.0.0"
     "@octokit/auth-oauth-user" "^2.0.0"
     "@octokit/request" "^6.0.0"
     "@octokit/request-error" "^3.0.0"
-    "@octokit/types" "^8.0.0"
+    "@octokit/types" "^9.0.0"
     "@types/lru-cache" "^5.1.0"
     deprecation "^2.3.1"
     lru-cache "^6.0.0"
@@ -601,11 +601,6 @@
   resolved "https://registry.yarnpkg.com/@octokit/openapi-types/-/openapi-types-13.0.1.tgz#f655810f0dc0547b771526fea171acffbc7bd4a8"
   integrity sha512-40U39YoFBhJhmkAg6gbJnh9U8aueJwCuiTW0mXY2pNl9/+E7dUxXiMPOrIUGT12XqLinroaXYA3FUiw3BMeNfg==
 
-"@octokit/openapi-types@^14.0.0":
-  version "14.0.0"
-  resolved "https://registry.yarnpkg.com/@octokit/openapi-types/-/openapi-types-14.0.0.tgz#949c5019028c93f189abbc2fb42f333290f7134a"
-  integrity sha512-HNWisMYlR8VCnNurDU6os2ikx0s0VyEjDYHNS/h4cgb8DeOxQ0n72HyinUtdDVxJhFy3FWLGl0DJhfEWk3P5Iw==
-
 "@octokit/openapi-types@^16.0.0":
   version "16.0.0"
   resolved "https://registry.yarnpkg.com/@octokit/openapi-types/-/openapi-types-16.0.0.tgz#d92838a6cd9fb4639ca875ddb3437f1045cc625e"
@@ -666,13 +661,6 @@
   integrity sha512-8uSDc66p6+wADn6lh6lA7I3ZTIapn7F/dfpsiDztVjEr6kkyKR3qPqa4lgEX92O/8iJoDeGcscKRXGAjCSR/zg==
   dependencies:
     "@octokit/openapi-types" "^13.0.0"
-
-"@octokit/types@^8.0.0":
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/@octokit/types/-/types-8.0.0.tgz#93f0b865786c4153f0f6924da067fe0bb7426a9f"
-  integrity sha512-65/TPpOJP1i3K4lBJMnWqPUJ6zuOtzhtagDvydAWbEXpbFYA0oMKKyLb95NFZZP0lSh/4b6K+DQlzvYQJQQePg==
-  dependencies:
-    "@octokit/openapi-types" "^14.0.0"
 
 "@octokit/types@^9.0.0":
   version "9.0.0"
