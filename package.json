@@ -25,7 +25,7 @@
     "framer-motion": "8.5.5",
     "markdown-it": "13.0.1",
     "next": "13.1.6",
-    "next-remove-imports": "1.0.8",
+    "next-remove-imports": "1.0.10",
     "next-sitemap": "3.1.52",
     "postcss": "8.4.21",
     "raw-loader": "4.0.2",
