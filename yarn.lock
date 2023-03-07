@@ -3221,10 +3221,10 @@ next-remove-imports@1.0.10:
     babel-loader "^9.0.0"
     babel-plugin-transform-remove-imports "^1.5.4"
 
-next-sitemap@4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/next-sitemap/-/next-sitemap-4.0.2.tgz#e652c497c36fd3aa875a7cf217774e2b586aa605"
-  integrity sha512-NQVzguzW6xkh0fZzmgZJ//H9f1DdvKmhJmTO1xuIPmDuZxM2Gd48CrKHXVnbK0zAx52hpyNe3ZUGkrExUWyljg==
+next-sitemap@4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/next-sitemap/-/next-sitemap-4.0.3.tgz#e3eb4feb290b2a3743f1b2dac0246a4d90b577ad"
+  integrity sha512-3sDnYY0NjtPhonxzfqmKhyX4lAY4J5ayqSV0JA8726DphjSVJ9ei6nvptGXDiMuvQ0doIznrPSpxI0AyZ23shQ==
   dependencies:
     "@corex/deepmerge" "^4.0.37"
     minimist "^1.2.8"
