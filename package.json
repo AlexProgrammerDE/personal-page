@@ -20,7 +20,7 @@
     "@octokit/core": "4.2.0",
     "@tailwindcss/typography": "0.5.9",
     "@uiw/react-md-editor": "3.20.5",
-    "autoprefixer": "10.4.13",
+    "autoprefixer": "10.4.14",
     "babel-plugin-macros": "3.1.0",
     "framer-motion": "10.2.3",
     "markdown-it": "13.0.1",
