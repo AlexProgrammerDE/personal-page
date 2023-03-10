@@ -1,7 +1,7 @@
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import {ReactNode} from "react";
-import {Inter} from "@next/font/google";
+import {Inter} from "next/font/google";
 
 const inter = Inter({
   display: "swap",
