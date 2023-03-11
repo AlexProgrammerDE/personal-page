@@ -1,7 +1,7 @@
 import {motion} from "framer-motion";
-import {Repository} from "../lib/github";
 import {ArchiveBoxIcon, CodeBracketIcon, StarIcon} from "@heroicons/react/24/solid";
 import {ForkIcon} from "./icons";
+import {Repository} from "../lib/github-types";
 
 function getColorForLanguage(language: string) {
     switch (language) {
