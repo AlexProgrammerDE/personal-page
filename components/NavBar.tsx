@@ -29,13 +29,11 @@ export default function NavBar() {
                 <nav className={`${open ? "flex" : "hidden"} flex-col flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row`}>
                     <div className="text-center p-1 md:p-5">
                         <Link href="/" className="nav">
-                            
-                                Home
-                            
+                            Home
                         </Link>
                     </div>
                     <div className="text-center p-1 md:p-5">
-                        <a className="nav" href="https://discord.gg/CDrcxzH">
+                        <a className="nav" href="/discord">
                             Discord
                         </a>
                     </div>

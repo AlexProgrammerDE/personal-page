@@ -8,6 +8,20 @@ const nextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     domains: ['discord.com', 'avatars.githubusercontent.com', 'github-readme-stats.vercel.app', 'spotify-recently-played-readme.vercel.app', 'img.shields.io']
   },
+  redirects: async () => {
+    return [
+      {
+        source: '/discord',
+        destination: 'https://discord.gg/CDrcxzH',
+        permanent: false,
+      },
+      {
+        source: '/github',
+        destination: 'https://github.com/AlexProgrammerDE',
+        permanent: false,
+      },
+    ]
+  },
   i18n: {
     locales: ["en-US"],
     defaultLocale: "en-US",
