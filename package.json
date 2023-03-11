@@ -9,18 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "6.3.0",
-    "@fortawesome/free-brands-svg-icons": "6.3.0",
-    "@fortawesome/free-regular-svg-icons": "6.3.0",
-    "@fortawesome/free-solid-svg-icons": "6.3.0",
-    "@fortawesome/react-fontawesome": "0.2.0",
     "@heroicons/react": "2.0.16",
     "@octokit/auth-app": "4.0.9",
     "@octokit/core": "4.2.0",
     "@tailwindcss/typography": "0.5.9",
     "@uiw/react-md-editor": "3.20.5",
     "autoprefixer": "10.4.14",
-    "babel-plugin-macros": "3.1.0",
+    "classnames": "^2.3.2",
     "framer-motion": "10.2.4",
     "markdown-it": "13.0.1",
     "next": "13.2.4",
@@ -33,9 +28,9 @@
     "tailwindcss": "3.2.7"
   },
   "devDependencies": {
+    "@next/env": "^13.2.4",
     "@types/node": "18.15.0",
     "@types/react": "18.0.28",
-    "@types/react-twemoji": "0.4.0",
     "eslint": "8.35.0",
     "eslint-config-next": "13.2.4",
     "typescript": "4.9.5"

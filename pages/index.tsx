@@ -1,14 +1,14 @@
 import type {NextPage} from 'next'
 import GlobalHead from "../components/GlobalHead";
-import {getOrganizations, getRepositories, getUserData, Organization, Repository, UserData} from "../lib/github";
+import {getOrganizations, getRepositories, getUserData} from "../lib/github";
 import RepositoryCard from "../components/RepositoryCard";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faGithub, faPinterest, faRedditAlien, faTwitter, faYoutube} from '@fortawesome/free-brands-svg-icons'
 import Image from 'next/image';
-import {faCube} from "@fortawesome/free-solid-svg-icons";
 import AboutMeBlock from "../components/AboutMeBlock";
+import {Organization, Repository, UserData} from "../lib/github-types";
+import {CubeIcon} from "@heroicons/react/20/solid";
+import cn from "classnames";
 
-const badges =[
+const badges = [
   {
     badge: 'Firefox-FF7139?style=for-the-badge&logo=Firefox-Browser&logoColor=white',
     width: 101.75,
@@ -380,7 +380,7 @@ const Home: NextPage<PageProps> = (props: PageProps) => {
                   <a className="mr-2"
                      href="https://open.spotify.com/user/songraper">
                     <img width={400} height={330} alt="Spotify Recently Played Songs"
-                         src="https://spotify-recently-played-readme.vercel.app/api?user=songraper"/>
+                           src="https://spotify-recently-played-readme.vercel.app/api?user=songraper"/>
                   </a>
                   <div
                       className="h-full rounded-xl bg-[#24292E] flex flex-row p-2 mt-4 md:mt-0 md:ml-2">
@@ -391,12 +391,10 @@ const Home: NextPage<PageProps> = (props: PageProps) => {
                              className="rounded-lg"
                       />
                     </div>
-
                     <div className="flex flex-col my-auto md:ml-2 mr-2">
                       <div className="inline-flex flex-row">
                         <h4 className="text-lg font-bold">{props.userData.followers} Followers</h4>
                       </div>
-
                       <div className="inline-flex flex-row">
                         <h4 className="text-lg font-bold">{props.userData.repoCount} Repositories</h4>
                       </div>
@@ -407,12 +405,12 @@ const Home: NextPage<PageProps> = (props: PageProps) => {
                 <div className="flex flex-wrap">
                   {
                     badges.map((badge, index) => (
-                        <div className={"mx-auto mt-4" + (index > 25 ? " hidden md:block" : "")} key={index}>
+                        <div className={cn("mx-auto mt-4", {"hidden md:block": index > 25})} key={index}>
                           <Image
-                                 alt="AlexProgrammerDE badge"
-                                 width={badge.width}
-                                 height={badge.height}
-                                 src={`https://img.shields.io/badge/${badge.badge}`}/>
+                              alt="AlexProgrammerDE badge"
+                              width={badge.width}
+                              height={badge.height}
+                              src={`https://img.shields.io/badge/${badge.badge}`}/>
                         </div>)
                     )
                   }
@@ -430,7 +428,12 @@ const Home: NextPage<PageProps> = (props: PageProps) => {
                     <a href="https://github.com/AlexProgrammerDE"
                        className="bg-[#24292E] font-bold rounded-lg px-4 py-2.5 flex flex-row shadow-lg">
                       <p className="flex flex-col justify-center mr-2">Follow me on</p>
-                      <FontAwesomeIcon icon={faGithub} size="2x"/>
+                      <svg xmlns="http://www.w3.org/2000/svg" height={String(98 / 3)} width={String(96 / 3)} viewBox="0 0 98 96"
+                           className="fill-current">
+                        <path fillRule="evenodd" clipRule="evenodd"
+                              d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"
+                              fill="currentColor"/>
+                      </svg>
                     </a>
                   </div>
                 </div>
@@ -438,21 +441,42 @@ const Home: NextPage<PageProps> = (props: PageProps) => {
                 <div className="mt-3 md:mt-0 mx-4 flex flex-col">
                   <div className="flex flex-wrap mb-2">
                     <a className="mr-2" title="Twitter"
-                       href="https://twitter.com/AlexProgrammer3"><FontAwesomeIcon icon={faTwitter}
-                                                                                   size="2x"/></a>
-                    <a className="mr-2" title="Reddit"
-                       href="https://www.reddit.com/user/Sensitive_Host_2515"><FontAwesomeIcon
-                        icon={faRedditAlien} size="2x"/></a>
+                       href="https://twitter.com/AlexProgrammer3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                           className="fill-current">
+                        <path
+                            d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+                      </svg>
+                    </a>
+                    <a className="mr-2" title="Reddit" href="https://www.reddit.com/user/Sensitive_Host_2515">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24" width="36" viewBox="0 0 165.07 147.08"
+                           className="fill-current">
+                        <path
+                            d="M165.066 74.832c0-9.976-8.087-18.062-18.063-18.062-4.87 0-9.28 1.935-12.527 5.067-12.348-8.91-29.36-14.663-48.305-15.325L94.398 7.8l26.883 5.716c.328 6.834 5.924 12.288 12.84 12.288 7.126 0 12.901-5.775 12.901-12.902 0-7.125-5.775-12.902-12.9-12.902-5.07 0-9.412 2.95-11.52 7.202L92.582.822a3.227 3.227 0 00-3.825 2.483L79.57 46.501c-19.225.534-36.51 6.295-49.016 15.304-3.244-3.113-7.64-5.035-12.49-5.035C8.089 56.77 0 64.856 0 74.832c0 7.34 4.386 13.644 10.673 16.47a35.578 35.578 0 00-.431 5.463c0 27.79 32.347 50.318 72.25 50.318 39.905 0 72.252-22.528 72.252-50.318 0-1.834-.15-3.643-.424-5.427 6.326-2.81 10.746-9.137 10.746-16.506"/>
+                      </svg>
+                    </a>
                     <a className="mr-2" title="Youtube"
-                       href="https://www.youtube.com/channel/UC86szSBHNiuIXC7hIfrMYtg"><FontAwesomeIcon
-                        icon={faYoutube} size="2x"/></a>
-                    <a className="mr-2" title="Pinterest" href="https://pin.it/2SeSvyM"><FontAwesomeIcon
-                        icon={faPinterest} size="2x"/></a>
+                       href="https://www.youtube.com/@alexprogrammerde">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                           className="fill-current">
+                        <path
+                            d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
+                      </svg>
+                    </a>
+                    <a className="mr-2" title="Pinterest" href="https://pin.it/2SeSvyM">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                           className="fill-current">
+                        <path
+                            d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"
+                            fillRule="evenodd" clipRule="evenodd"/>
+                      </svg>
+                    </a>
                     <a className="mr-2" title="Minecraft"
-                       href="https://namemc.com/profile/Pistonmaster.1"><FontAwesomeIcon icon={faCube}
-                                                                                         size="2x"/></a>
+                       href="https://namemc.com/profile/Pistonmaster.1">
+                      <CubeIcon title="Minecraft" width="24" height="24" className="fill-current"/>
+                    </a>
                   </div>
-                  <a href="https://discord.gg/CDrcxzH" title="Discord Server">
+                  <a href="/discord" title="Discord Server">
                     <Image width={320} height={76} alt="Discord Server Invite Banner"
                            className="shadow-xl"
                            src="https://discord.com/api/guilds/739784741124833301/widget.png?style=banner2"/>

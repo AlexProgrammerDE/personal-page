@@ -1,5 +1,6 @@
 import {Octokit} from "@octokit/core";
 import {createAppAuth} from "@octokit/auth-app";
+import {Organization, Repository, UserData} from "./github-types";
 
 const octokit = new Octokit({
   authStrategy: createAppAuth,
@@ -20,29 +21,6 @@ const repositories = [
   'ServerWrecker',
   'PistonPost-frontend'
 ]
-
-export interface Organization {
-  login: string;
-  avatar: string;
-  description: string;
-}
-
-export interface Repository {
-  name: string;
-  url: string;
-  description: string;
-  language: string;
-  stars: number;
-  forks: number;
-}
-
-export interface UserData {
-  avatar: string,
-  name: string,
-  bio: string,
-  repoCount: number,
-  followers: number,
-}
 
 export async function getUserData(username: string): Promise<UserData> {
   const userReply = await octokit.request('GET /users/{username}', {
