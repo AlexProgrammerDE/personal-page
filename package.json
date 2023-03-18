@@ -20,7 +20,7 @@
     "markdown-it": "13.0.1",
     "next": "13.2.4",
     "next-remove-imports": "1.0.10",
-    "next-sitemap": "4.0.5",
+    "next-sitemap": "4.0.6",
     "postcss": "8.4.21",
     "raw-loader": "4.0.2",
     "react": "18.2.0",
