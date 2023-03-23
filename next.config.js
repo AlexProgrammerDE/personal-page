@@ -4,7 +4,6 @@ const removeImports = require("next-remove-imports")();
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     domains: ['discord.com', 'avatars.githubusercontent.com', 'github-readme-stats.vercel.app', 'spotify-recently-played-readme.vercel.app', 'img.shields.io']
   },
