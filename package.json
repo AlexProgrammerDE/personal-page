@@ -30,7 +30,7 @@
   "devDependencies": {
     "@next/env": "^13.2.3",
     "@types/node": "18.15.11",
-    "@types/react": "18.0.32",
+    "@types/react": "18.0.33",
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
     "typescript": "5.0.3"
