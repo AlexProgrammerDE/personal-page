@@ -18,7 +18,7 @@
     "classnames": "^2.3.2",
     "framer-motion": "10.12.4",
     "markdown-it": "13.0.1",
-    "next": "13.3.0",
+    "next": "13.3.1",
     "next-remove-imports": "1.0.11",
     "next-sitemap": "4.0.7",
     "postcss": "8.4.23",
@@ -32,7 +32,7 @@
     "@types/node": "18.15.13",
     "@types/react": "18.0.38",
     "eslint": "8.38.0",
-    "eslint-config-next": "13.3.0",
+    "eslint-config-next": "13.3.1",
     "typescript": "5.0.4"
   }
 }
