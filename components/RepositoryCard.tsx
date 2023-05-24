@@ -29,6 +29,19 @@ export default function RepositoryCard({repo}: { repo: Repository }) {
         <motion.div
             initial="hidden"
             animate="visible"
+            whileHover={{
+                scale: 1.05,
+                transition: {
+                    duration: .5,
+                }
+            }}
+            whileTap={{
+                scale: 0.95,
+                transition: {
+                    duration: .5,
+                }
+            }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
             variants={{
                 hidden: {
                     scale: .8,
@@ -42,7 +55,7 @@ export default function RepositoryCard({repo}: { repo: Repository }) {
                     }
                 },
             }}
-            className="flex flex-col justify-center">
+            className="flex flex-col justify-center cursor-pointer">
             <div className="h-40 rounded-xl bg-sectionDark shadow-lg flex flex-col">
                 <a href={repo.url}>
                     <div className="flex flex-row px-3 py-1 rounded-xl bg-sectionDarkest">
