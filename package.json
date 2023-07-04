@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@heroicons/react": "2.0.18",
-    "@octokit/auth-app": "4.0.13",
+    "@octokit/auth-app": "5.0.6",
     "@octokit/core": "4.2.4",
     "@tailwindcss/typography": "0.5.9",
     "@uiw/react-md-editor": "3.23.3",
