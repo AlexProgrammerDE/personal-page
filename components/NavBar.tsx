@@ -33,7 +33,7 @@ export default function NavBar() {
                         </Link>
                     </div>
                     <div className="text-center p-1 md:p-5">
-                        <a className="nav" href="/discord">
+                        <a className="nav" href="https://discord.gg/F4ZyEtXXge">
                             Discord
                         </a>
                     </div>
