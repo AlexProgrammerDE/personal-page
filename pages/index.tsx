@@ -493,7 +493,7 @@ const Home: NextPage<PageProps> = (props: PageProps) => {
                       <CubeIcon title="Minecraft" width="24" height="24" className="fill-current"/>
                     </a>
                   </div>
-                  <a href="/discord" title="Discord Server">
+                  <a href="https://discord.gg/B7mW9b3KhS" title="Discord Server">
                     <Image width={320} height={76} alt="Discord Server Invite Banner"
                            className="shadow-xl"
                            src="https://discord.com/api/guilds/739784741124833301/widget.png?style=banner2"/>
