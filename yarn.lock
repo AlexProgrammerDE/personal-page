@@ -726,10 +726,10 @@
     remark-gfm "~3.0.1"
     unist-util-visit "^4.1.0"
 
-"@uiw/react-md-editor@3.23.5":
-  version "3.23.5"
-  resolved "https://registry.yarnpkg.com/@uiw/react-md-editor/-/react-md-editor-3.23.5.tgz#ee449c278d2e449894c72b45363f3bd6ec97d63f"
-  integrity sha512-plghfA4BRKeJgwEBudLg7alLVXI2pVVMCesPeZDg3BfmaFpCwQZ3wTUh8y6Agjh/judMJPwuZdyBu4FISnSG6Q==
+"@uiw/react-md-editor@3.23.6":
+  version "3.23.6"
+  resolved "https://registry.yarnpkg.com/@uiw/react-md-editor/-/react-md-editor-3.23.6.tgz#d67d0745316443a81acbce4642b566e1525f4be9"
+  integrity sha512-jv5JtfbcWuTDRRvlKNJHI5maqyABP2+l8gUVDPUa6k+gYXKBdr0ijIggMrFsQamV4bYrmqEQXAMXPcYAzVHJCQ==
   dependencies:
     "@babel/runtime" "^7.14.6"
     "@uiw/react-markdown-preview" "^4.1.14"
