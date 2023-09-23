@@ -398,16 +398,16 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@octokit/auth-app@6.0.0":
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/@octokit/auth-app/-/auth-app-6.0.0.tgz#f7d31d40f78973cb801c0661db2cc3719de7328b"
-  integrity sha512-OKct7Rukf3g9DjpzcpdacQsdmd6oPrJ7fZND22JkjzhDvfhttUOnmh+qPS4kHhaNNyTxqSThnfrUWvkqNLd1nw==
+"@octokit/auth-app@6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@octokit/auth-app/-/auth-app-6.0.1.tgz#7137b1af124189a979de6053da5d4c8cdb1fa4e9"
+  integrity sha512-tjCD4nzQNZgmLH62+PSnTF6eGerisFgV4v6euhqJik6yWV96e1ZiiGj+NXIqbgnpjLmtnBqVUrNyGKu3DoGEGA==
   dependencies:
     "@octokit/auth-oauth-app" "^7.0.0"
     "@octokit/auth-oauth-user" "^4.0.0"
     "@octokit/request" "^8.0.2"
     "@octokit/request-error" "^5.0.0"
-    "@octokit/types" "^11.0.0"
+    "@octokit/types" "^12.0.0"
     deprecation "^2.3.1"
     lru-cache "^10.0.0"
     universal-github-app-jwt "^1.1.1"
@@ -505,6 +505,11 @@
   resolved "https://registry.yarnpkg.com/@octokit/openapi-types/-/openapi-types-18.0.0.tgz#f43d765b3c7533fd6fb88f3f25df079c24fccf69"
   integrity sha512-V8GImKs3TeQRxRtXFpG2wl19V7444NIOTDF24AWuIbmNaNYOQMWRbjcGDXV5B+0n887fgDcuMNOmlul+k+oJtw==
 
+"@octokit/openapi-types@^19.0.0":
+  version "19.0.0"
+  resolved "https://registry.yarnpkg.com/@octokit/openapi-types/-/openapi-types-19.0.0.tgz#0101bf62ab14c1946149a0f8385440963e1253c4"
+  integrity sha512-PclQ6JGMTE9iUStpzMkwLCISFn/wDeRjkZFIKALpvJQNBGwDoYYi2fFvuHwssoQ1rXI5mfh6jgTgWuddeUzfWw==
+
 "@octokit/request-error@^5.0.0":
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/@octokit/request-error/-/request-error-5.0.0.tgz#060c5770833f9d563ad9a49fec6650c41584bc40"
@@ -531,6 +536,13 @@
   integrity sha512-Fz0+7GyLm/bHt8fwEqgvRBWwIV1S6wRRyq+V6exRKLVWaKGsuy6H9QFYeBVDV7rK6fO3XwHgQOPxv+cLj2zpXQ==
   dependencies:
     "@octokit/openapi-types" "^18.0.0"
+
+"@octokit/types@^12.0.0":
+  version "12.0.0"
+  resolved "https://registry.yarnpkg.com/@octokit/types/-/types-12.0.0.tgz#6b34309288b6f5ac9761d2589e3165cde1b95fee"
+  integrity sha512-EzD434aHTFifGudYAygnFlS1Tl6KhbTynEWELQXIbTY8Msvb5nEqTZIm7sbPEt4mQYLZwu3zPKVdeIrw0g7ovg==
+  dependencies:
+    "@octokit/openapi-types" "^19.0.0"
 
 "@pkgr/utils@^2.3.1":
   version "2.4.1"
