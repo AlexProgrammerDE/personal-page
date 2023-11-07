@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@next/env": "^13.2.3",
-    "@types/node": "18.18.8",
+    "@types/node": "18.18.9",
     "@types/react": "18.2.36",
     "eslint": "8.53.0",
     "eslint-config-next": "13.5.6",
