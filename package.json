@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@heroicons/react": "2.0.18",
+    "@heroicons/react": "2.1.1",
     "@octokit/auth-app": "6.0.2",
     "@octokit/core": "5.0.2",
     "@tailwindcss/typography": "0.5.10",
