@@ -11,7 +11,7 @@
   "dependencies": {
     "@heroicons/react": "2.1.1",
     "@octokit/auth-app": "6.0.3",
-    "@octokit/core": "5.0.2",
+    "@octokit/core": "5.1.0",
     "@tailwindcss/typography": "0.5.10",
     "@uiw/react-md-editor": "3.25.6",
     "autoprefixer": "10.4.17",
