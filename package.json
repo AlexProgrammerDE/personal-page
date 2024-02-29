@@ -13,7 +13,7 @@
     "@octokit/auth-app": "6.0.4",
     "@octokit/core": "5.1.0",
     "@tailwindcss/typography": "0.5.10",
-    "@uiw/react-md-editor": "3.25.6",
+    "@uiw/react-md-editor": "4.0.3",
     "autoprefixer": "10.4.17",
     "classnames": "^2.5.1",
     "framer-motion": "11.0.8",
