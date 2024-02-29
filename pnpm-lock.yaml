@@ -24,7 +24,7 @@ dependencies:
     specifier: 10.4.17
     version: 10.4.17(postcss@8.4.35)
   classnames:
-    specifier: ^2.3.2
+    specifier: ^2.5.1
     version: 2.5.1
   framer-motion:
     specifier: 10.18.0
@@ -59,7 +59,7 @@ dependencies:
 
 devDependencies:
   '@next/env':
-    specifier: ^13.2.3
+    specifier: ^13.5.6
     version: 13.5.6
   '@types/node':
     specifier: 18.19.20
