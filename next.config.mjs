@@ -48,6 +48,6 @@ const nextConfig = {
   }
 }
 
-module.exports = withPlausibleProxy({
+export default withPlausibleProxy({
   customDomain: process.env.PLAUSIBLE_URL
 })(removeImports(nextConfig))
