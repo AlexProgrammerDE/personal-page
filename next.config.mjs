@@ -1,4 +1,6 @@
-const removeImports = require("next-remove-imports")();
+import {withPlausibleProxy} from "next-plausible";
+import next_remove_imports from "next-remove-imports";
+const removeImports = next_remove_imports();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -46,4 +48,6 @@ const nextConfig = {
   }
 }
 
-module.exports = removeImports(nextConfig)
+module.exports = withPlausibleProxy({
+  customDomain: process.env.PLAUSIBLE_URL
+})(removeImports(nextConfig))
