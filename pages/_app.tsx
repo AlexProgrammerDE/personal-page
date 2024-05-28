@@ -6,8 +6,7 @@ import PlausibleProvider from "next-plausible";
 
 function App({ Component, pageProps }: AppProps) {
   return (
-      <PlausibleProvider trackOutboundLinks trackFileDownloads scriptProps={{"add-file-types": "jar"}}
-                         domain="pistonmaster.net">
+      <PlausibleProvider trackOutboundLinks trackFileDownloads domain="pistonmaster.net">
         <Layout>
           <Component {...pageProps} />
         </Layout>
