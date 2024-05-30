@@ -7,8 +7,24 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    domains: ['discord.com', 'avatars.githubusercontent.com', 'github-readme-stats.vercel.app', 'spotify-recently-played-readme.vercel.app', 'img.shields.io']
+    remotePatterns: [{
+      protocol: 'https',
+      hostname: 'discord.com',
+    }, {
+      protocol: 'https',
+      hostname: 'avatars.githubusercontent.com',
+    }, {
+      protocol: 'https',
+      hostname: 'github-readme-stats.vercel.app',
+    }, {
+      protocol: 'https',
+      hostname: 'spotify-recently-played-readme.vercel.app',
+    }, {
+      protocol: 'https',
+      hostname: 'img.shields.io',
+    }],
   },
   redirects: async () => {
     return [

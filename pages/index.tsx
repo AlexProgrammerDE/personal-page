@@ -40,7 +40,8 @@ const Home: NextPage<PageProps> = (props: PageProps) => {
                 </div>
               </a>
             </div>
-            <div className="w-screen max-w-full absolute z-10 header-size bg-section landing-diagonal md:landing-diagonal-md"/>
+            <div
+                className="w-screen max-w-full absolute z-10 header-size bg-section landing-diagonal md:landing-diagonal-md"/>
           </header>
 
           <section id="projects" className="w-full min-h-screen bg-section">
@@ -91,18 +92,20 @@ const Home: NextPage<PageProps> = (props: PageProps) => {
               <div
                   className="flex flex-col gap-4 my-auto mx-auto">
                 <div className="flex flex-col md:flex-row mx-auto">
-                  <img className="mx-auto md:mr-2"
+                  <Image width={300} height={165}
+                       className="mx-auto md:mr-2"
                        alt="AlexProgrammer GitHub language stats"
                        src="https://github-readme-stats.vercel.app/api/top-langs/?username=alexprogrammerde&layout=compact&theme=dark"/>
-                  <img className="mx-auto mt-2 md:mt-0 md:ml-2"
+                  <Image width={450} height={165}
+                       className="mx-auto mt-2 md:mt-0 md:ml-2"
                        alt="AlexProgrammer GitHub general stats"
                        src="https://github-readme-stats.vercel.app/api?username=alexprogrammerde&hide_title=true&theme=dark"/>
                 </div>
                 <div className="flex flex-col md:flex-row mx-auto">
                   <a className="mr-2"
                      href="https://open.spotify.com/user/songraper">
-                    <img width={400} height={330} alt="Spotify Recently Played Songs"
-                         src="https://spotify-recently-played-readme.vercel.app/api?user=songraper"/>
+                    <Image width={400} height={330} alt="Spotify Recently Played Songs"
+                           src="https://spotify-recently-played-readme.vercel.app/api?user=songraper"/>
                   </a>
                   <div
                       className="h-full rounded-xl bg-[#24292E] flex flex-row p-2 mt-4 md:mt-0 md:ml-2">
