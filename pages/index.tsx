@@ -6,301 +6,8 @@ import Image from 'next/image';
 import AboutMeBlock from "../components/AboutMeBlock";
 import {Organization, Repository, UserData} from "../lib/github-types";
 import {CubeIcon} from "@heroicons/react/20/solid";
-import cn from "classnames";
 import {motion} from "framer-motion";
-
-const badges = [
-  {
-    badge: 'Firefox-FF7139?style=for-the-badge&logo=Firefox-Browser&logoColor=white',
-    width: 101.75,
-    height: 28
-  },
-  {
-    badge: 'dependabot-025E8C?style=for-the-badge&logo=dependabot&logoColor=white',
-    width: 132.5,
-    height: 28
-  },
-  {
-    badge: 'MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white',
-    width: 106.75,
-    height: 28
-  },
-  {
-    badge: 'webstorm-143?style=for-the-badge&logo=webstorm&logoColor=white&color=black',
-    width: 119,
-    height: 28
-  },
-  {
-    badge: 'css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white',
-    width: 77,
-    height: 28
-  },
-  {
-    badge: 'javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E',
-    width: 126.5,
-    height: 28
-  },
-  {
-    badge: 'sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white',
-    width: 92.5,
-    height: 28
-  },
-  {
-    badge: 'Microsoft_Office-D83B01?style=for-the-badge&logo=microsoft-office&logoColor=white',
-    width: 175,
-    height: 28
-  },
-  {
-    badge: 'Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black',
-    width: 86.25,
-    height: 28
-  },
-  {
-    badge: 'github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white',
-    width: 160.5,
-    height: 28
-  },
-  {
-    badge: 'java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white',
-    width: 57,
-    height: 28
-  },
-  {
-    badge: 'MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white',
-    width: 110.75,
-    height: 28
-  },
-  {
-    badge: 'Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white',
-    width: 144,
-    height: 28
-  },
-  {
-    badge: 'mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white',
-    width: 88.25,
-    height: 28
-  },
-  {
-    badge: 'MDN_Web_Docs-black?style=for-the-badge&logo=mdnwebdocs&logoColor=white',
-    width: 148,
-    height: 28
-  },
-  {
-    badge: 'typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white',
-    width: 126.5,
-    height: 28
-  },
-  {
-    badge: 'Debian-D70A53?style=for-the-badge&logo=debian&logoColor=white',
-    width: 95.5,
-    height: 28
-  },
-  {
-    badge: 'PSN-%230070D1.svg?style=for-the-badge&logo=Playstation&logoColor=white',
-    width: 69.75,
-    height: 28
-  },
-  {
-    badge: 'epicgames-%23313131.svg?style=for-the-badge&logo=epicgames&logoColor=white',
-    width: 121.25,
-    height: 28
-  },
-  {
-    badge: 'Spotify-1ED760?style=for-the-badge&logo=spotify&logoColor=white',
-    width: 101.75,
-    height: 28
-  },
-  {
-    badge: 'html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white',
-    width: 88.25,
-    height: 28
-  },
-  {
-    badge: 'node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white',
-    width: 100.75,
-    height: 28
-  },
-  {
-    badge: 'StackExchange-%23ffffff.svg?style=for-the-badge&logo=StackExchange&logoColor=white',
-    width: 157.25,
-    height: 28
-  },
-  {
-    badge: '-Stackoverflow-FE7A16?style=for-the-badge&logo=stack-overflow&logoColor=white',
-    width: 160.25,
-    height: 28
-  },
-  {
-    badge: 'Gimp-657D8B?style=for-the-badge&logo=gimp&logoColor=FFFFFF',
-    width: 79,
-    height: 28
-  },
-  {
-    badge: 'Next-black?style=for-the-badge&logo=next.js&logoColor=white',
-    width: 78,
-    height: 28
-  },
-  {
-    badge: 'Krita-203759?style=for-the-badge&logo=krita&logoColor=EEF37B',
-    width: 85.25,
-    height: 28
-  },
-  {
-    badge: 'Nuxt-black?style=for-the-badge&logo=nuxt.js&logoColor=white',
-    width: 80,
-    height: 28
-  },
-  {
-    badge: 'react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB',
-    width: 86.25,
-    height: 28
-  },
-  {
-    badge: 'Wikipedia-%23000000.svg?style=for-the-badge&logo=wikipedia&logoColor=white',
-    width: 120.25,
-    height: 28
-  },
-  {
-    badge: 'c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white',
-    width: 61.5,
-    height: 28
-  },
-  {
-    badge: 'markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white',
-    width: 123,
-    height: 28
-  },
-  {
-    badge: 'yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white',
-    width: 80,
-    height: 28
-  },
-  {
-    badge: 'vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D',
-    width: 85.25,
-    height: 28
-  },
-  {
-    badge: 'IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white',
-    width: 138,
-    height: 28
-  },
-  {
-    badge: 'vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white',
-    width: 93.5,
-    height: 28
-  },
-  {
-    badge: 'PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white',
-    width: 94.5,
-    height: 28
-  },
-  {
-    badge: 'NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white',
-    width: 72.75,
-    height: 28
-  },
-  {
-    badge: 'Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white',
-    width: 135.75,
-    height: 28
-  },
-  {
-    badge: 'google-4285F4?style=for-the-badge&logo=google&logoColor=white',
-    width: 97.5,
-    height: 28
-  },
-  {
-    badge: 'jenkins-%232C5263.svg?style=for-the-badge&logo=jenkins&logoColor=white',
-    width: 101.75,
-    height: 28
-  },
-  {
-    badge: 'Gradle-02303A.svg?style=for-the-badge&logo=Gradle&logoColor=white',
-    width: 96.5,
-    height: 28
-  },
-  {
-    badge: '-RaspberryPi-C51A4A?style=for-the-badge&logo=Raspberry-Pi',
-    width: 137.75,
-    height: 28
-  },
-  {
-    badge: 'Amazon%20Prime-0F79AF?style=for-the-badge&logo=amazonprime&logoColor=white',
-    width: 148,
-    height: 28
-  },
-  {
-    badge: 'DuckDuckGo-DE5833?style=for-the-badge&logo=DuckDuckGo&logoColor=white',
-    width: 135.5,
-    height: 28
-  },
-  {
-    badge: 'Netflix-E50914?style=for-the-badge&logo=netflix&logoColor=white',
-    width: 100.75,
-    height: 28
-  },
-  {
-    badge: 'git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white',
-    width: 67.75,
-    height: 28
-  },
-  {
-    badge: 'github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white',
-    width: 95.5,
-    height: 28
-  },
-  {
-    badge: 'docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white',
-    width: 97.5,
-    height: 28
-  },
-  {
-    badge: 'Playstation%204-003791?style=for-the-badge&logo=playstation-4&logoColor=white',
-    width: 150.25,
-    height: 28
-  },
-  {
-    badge: 'lineageos-167C80?style=for-the-badge&logo=lineageos&logoColor=white',
-    width: 120.25,
-    height: 28
-  },
-  {
-    badge: 'Android-3DDC84?style=for-the-badge&logo=android&logoColor=white',
-    width: 106.75,
-    height: 28
-  },
-  {
-    badge: 'shazam-1476FE?style=for-the-badge&logo=shazam&logoColor=white',
-    width: 98.5,
-    height: 28
-  },
-  {
-    badge: 'nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white',
-    width: 88.25,
-    height: 28
-  },
-  {
-    badge: 'Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white',
-    width: 112.75,
-    height: 28
-  },
-  {
-    badge: 'Microsoft-0078D4?style=for-the-badge&logo=microsoft&logoColor=white',
-    width: 122.25,
-    height: 28
-  },
-  {
-    badge: 'Pop!_OS-48B9C7?style=for-the-badge&logo=Pop!_OS&logoColor=white',
-    width: 98.75,
-    height: 28
-  },
-  {
-    badge: 'Samsung-%231428A0.svg?style=for-the-badge&logo=samsung&logoColor=white',
-    width: 108.75,
-    height: 28
-  }
-]
+import {GitHubIcon} from "../components/icons";
 
 const user = "AlexProgrammerDE"
 
@@ -318,8 +25,8 @@ const Home: NextPage<PageProps> = (props: PageProps) => {
           <header className="header-size w-full flex flex-col justify-center">
             <div className="flex-grow flex justify-center text-center">
               <div className="flex flex-col justify-center z-20">
-                <h1 className="text-2xl md:text-5xl font-extrabold mb-4">AlexProgrammerDE</h1>
-                <p className="text-lg md:text-2xl">Hi! I&apos;m Alex. Welcome to my page!</p>
+                <h1 className="text-2xl md:text-5xl font-extrabold mb-4">Hi, I&apos;m Alex</h1>
+                <h1 className="text-lg md:text-xl font-extrabold mb-4">Freelance and Open-Source Developer</h1>
               </div>
             </div>
             <div className="flex flex-row justify-center mb-4">
@@ -333,8 +40,7 @@ const Home: NextPage<PageProps> = (props: PageProps) => {
                 </div>
               </a>
             </div>
-            <div
-                className="w-screen max-w-full absolute z-10 header-size bg-section landing-diagonal md:landing-diagonal-md"/>
+            <div className="w-screen max-w-full absolute z-10 header-size bg-section landing-diagonal md:landing-diagonal-md"/>
           </header>
 
           <section id="projects" className="w-full min-h-screen bg-section">
@@ -354,16 +60,16 @@ const Home: NextPage<PageProps> = (props: PageProps) => {
                     whileHover={{
                       scale: 1.05,
                       transition: {
-                        duration: .5,
+                        duration: .25,
                       }
                     }}
                     whileTap={{
                       scale: 0.95,
                       transition: {
-                        duration: .5,
+                        duration: .25,
                       }
                     }}
-                    transition={{type: "spring", stiffness: 400, damping: 10}}
+                    transition={{type: "spring", stiffness: 300, damping: 10}}
                     href="https://github.com/AlexProgrammerDE?tab=repositories"
                     className="px-4 py-1.5 font-bold shadow-md bg-sectionDark hover:bg-sectionDarkest rounded-lg text-2xl">
                   And more!
@@ -372,7 +78,7 @@ const Home: NextPage<PageProps> = (props: PageProps) => {
             </div>
           </section>
 
-          <section id="about-me" className="w-full min-h-screen bg-content flex flex-col shadow-2xl">
+          <section id="about-me" className="w-full min-h-screen bg-content flex flex-col">
             <div
                 className="h-screen w-screen max-w-full absolute z-10 bg-section section2-diagonal"/>
             <div className="container min-h-screen p-2 pb-8 flex flex-col z-20 mt-24">
@@ -417,20 +123,6 @@ const Home: NextPage<PageProps> = (props: PageProps) => {
                     </div>
                   </div>
                 </div>
-                <h3 className="text-3xl font-bold mx-auto mt-4">Me in badges</h3>
-                <div className="flex flex-wrap">
-                  {
-                    badges.map((badge, index) => (
-                        <div className={cn("mx-auto mt-4", {"hidden md:block": index > 25})} key={index}>
-                          <Image
-                              alt="AlexProgrammerDE badge"
-                              width={badge.width}
-                              height={badge.height}
-                              src={`https://img.shields.io/badge/${badge.badge}`}/>
-                        </div>)
-                    )
-                  }
-                </div>
               </div>
             </div>
           </section>
@@ -440,17 +132,11 @@ const Home: NextPage<PageProps> = (props: PageProps) => {
               <div className="flex flex-col md:flex-row justify-center">
                 <div className="flex flex-col mx-4 mb-3 md:mb-0">
                   <p className="font-bold text-3xl mb-2">Like my work?</p>
-                  <div className="flex flex-row justify-center">
+                  <div className="flex flex-row md:justify-center">
                     <a href="https://github.com/AlexProgrammerDE"
                        className="bg-[#24292E] font-bold rounded-lg px-4 py-2.5 flex flex-row shadow-lg">
                       <p className="flex flex-col justify-center mr-2">Follow me on</p>
-                      <svg xmlns="http://www.w3.org/2000/svg" height={String(98 / 3)} width={String(96 / 3)}
-                           viewBox="0 0 98 96"
-                           className="fill-current">
-                        <path fillRule="evenodd" clipRule="evenodd"
-                              d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"
-                              fill="currentColor"/>
-                      </svg>
+                      <GitHubIcon/>
                     </a>
                   </div>
                 </div>

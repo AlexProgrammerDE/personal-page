@@ -32,26 +32,29 @@ export default function RepositoryCard({repo}: { repo: Repository }) {
             whileHover={{
                 scale: 1.05,
                 transition: {
-                    duration: .5,
+                    duration: .25,
                 }
             }}
             whileTap={{
                 scale: 0.95,
                 transition: {
-                    duration: .5,
+                    duration: .25,
                 }
             }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            transition={{type: "spring", stiffness: 300, damping: 10}}
             variants={{
                 hidden: {
-                    scale: .8,
-                    opacity: 0
+                    scale: 0.95,
+                    opacity: 0,
+                    transition: {
+                        delay: 0.25
+                    }
                 },
                 visible: {
                     scale: 1,
                     opacity: 1,
                     transition: {
-                        delay: 1
+                        delay: 0.25
                     }
                 },
             }}
@@ -72,7 +75,7 @@ export default function RepositoryCard({repo}: { repo: Repository }) {
                                 <p className="my-auto font-bold">{repo.stars}</p>
                             </div>
                             <div className="flex flex-row mr-2">
-                                <ForkIcon/>
+                                <ForkIcon className="h-6 w-7 my-auto"/>
                                 <p className="my-auto font-bold">{repo.forks}</p>
                             </div>
                             <div className="flex flex-row mr-2">
