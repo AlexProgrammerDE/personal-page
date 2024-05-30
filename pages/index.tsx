@@ -8,6 +8,200 @@ import {Organization, Repository, UserData} from "../lib/github-types";
 import {CubeIcon} from "@heroicons/react/20/solid";
 import {motion} from "framer-motion";
 import {GitHubIcon} from "../components/icons";
+import cn from "classnames";
+
+const badges = [
+  {
+    badge: 'Firefox-FF7139?style=for-the-badge&logo=Firefox-Browser&logoColor=white',
+    width: 101.75,
+    height: 28
+  },
+  {
+    badge: 'dependabot-025E8C?style=for-the-badge&logo=dependabot&logoColor=white',
+    width: 132.5,
+    height: 28
+  },
+  {
+    badge: 'MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white',
+    width: 106.75,
+    height: 28
+  },
+  {
+    badge: 'webstorm-143?style=for-the-badge&logo=webstorm&logoColor=white&color=black',
+    width: 119,
+    height: 28
+  },
+  {
+    badge: 'css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white',
+    width: 77,
+    height: 28
+  },
+  {
+    badge: 'javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E',
+    width: 126.5,
+    height: 28
+  },
+  {
+    badge: 'Microsoft_Office-D83B01?style=for-the-badge&logo=microsoft-office&logoColor=white',
+    width: 175,
+    height: 28
+  },
+  {
+    badge: 'Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black',
+    width: 86.25,
+    height: 28
+  },
+  {
+    badge: 'github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white',
+    width: 160.5,
+    height: 28
+  },
+  {
+    badge: 'java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white',
+    width: 57,
+    height: 28
+  },
+  {
+    badge: 'MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white',
+    width: 110.75,
+    height: 28
+  },
+  {
+    badge: 'mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white',
+    width: 88.25,
+    height: 28
+  },
+  {
+    badge: 'typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white',
+    width: 126.5,
+    height: 28
+  },
+  {
+    badge: 'Debian-D70A53?style=for-the-badge&logo=debian&logoColor=white',
+    width: 95.5,
+    height: 28
+  },
+  {
+    badge: 'Spotify-1ED760?style=for-the-badge&logo=spotify&logoColor=white',
+    width: 101.75,
+    height: 28
+  },
+  {
+    badge: 'html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white',
+    width: 88.25,
+    height: 28
+  },
+  {
+    badge: 'node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white',
+    width: 100.75,
+    height: 28
+  },
+  {
+    badge: 'Gimp-657D8B?style=for-the-badge&logo=gimp&logoColor=FFFFFF',
+    width: 79,
+    height: 28
+  },
+  {
+    badge: 'Next-black?style=for-the-badge&logo=next.js&logoColor=white',
+    width: 78,
+    height: 28
+  },
+  {
+    badge: 'react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB',
+    width: 86.25,
+    height: 28
+  },
+  {
+    badge: 'IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white',
+    width: 138,
+    height: 28
+  },
+  {
+    badge: 'vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white',
+    width: 93.5,
+    height: 28
+  },
+  {
+    badge: 'NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white',
+    width: 72.75,
+    height: 28
+  },
+  {
+    badge: 'google-4285F4?style=for-the-badge&logo=google&logoColor=white',
+    width: 97.5,
+    height: 28
+  },
+  {
+    badge: 'jenkins-%232C5263.svg?style=for-the-badge&logo=jenkins&logoColor=white',
+    width: 101.75,
+    height: 28
+  },
+  {
+    badge: 'Gradle-02303A.svg?style=for-the-badge&logo=Gradle&logoColor=white',
+    width: 96.5,
+    height: 28
+  },
+  {
+    badge: '-RaspberryPi-C51A4A?style=for-the-badge&logo=Raspberry-Pi',
+    width: 137.75,
+    height: 28
+  },
+  {
+    badge: 'git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white',
+    width: 67.75,
+    height: 28
+  },
+  {
+    badge: 'github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white',
+    width: 95.5,
+    height: 28
+  },
+  {
+    badge: 'docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white',
+    width: 97.5,
+    height: 28
+  },
+  {
+    badge: 'Playstation%204-003791?style=for-the-badge&logo=playstation-4&logoColor=white',
+    width: 150.25,
+    height: 28
+  },
+  {
+    badge: 'lineageos-167C80?style=for-the-badge&logo=lineageos&logoColor=white',
+    width: 120.25,
+    height: 28
+  },
+  {
+    badge: 'Android-3DDC84?style=for-the-badge&logo=android&logoColor=white',
+    width: 106.75,
+    height: 28
+  },
+  {
+    badge: 'nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white',
+    width: 88.25,
+    height: 28
+  },
+  {
+    badge: 'Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white',
+    width: 112.75,
+    height: 28
+  },
+  {
+    badge: 'Microsoft-0078D4?style=for-the-badge&logo=microsoft&logoColor=white',
+    width: 122.25,
+    height: 28
+  },
+  {
+    badge: 'Pop!_OS-48B9C7?style=for-the-badge&logo=Pop!_OS&logoColor=white',
+    width: 98.75,
+    height: 28
+  },
+  {
+    badge: 'Samsung-%231428A0.svg?style=for-the-badge&logo=samsung&logoColor=white',
+    width: 108.75,
+    height: 28
+  }
+]
 
 const user = "AlexProgrammerDE"
 
@@ -93,13 +287,13 @@ const Home: NextPage<PageProps> = (props: PageProps) => {
                   className="flex flex-col gap-4 my-auto mx-auto">
                 <div className="flex flex-col md:flex-row mx-auto">
                   <Image width={300} height={165}
-                       className="mx-auto md:mr-2"
-                       alt="AlexProgrammer GitHub language stats"
-                       src="https://github-readme-stats.vercel.app/api/top-langs/?username=alexprogrammerde&layout=compact&theme=dark"/>
+                         className="mx-auto md:mr-2"
+                         alt="AlexProgrammer GitHub language stats"
+                         src="https://github-readme-stats.vercel.app/api/top-langs/?username=alexprogrammerde&layout=compact&theme=dark"/>
                   <Image width={450} height={165}
-                       className="mx-auto mt-2 md:mt-0 md:ml-2"
-                       alt="AlexProgrammer GitHub general stats"
-                       src="https://github-readme-stats.vercel.app/api?username=alexprogrammerde&hide_title=true&theme=dark"/>
+                         className="mx-auto mt-2 md:mt-0 md:ml-2"
+                         alt="AlexProgrammer GitHub general stats"
+                         src="https://github-readme-stats.vercel.app/api?username=alexprogrammerde&hide_title=true&theme=dark"/>
                 </div>
                 <div className="flex flex-col md:flex-row mx-auto">
                   <a className="mr-2"
@@ -125,6 +319,20 @@ const Home: NextPage<PageProps> = (props: PageProps) => {
                       </div>
                     </div>
                   </div>
+                </div>
+                <h3 className="text-3xl font-bold mx-auto mt-4">Me in badges</h3>
+                <div className="flex flex-wrap">
+                  {
+                    badges.map((badge, index) => (
+                        <div className={cn("mx-auto mt-4 mr-auto", {"hidden md:block": index > 25})} key={index}>
+                          <Image
+                              alt="AlexProgrammerDE badge"
+                              width={badge.width}
+                              height={badge.height}
+                              src={`https://img.shields.io/badge/${badge.badge}`}/>
+                        </div>)
+                    )
+                  }
                 </div>
               </div>
             </div>
