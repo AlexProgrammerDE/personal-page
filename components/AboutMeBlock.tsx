@@ -30,7 +30,7 @@ export default function AboutMeBlock() {
                     <p className="my-auto">Preview</p>
                 </button>
                 <button
-                    className={cn("flex flex-row justify-center w-32 md:w-40 text-lg md:text-xl rounded-tr-2xl sm:rounded-tr-none font-bold p-2", {"bg-gray-900" : isEditing})}
+                    className={cn("flex flex-row justify-center w-32 md:w-40 text-lg md:text-xl rounded-tr-none font-bold p-2", {"bg-gray-900" : isEditing})}
                     onMouseDown={() => setIsEditing(true)}>
                     <CodeBracketIcon className="h-4 md:h-6 w-4 md:w-6 my-auto mr-2"/>
                     <p className="my-auto">Edit File</p>
