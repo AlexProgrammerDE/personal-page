@@ -38,14 +38,12 @@ export default function AboutMeBlock() {
             </div>
             <div className="flex-grow flex flex-row">
                 <div className="flex-grow p-2 pb-0 md:p-6 md:pb-0 flex flex-col">
-                    {
-                        isEditing ?
-                            <AboutMeEditor text={text} setText={setText}/>
-                            :
-                            <div className="flex-grow overflow-x-auto mb-2 md:mb-6">
-                                <div className="prose prose-invert" dangerouslySetInnerHTML={{__html: md.render(text)}}/>
-                            </div>
-                    }
+                    <div className={cn("flex flex-col flex-grow", {"hidden": !isEditing})}>
+                        <AboutMeEditor text={text} setText={setText}/>
+                    </div>
+                    <div className={cn("flex-grow overflow-x-auto mb-2 md:mb-6", {"hidden": isEditing})}>
+                        <div className="prose prose-invert" dangerouslySetInnerHTML={{__html: md.render(text)}}/>
+                    </div>
                 </div>
             </div>
         </div>
