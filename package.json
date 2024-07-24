@@ -16,7 +16,7 @@
     "@uiw/react-md-editor": "4.0.4",
     "autoprefixer": "10.4.19",
     "classnames": "^2.5.1",
-    "framer-motion": "11.3.12",
+    "framer-motion": "11.3.17",
     "markdown-it": "14.1.0",
     "next": "14.2.5",
     "next-plausible": "^3.12.0",
