@@ -14,7 +14,7 @@
     "@octokit/core": "6.1.2",
     "@tailwindcss/typography": "0.5.13",
     "@uiw/react-md-editor": "4.0.4",
-    "autoprefixer": "10.4.19",
+    "autoprefixer": "10.4.20",
     "classnames": "^2.5.1",
     "framer-motion": "11.3.21",
     "markdown-it": "14.1.0",
