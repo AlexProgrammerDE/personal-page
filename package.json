@@ -12,7 +12,7 @@
     "@heroicons/react": "2.1.5",
     "@octokit/auth-app": "7.1.0",
     "@octokit/core": "6.1.2",
-    "@tailwindcss/typography": "0.5.13",
+    "@tailwindcss/typography": "0.5.14",
     "@uiw/react-md-editor": "4.0.4",
     "autoprefixer": "10.4.20",
     "classnames": "^2.5.1",
