@@ -12,8 +12,8 @@ importers:
         specifier: 2.1.5
         version: 2.1.5(react@18.3.1)
       '@octokit/auth-app':
-        specifier: 7.1.0
-        version: 7.1.0
+        specifier: 7.1.1
+        version: 7.1.1
       '@octokit/core':
         specifier: 6.1.2
         version: 6.1.2
@@ -326,8 +326,8 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@octokit/auth-app@7.1.0':
-    resolution: {integrity: sha512-cazGaJPSgeZ8NkVYeM/C5l/6IQ5vZnsI8p1aMucadCkt/bndI+q+VqwrlnWbASRmenjOkf1t1RpCKrif53U8gw==}
+  '@octokit/auth-app@7.1.1':
+    resolution: {integrity: sha512-kRAd6yelV9OgvlEJE88H0VLlQdZcag9UlLr7dV0YYP37X8PPDvhgiTy66QVhDXdyoT0AleFN2w/qXkPdrSzINg==}
     engines: {node: '>= 18'}
 
   '@octokit/auth-oauth-app@8.1.1':
@@ -2849,7 +2849,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
 
-  '@octokit/auth-app@7.1.0':
+  '@octokit/auth-app@7.1.1':
     dependencies:
       '@octokit/auth-oauth-app': 8.1.1
       '@octokit/auth-oauth-user': 5.1.1
@@ -2902,7 +2902,7 @@ snapshots:
 
   '@octokit/graphql@8.0.1':
     dependencies:
-      '@octokit/request': 9.0.1
+      '@octokit/request': 9.1.1
       '@octokit/types': 12.6.0
       universal-user-agent: 7.0.2
 
@@ -2932,7 +2932,7 @@ snapshots:
   '@octokit/request@9.0.1':
     dependencies:
       '@octokit/endpoint': 10.0.0
-      '@octokit/request-error': 6.0.2
+      '@octokit/request-error': 6.1.1
       '@octokit/types': 12.6.0
       universal-user-agent: 7.0.2
 
