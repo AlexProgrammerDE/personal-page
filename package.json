@@ -32,7 +32,7 @@
     "@next/env": "^15.0.0",
     "@types/node": "20.16.15",
     "@types/react": "18.3.12",
-    "eslint": "8.57.1",
+    "eslint": "9.13.0",
     "eslint-config-next": "15.0.1",
     "typescript": "5.6.3"
   }
