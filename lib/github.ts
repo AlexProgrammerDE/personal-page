@@ -18,7 +18,7 @@ const repositories = [
   'PistonMOTD',
   'PistonQueue',
   'PistonBot',
-  'ServerWrecker',
+  'SoulFire',
   'PistonPost-frontend'
 ]
 
