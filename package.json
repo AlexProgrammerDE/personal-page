@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@next/env": "^15.0.0",
-    "@types/node": "22.10.1",
+    "@types/node": "22.10.2",
     "@types/react": "18.3.16",
     "eslint": "8.57.1",
     "eslint-config-next": "15.1.0",
