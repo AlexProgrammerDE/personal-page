@@ -287,10 +287,12 @@ const Home: NextPage<PageProps> = (props: PageProps) => {
                   className="flex flex-col gap-4 my-auto mx-auto">
                 <div className="flex flex-col md:flex-row mx-auto">
                   <Image width={300} height={165}
+                         unoptimized
                          className="mx-auto md:mr-2"
                          alt="AlexProgrammer GitHub language stats"
                          src="https://github-readme-stats.vercel.app/api/top-langs/?username=alexprogrammerde&layout=compact&theme=dark"/>
                   <Image width={450} height={165}
+                         unoptimized
                          className="mx-auto mt-2 md:mt-0 md:ml-2"
                          alt="AlexProgrammer GitHub general stats"
                          src="https://github-readme-stats.vercel.app/api?username=alexprogrammerde&hide_title=true&theme=dark"/>
