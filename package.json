@@ -16,7 +16,7 @@
     "@uiw/react-md-editor": "4.0.4",
     "autoprefixer": "10.4.20",
     "classnames": "^2.5.1",
-    "framer-motion": "11.14.4",
+    "framer-motion": "11.15.0",
     "markdown-it": "14.1.0",
     "next": "15.1.0",
     "next-plausible": "^3.12.0",
@@ -31,7 +31,7 @@
   "devDependencies": {
     "@next/env": "^15.0.0",
     "@types/node": "22.10.2",
-    "@types/react": "18.3.16",
+    "@types/react": "18.3.17",
     "eslint": "8.57.1",
     "eslint-config-next": "15.1.0",
     "typescript": "5.7.2"
