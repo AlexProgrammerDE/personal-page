@@ -11,7 +11,7 @@
   "dependencies": {
     "@heroicons/react": "2.2.0",
     "@octokit/auth-app": "7.1.3",
-    "@octokit/core": "6.1.2",
+    "@octokit/core": "6.1.3",
     "@tailwindcss/typography": "0.5.15",
     "@uiw/react-md-editor": "4.0.5",
     "autoprefixer": "10.4.20",
@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@next/env": "^15.0.0",
-    "@types/node": "22.10.4",
+    "@types/node": "22.10.5",
     "@types/react": "18.3.18",
     "eslint": "8.57.1",
     "eslint-config-next": "15.1.3",
