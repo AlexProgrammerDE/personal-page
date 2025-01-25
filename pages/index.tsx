@@ -219,7 +219,7 @@ const Home: NextPage<PageProps> = (props: PageProps) => {
           <header className="header-size w-full flex flex-col justify-center">
             <div className="flex-grow flex justify-center text-center">
               <div className="flex flex-col justify-center z-20">
-                <h1 className="text-2xl md:text-5xl font-extrabold mb-4">Hi, I&apos;m Alex</h1>
+                <h1 className="text-2xl md:text-5xl font-extrabold mb-4">Hi 👋, I&apos;m Alex</h1>
                 <p className="text-lg md:text-xl font-extrabold mb-4">Freelance Student and Open-Source Developer</p>
               </div>
             </div>
