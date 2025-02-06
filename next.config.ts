@@ -1,10 +1,47 @@
+import {type NextConfig} from "next";
 import {withPlausibleProxy} from "next-plausible";
 import next_remove_imports from "next-remove-imports";
+import * as fs from 'fs';
+import * as path from 'path';
+
+function getFoldersWithPageFiles(dir: string): string[] {
+  const foldersWithPageFiles: string[] = [];
+
+  // Read the contents of the current directory.
+  const items = fs.readdirSync(dir);
+
+  // Check if the current directory contains either 'page.mdx' or 'page.tsx'
+  const containsPageFile = items.some(item =>
+      item === 'page.mdx' || item === 'page.tsx'
+  );
+
+  if (containsPageFile) {
+    foldersWithPageFiles.push(dir);
+  }
+
+  // Loop through each item in the directory.
+  for (const item of items) {
+    const fullPath = path.join(dir, item);
+    const stat = fs.statSync(fullPath);
+
+    // If the item is a directory, recursively search it.
+    if (stat.isDirectory()) {
+      foldersWithPageFiles.push(...getFoldersWithPageFiles(fullPath));
+    }
+  }
+
+  return foldersWithPageFiles;
+}
+
 const removeImports = next_remove_imports();
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   reactStrictMode: true,
+  env: {
+    SITEMAP_PAGES: getFoldersWithPageFiles("app")
+        .map(folder => folder.substring("app".length))
+        .join("|")
+  },
   images: {
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
@@ -38,16 +75,6 @@ const nextConfig = {
         destination: 'https://github.com/AlexProgrammerDE',
         permanent: false,
       },
-    ]
-  },
-  i18n: {
-    locales: ["en-US"],
-    defaultLocale: "en-US",
-    domains: [
-      {
-        domain: "pistonmaster.net",
-        defaultLocale: "en-US"
-      }
     ]
   },
   webpack: (config) => {

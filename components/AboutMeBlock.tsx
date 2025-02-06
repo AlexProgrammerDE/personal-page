@@ -1,3 +1,5 @@
+"use client";
+
 import {useState} from "react";
 
 import dynamic from "next/dynamic";
@@ -6,10 +8,12 @@ import {CodeBracketIcon, EyeIcon} from "@heroicons/react/24/solid";
 import defaultText from '../data/AboutMe.md'
 import cn from "classnames";
 
+import markdown_it from "markdown-it";
+
 const AboutMeEditor = dynamic(() => import('./AboutMeEditor'),
     {ssr: false})
 
-const md = require('markdown-it')({
+const md = markdown_it({
     html: false,
     xhtmlOut: false,
     linkify: true,

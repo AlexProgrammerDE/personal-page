@@ -15,7 +15,7 @@ take responsibility.
 
 I am also a big fan of Open Source and my [GitHub profile](https://github.com/AlexProgrammerDE) is very active.
 
-## What am I capable of?
+## What are my skills?
 
 I code in Java and TypeScript mainly. I also have a bit of experience with Python and C#. I am very flexible with what I
 do, so I can adapt to most situations. I work well with Minecraft Plugin development and Website Design/Coding, but I'm
