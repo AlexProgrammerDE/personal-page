@@ -3,9 +3,9 @@ import RepositoryCard from "../components/RepositoryCard";
 import Image from 'next/image';
 import AboutMeBlock from "../components/AboutMeBlock";
 import * as motion from "motion/react-client"
-import {GitHubIcon} from "~/components/icons";
 import cn from "classnames";
-import {SiBluesky, SiNamemc, SiReddit, SiSpigotmc, SiYoutube} from "@icons-pack/react-simple-icons";
+import {SiBluesky, SiGithub, SiNamemc, SiReddit, SiSpigotmc, SiYoutube} from "@icons-pack/react-simple-icons";
+import {ArrowDownIcon} from "lucide-react";
 
 const badges = [
   {
@@ -218,10 +218,7 @@ export default async function Index() {
             <a href="#projects"
                className="z-20 rounded-full animate-bounce bg-brighter h-12 w-12 flex flex-col justify-center">
               <div className="flex flex-row justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none"
-                     viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-                </svg>
+                <ArrowDownIcon className="h-8 w-8"/>
               </div>
             </a>
           </div>
@@ -340,7 +337,7 @@ export default async function Index() {
                   <a href="https://github.com/AlexProgrammerDE"
                      className="bg-[#24292E] font-bold rounded-lg px-4 py-2.5 flex flex-row shadow-lg">
                     <p className="flex flex-col justify-center mr-2">Follow me on</p>
-                    <GitHubIcon/>
+                    <SiGithub className="h-8 w-fit fill-current"/>
                   </a>
                 </div>
               </div>

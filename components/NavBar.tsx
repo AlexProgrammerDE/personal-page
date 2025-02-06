@@ -1,4 +1,4 @@
-import {DiscordIcon, GitHubIcon} from "./icons";
+import {SiDiscord, SiGithub} from "@icons-pack/react-simple-icons";
 
 export default function NavBar() {
   return (
@@ -6,12 +6,12 @@ export default function NavBar() {
         <nav className="container flex flex-row flex-grow pb-0 justify-end">
           <div className="text-center p-5">
             <a href="https://github.com/AlexProgrammerDE" className="nav">
-              <GitHubIcon className="h-8"/>
+              <SiGithub className="h-8 w-fit"/>
             </a>
           </div>
           <div className="text-center p-5">
             <a href="https://discord.gg/F4ZyEtXXge" className="nav">
-              <DiscordIcon className="h-8"/>
+              <SiDiscord className="h-8 w-fit"/>
             </a>
           </div>
         </nav>
