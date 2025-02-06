@@ -1,4 +1,4 @@
-import {getOrganizations, getRepositories, getUserData} from "~/lib/github";
+import {getRepositories, getUserData} from "~/lib/github";
 import RepositoryCard from "../components/RepositoryCard";
 import Image from 'next/image';
 import AboutMeBlock from "../components/AboutMeBlock";
@@ -204,7 +204,6 @@ const user = "AlexProgrammerDE"
 export default async function Index() {
   const userData = await getUserData(user)
   const repositories = await getRepositories(user)
-  const organizations = await getOrganizations(user)
 
   return (
       <main className="w-full flex-col">
