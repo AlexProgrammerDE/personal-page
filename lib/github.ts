@@ -15,10 +15,10 @@ const octokit = new Octokit({
 
 const repositories = [
   'balena-minecraft-server',
+  'SoulFire',
+  'SoulFireClient',
   'PistonMOTD',
   'PistonQueue',
-  'PistonBot',
-  'SoulFire',
   'PistonPost-frontend'
 ]
 
