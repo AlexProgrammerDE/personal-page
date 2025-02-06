@@ -3,9 +3,9 @@ import RepositoryCard from "../components/RepositoryCard";
 import Image from 'next/image';
 import AboutMeBlock from "../components/AboutMeBlock";
 import * as motion from "motion/react-client"
-import cn from "classnames";
 import {SiBluesky, SiGithub, SiNamemc, SiReddit, SiSpigotmc, SiYoutube} from "@icons-pack/react-simple-icons";
 import {ArrowDownIcon} from "lucide-react";
+import {cn} from "~/lib/utils";
 
 const badges = [
   {

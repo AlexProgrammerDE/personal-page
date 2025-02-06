@@ -5,10 +5,10 @@ import {useState} from "react";
 import dynamic from "next/dynamic";
 
 import defaultText from '../data/AboutMe.md'
-import cn from "classnames";
 
 import markdown_it from "markdown-it";
 import {CodeIcon, EyeIcon} from "lucide-react";
+import { cn } from "~/lib/utils";
 
 const AboutMeEditor = dynamic(() => import('./AboutMeEditor'),
     {ssr: false})
