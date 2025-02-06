@@ -6,7 +6,7 @@
 ## Who is this guy?
 
 Hi! I'm Alex aka AlexProgrammerDE and aka Pistonmaster. I have quite a passion for Minecraft and have learned lots of
-programming languages and frameworks over the years. I am currently a student in a German university.
+programming languages and frameworks over the years. I am currently a student at a German university.
 
 ## What does describe me?
 
