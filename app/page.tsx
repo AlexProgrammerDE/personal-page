@@ -3,7 +3,7 @@ import RepositoryCard from "../components/RepositoryCard";
 import Image from 'next/image';
 import AboutMeBlock from "../components/AboutMeBlock";
 import * as motion from "motion/react-client"
-import {SiBluesky, SiGithub, SiNamemc, SiReddit, SiSpigotmc, SiYoutube} from "@icons-pack/react-simple-icons";
+import {SiBluesky, SiGithub, SiNamemc, SiSpigotmc, SiSpotify, SiYoutube} from "@icons-pack/react-simple-icons";
 import {ArrowDownIcon} from "lucide-react";
 import {cn} from "~/lib/utils";
 
@@ -311,16 +311,51 @@ export default async function Index() {
                 </div>
               </div>
               <h3 className="text-3xl font-bold mx-auto mt-4">Me in badges</h3>
-              <div className="flex flex-wrap">
+              <div className="flex flex-wrap justify-center items-center gap-y-4 gap-x-1">
                 {
                   badges.map((badge, index) => (
-                      <div className={cn("mx-auto mt-4 mr-auto", {"hidden md:block": index > 25})} key={index}>
-                        <Image
-                            alt="AlexProgrammerDE badge"
-                            width={badge.width}
-                            height={badge.height}
-                            src={`https://img.shields.io/badge/${badge.badge}`}/>
-                      </div>)
+                          <motion.div
+                              key={badge.badge}
+                              className={cn("cursor-pointer", {"hidden md:block": index > 25})}
+                              initial="hidden"
+                              animate="visible"
+                              whileHover={{
+                                rotateZ: 3,
+                                scale: 1.2,
+                                transition: {
+                                  duration: .25,
+                                }
+                              }}
+                              whileTap={{
+                                scale: 0.9,
+                                transition: {
+                                  duration: .25,
+                                }
+                              }}
+                              transition={{type: "spring", stiffness: 200, damping: 10}}
+                              variants={{
+                                hidden: {
+                                  scale: 0.95,
+                                  opacity: 0,
+                                  transition: {
+                                    delay: 0.25
+                                  }
+                                },
+                                visible: {
+                                  scale: 1,
+                                  opacity: 1,
+                                  transition: {
+                                    delay: 0.25
+                                  }
+                                },
+                              }}>
+                            <Image
+                                alt="AlexProgrammerDE badge"
+                                width={badge.width}
+                                height={badge.height}
+                                src={`https://img.shields.io/badge/${badge.badge}`}/>
+                          </motion.div>
+                      )
                   )
                 }
               </div>
@@ -347,8 +382,8 @@ export default async function Index() {
                   <a title="Bluesky" href="https://bsky.app/profile/pistondev.bsky.social">
                     <SiBluesky width="24" height="24" className="fill-current"/>
                   </a>
-                  <a title="Reddit" href="https://www.reddit.com/user/Sensitive_Host_2515">
-                    <SiReddit width="24" height="24" className="fill-current"/>
+                  <a title="Spotify" href="https://open.spotify.com/user/songraper">
+                    <SiSpotify width="24" height="24" className="fill-current"/>
                   </a>
                   <a title="Youtube" href="https://www.youtube.com/@alexprogrammerde">
                     <SiYoutube width="24" height="24" className="fill-current"/>
