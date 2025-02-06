@@ -29,7 +29,8 @@ export default function RepositoryCard({repo}: { repo: Repository }) {
             initial="hidden"
             animate="visible"
             whileHover={{
-                scale: 1.05,
+                rotateZ: 0.5,
+                scale: 1.02,
                 transition: {
                     duration: .25,
                 }
@@ -40,7 +41,7 @@ export default function RepositoryCard({repo}: { repo: Repository }) {
                     duration: .25,
                 }
             }}
-            transition={{type: "spring", stiffness: 300, damping: 10}}
+            transition={{type: "spring", stiffness: 200, damping: 10}}
             variants={{
                 hidden: {
                     scale: 0.95,

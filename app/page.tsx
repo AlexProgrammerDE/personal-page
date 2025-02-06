@@ -254,7 +254,7 @@ export default async function Index() {
                   }}
                   transition={{type: "spring", stiffness: 300, damping: 10}}
                   href="https://github.com/AlexProgrammerDE?tab=repositories"
-                  className="px-4 py-1.5 font-bold shadow-md bg-sectionDark hover:bg-sectionDarkest rounded-lg text-2xl">
+                  className="px-4 py-1.5 font-bold shadow-md bg-sectionDark hover:bg-sectionDarkest rounded-md text-2xl">
                 And more!
               </motion.a>
             </div>
@@ -292,12 +292,12 @@ export default async function Index() {
                          src="https://spotify-recently-played-readme.vercel.app/api?user=songraper"/>
                 </a>
                 <div
-                    className="h-full rounded-xl bg-[#24292E] flex flex-row p-2 mt-4 md:mt-0 md:ml-2">
-                  <div className="inline-flex mx-auto rounded-lg border-8 border-[#24292E]">
+                    className="h-full rounded-md bg-[#24292E] flex flex-row p-2 mt-4 md:mt-0 md:ml-2">
+                  <div className="inline-flex mx-auto rounded-md border-8 border-[#24292E]">
                     <Image title={userData.bio} src={userData.avatar} width={110}
                            height={110}
                            alt={userData.name}
-                           className="rounded-lg"
+                           className="rounded-md"
                     />
                   </div>
                   <div className="flex flex-col my-auto md:ml-2 mr-2">
@@ -335,7 +335,7 @@ export default async function Index() {
                 <p className="font-bold text-3xl mb-2">Like my work?</p>
                 <div className="flex flex-row md:justify-center">
                   <a href="https://github.com/AlexProgrammerDE"
-                     className="bg-[#24292E] font-bold rounded-lg px-4 py-2.5 flex flex-row shadow-lg">
+                     className="bg-[#24292E] font-bold rounded-md px-4 py-2.5 flex flex-row shadow-lg">
                     <p className="flex flex-col justify-center mr-2">Follow me on</p>
                     <SiGithub className="h-8 w-fit fill-current"/>
                   </a>
