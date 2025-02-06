@@ -2,10 +2,10 @@ import {getRepositories, getUserData} from "~/lib/github";
 import RepositoryCard from "../components/RepositoryCard";
 import Image from 'next/image';
 import AboutMeBlock from "../components/AboutMeBlock";
-import {CubeIcon} from "@heroicons/react/20/solid";
 import * as motion from "motion/react-client"
 import {GitHubIcon} from "~/components/icons";
 import cn from "classnames";
+import {SiBluesky, SiNamemc, SiReddit, SiSpigotmc, SiYoutube} from "@icons-pack/react-simple-icons";
 
 const badges = [
   {
@@ -346,41 +346,21 @@ export default async function Index() {
               </div>
               <div className="mx-4 md:mx-0 w-[90vw] md:w-0.5 border"/>
               <div className="mt-3 md:mt-0 mx-4 flex flex-col">
-                <div className="flex flex-wrap mb-2">
-                  <a className="mr-2" title="Twitter"
-                     href="https://twitter.com/AlexProgrammer3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                         className="fill-current">
-                      <path
-                          d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-                    </svg>
+                <div className="flex gap-2 flex-wrap mb-2">
+                  <a title="Bluesky" href="https://bsky.app/profile/pistondev.bsky.social">
+                    <SiBluesky width="24" height="24" className="fill-current"/>
                   </a>
-                  <a className="mr-2" title="Reddit" href="https://www.reddit.com/user/Sensitive_Host_2515">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24" width="36" viewBox="0 0 165.07 147.08"
-                         className="fill-current">
-                      <path
-                          d="M165.066 74.832c0-9.976-8.087-18.062-18.063-18.062-4.87 0-9.28 1.935-12.527 5.067-12.348-8.91-29.36-14.663-48.305-15.325L94.398 7.8l26.883 5.716c.328 6.834 5.924 12.288 12.84 12.288 7.126 0 12.901-5.775 12.901-12.902 0-7.125-5.775-12.902-12.9-12.902-5.07 0-9.412 2.95-11.52 7.202L92.582.822a3.227 3.227 0 00-3.825 2.483L79.57 46.501c-19.225.534-36.51 6.295-49.016 15.304-3.244-3.113-7.64-5.035-12.49-5.035C8.089 56.77 0 64.856 0 74.832c0 7.34 4.386 13.644 10.673 16.47a35.578 35.578 0 00-.431 5.463c0 27.79 32.347 50.318 72.25 50.318 39.905 0 72.252-22.528 72.252-50.318 0-1.834-.15-3.643-.424-5.427 6.326-2.81 10.746-9.137 10.746-16.506"/>
-                    </svg>
+                  <a title="Reddit" href="https://www.reddit.com/user/Sensitive_Host_2515">
+                    <SiReddit width="24" height="24" className="fill-current"/>
                   </a>
-                  <a className="mr-2" title="Youtube"
-                     href="https://www.youtube.com/@alexprogrammerde">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                         className="fill-current">
-                      <path
-                          d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-                    </svg>
+                  <a title="Youtube" href="https://www.youtube.com/@alexprogrammerde">
+                    <SiYoutube width="24" height="24" className="fill-current"/>
                   </a>
-                  <a className="mr-2" title="Pinterest" href="https://pin.it/2SeSvyM">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                         className="fill-current">
-                      <path
-                          d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"
-                          fillRule="evenodd" clipRule="evenodd"/>
-                    </svg>
+                  <a title="SpigotMC" href="https://www.spigotmc.org/resources/authors/pistonmaster.847485/">
+                    <SiSpigotmc width="24" height="24" className="fill-current"/>
                   </a>
-                  <a className="mr-2" title="Minecraft"
-                     href="https://namemc.com/profile/Pistonmaster.1">
-                    <CubeIcon title="Minecraft" width="24" height="24" className="fill-current"/>
+                  <a title="NameMC" href="https://namemc.com/profile/Pistonmaster.1">
+                    <SiNamemc width="24" height="24" className="fill-current"/>
                   </a>
                 </div>
                 <a href="https://discord.gg/B7mW9b3KhS" title="Discord Server">
