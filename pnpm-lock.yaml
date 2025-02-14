@@ -15,8 +15,8 @@ importers:
         specifier: 7.1.4
         version: 7.1.4
       '@octokit/core':
-        specifier: 6.1.3
-        version: 6.1.3
+        specifier: 6.1.4
+        version: 6.1.4
       '@tailwindcss/typography':
         specifier: 0.5.16
         version: 0.5.16(tailwindcss@3.4.17)
@@ -73,8 +73,8 @@ importers:
         specifier: ^14.1.2
         version: 14.1.2
       '@types/node':
-        specifier: 22.13.2
-        version: 22.13.2
+        specifier: 22.13.4
+        version: 22.13.4
       '@types/react':
         specifier: 19.0.8
         version: 19.0.8
@@ -455,12 +455,16 @@ packages:
     resolution: {integrity: sha512-RTmWsLfig8SBoiSdgvCht4BXl1CHU89Co5xiQ5JF19my/sIRDFCQ1RPrmK0exgqUZuNm39C/bV8+/83+MJEjGg==}
     engines: {node: '>= 18'}
 
-  '@octokit/core@6.1.3':
-    resolution: {integrity: sha512-z+j7DixNnfpdToYsOutStDgeRzJSMnbj8T1C/oQjB6Aa+kRfNjs/Fn7W6c8bmlt6mfy3FkgeKBRnDjxQow5dow==}
+  '@octokit/core@6.1.4':
+    resolution: {integrity: sha512-lAS9k7d6I0MPN+gb9bKDt7X8SdxknYqAMh44S5L+lNqIN2NuV8nvv3g8rPp7MuRxcOpxpUIATWprO0C34a8Qmg==}
     engines: {node: '>= 18'}
 
   '@octokit/endpoint@10.0.0':
     resolution: {integrity: sha512-emBcNDxBdC1y3+knJonS5zhUB/CG6TihubxM2U1/pG/Z1y3a4oV0Gzz3lmkCvWWQI6h3tqBAX9MgCBFp+M68Jw==}
+    engines: {node: '>= 18'}
+
+  '@octokit/endpoint@10.1.3':
+    resolution: {integrity: sha512-nBRBMpKPhQUxCsQQeW+rCJ/OPSMcj3g0nfHn01zGYZXuNDvvXudF/TYY6APj5THlurerpFN4a/dQAIAaM6BYhA==}
     engines: {node: '>= 18'}
 
   '@octokit/graphql@8.1.2':
@@ -489,8 +493,16 @@ packages:
     resolution: {integrity: sha512-pqnVKYo/at0NuOjinrgcQYpEbv4snvP3bKMRqHaD9kIsk9u1LCpb2smHZi8/qJfgeNqLo5hNW4Z7FezNdEo0xg==}
     engines: {node: '>= 18'}
 
+  '@octokit/request-error@6.1.7':
+    resolution: {integrity: sha512-69NIppAwaauwZv6aOzb+VVLwt+0havz9GT5YplkeJv7fG7a40qpLt/yZKyiDxAhgz0EtgNdNcb96Z0u+Zyuy2g==}
+    engines: {node: '>= 18'}
+
   '@octokit/request@9.1.4':
     resolution: {integrity: sha512-tMbOwGm6wDII6vygP3wUVqFTw3Aoo0FnVQyhihh8vVq12uO3P+vQZeo2CKMpWtPSogpACD0yyZAlVlQnjW71DA==}
+    engines: {node: '>= 18'}
+
+  '@octokit/request@9.2.1':
+    resolution: {integrity: sha512-TqHLIdw1KFvx8WvLc7Jv94r3C3+AzKY2FWq7c20zvrxmCIa6MCVkLCE/826NCXnml3LFJjLsidDh1BhMaGEDQw==}
     engines: {node: '>= 18'}
 
   '@octokit/types@12.6.0':
@@ -562,8 +574,8 @@ packages:
   '@types/ms@0.7.34':
     resolution: {integrity: sha512-nG96G3Wp6acyAgJqGasjODb+acrI7KltPiRxzHPXnP3NgI28bpQDRv53olbqGXbfcgF5aiiHmO3xpwEpS5Ld9g==}
 
-  '@types/node@22.13.2':
-    resolution: {integrity: sha512-Z+r8y3XL9ZpI2EY52YYygAFmo2/oWfNSj4BCpAXE2McAexDk8VcnBMGC9Djn9gTKt4d2T/hhXqmPzo4hfIXtTg==}
+  '@types/node@22.13.4':
+    resolution: {integrity: sha512-ywP2X0DYtX3y08eFVx5fNIw7/uIv8hYUKgXoK8oayJlLnKcRfEYCxWMVE1XagUdVtCJlZT1AU4LXEABW+L1Peg==}
 
   '@types/prismjs@1.26.3':
     resolution: {integrity: sha512-A0D0aTXvjlqJ5ZILMz3rNfDBOx9hHxLZYv2by47Sm/pqW35zzjusrZTryatjN/Rf8Us2gZrJD+KeHbUSTux1Cw==}
@@ -3247,12 +3259,12 @@ snapshots:
 
   '@octokit/auth-token@5.0.1': {}
 
-  '@octokit/core@6.1.3':
+  '@octokit/core@6.1.4':
     dependencies:
       '@octokit/auth-token': 5.0.1
       '@octokit/graphql': 8.1.2
-      '@octokit/request': 9.1.4
-      '@octokit/request-error': 6.1.6
+      '@octokit/request': 9.2.1
+      '@octokit/request-error': 6.1.7
       '@octokit/types': 13.6.2
       before-after-hook: 3.0.2
       universal-user-agent: 7.0.2
@@ -3262,9 +3274,14 @@ snapshots:
       '@octokit/types': 12.6.0
       universal-user-agent: 7.0.2
 
+  '@octokit/endpoint@10.1.3':
+    dependencies:
+      '@octokit/types': 13.6.2
+      universal-user-agent: 7.0.2
+
   '@octokit/graphql@8.1.2':
     dependencies:
-      '@octokit/request': 9.1.4
+      '@octokit/request': 9.2.1
       '@octokit/types': 13.6.2
       universal-user-agent: 7.0.2
 
@@ -3292,10 +3309,22 @@ snapshots:
     dependencies:
       '@octokit/types': 13.6.2
 
+  '@octokit/request-error@6.1.7':
+    dependencies:
+      '@octokit/types': 13.6.2
+
   '@octokit/request@9.1.4':
     dependencies:
       '@octokit/endpoint': 10.0.0
       '@octokit/request-error': 6.1.6
+      '@octokit/types': 13.6.2
+      fast-content-type-parse: 2.0.1
+      universal-user-agent: 7.0.2
+
+  '@octokit/request@9.2.1':
+    dependencies:
+      '@octokit/endpoint': 10.1.3
+      '@octokit/request-error': 6.1.7
       '@octokit/types': 13.6.2
       fast-content-type-parse: 2.0.1
       universal-user-agent: 7.0.2
@@ -3376,7 +3405,7 @@ snapshots:
 
   '@types/ms@0.7.34': {}
 
-  '@types/node@22.13.2':
+  '@types/node@22.13.4':
     dependencies:
       undici-types: 6.20.0
 
@@ -4877,7 +4906,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 22.13.2
+      '@types/node': 22.13.4
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
