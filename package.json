@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^11.2.0",
-    "@octokit/auth-app": "7.1.4",
+    "@octokit/auth-app": "7.1.5",
     "@octokit/core": "6.1.4",
     "@tailwindcss/typography": "0.5.16",
     "@uiw/react-md-editor": "4.0.5",
