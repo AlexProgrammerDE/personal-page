@@ -19,7 +19,7 @@
     "lucide-react": "^0.482.0",
     "markdown-it": "^14.1.0",
     "motion": "^12.3.1",
-    "next": "15.2.2",
+    "next": "15.2.3",
     "next-plausible": "^3.12.0",
     "next-remove-imports": "1.0.12",
     "postcss": "8.5.3",
@@ -33,9 +33,9 @@
     "@next/env": "^15.0.0",
     "@types/markdown-it": "^14.1.2",
     "@types/node": "22.13.10",
-    "@types/react": "19.0.10",
+    "@types/react": "19.0.11",
     "eslint": "8.57.1",
-    "eslint-config-next": "15.2.2",
+    "eslint-config-next": "15.2.3",
     "typescript": "5.8.2"
   }
 }
