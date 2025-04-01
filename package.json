@@ -16,7 +16,7 @@
     "@uiw/react-md-editor": "4.0.5",
     "autoprefixer": "10.4.21",
     "clsx": "^2.1.1",
-    "lucide-react": "^0.485.0",
+    "lucide-react": "^0.486.0",
     "markdown-it": "^14.1.0",
     "motion": "^12.3.1",
     "next": "15.2.4",
