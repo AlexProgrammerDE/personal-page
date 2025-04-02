@@ -16,7 +16,7 @@
     "@uiw/react-md-editor": "4.0.5",
     "autoprefixer": "10.4.21",
     "clsx": "^2.1.1",
-    "lucide-react": "^0.486.0",
+    "lucide-react": "^0.487.0",
     "markdown-it": "^14.1.0",
     "motion": "^12.3.1",
     "next": "15.2.4",
@@ -33,7 +33,7 @@
     "@next/env": "^15.0.0",
     "@types/markdown-it": "^14.1.2",
     "@types/node": "22.13.17",
-    "@types/react": "19.0.12",
+    "@types/react": "19.1.0",
     "eslint": "8.57.1",
     "eslint-config-next": "15.2.4",
     "typescript": "5.8.2"
