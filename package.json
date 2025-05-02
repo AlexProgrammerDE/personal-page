@@ -13,7 +13,7 @@
     "@octokit/auth-app": "7.2.1",
     "@octokit/core": "6.1.5",
     "@tailwindcss/typography": "0.5.16",
-    "@uiw/react-md-editor": "4.0.5",
+    "@uiw/react-md-editor": "4.0.6",
     "autoprefixer": "10.4.21",
     "clsx": "^2.1.1",
     "lucide-react": "^0.503.0",

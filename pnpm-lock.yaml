@@ -21,8 +21,8 @@ importers:
         specifier: 0.5.16
         version: 0.5.16(tailwindcss@3.4.17)
       '@uiw/react-md-editor':
-        specifier: 4.0.5
-        version: 4.0.5(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: 4.0.6
+        version: 4.0.6(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       autoprefixer:
         specifier: 10.4.21
         version: 10.4.21(postcss@8.5.3)
@@ -527,9 +527,6 @@ packages:
   '@types/estree-jsx@1.0.5':
     resolution: {integrity: sha512-52CcUVNFyfb1A2ALocQw/Dd1BQFNmSdkuC3BkZ6iqhdMfQz7JWOFRuJFloOzjk+6WijU56m9oKXFAXc7o3Towg==}
 
-  '@types/estree@1.0.6':
-    resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
-
   '@types/estree@1.0.7':
     resolution: {integrity: sha512-w28IoSUCJpidD/TGviZwwMJckNESJZXFu7NBZ5YJ4mEUnNraUn9Pm8HSZm/jDF1pDWYKspWE7oVphigUPRakIQ==}
 
@@ -666,8 +663,8 @@ packages:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
 
-  '@uiw/react-md-editor@4.0.5':
-    resolution: {integrity: sha512-x+S7ZMz1B+KwVODOZk663H2gdOZhcFsrPUF8V69K4L2BbTZ3A4sBCw/uTrBE9dHH0gajAzRAYbAYCHsUQaTcyA==}
+  '@uiw/react-md-editor@4.0.6':
+    resolution: {integrity: sha512-yS/FVY/IrwAbT9wGMCyjGCEzIVRD/VC4q3GsfseKNWKeKQZITa0v1KHpTxhb+DIbo+BcFOyHvnzutOEwS8M1IQ==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -3289,9 +3286,7 @@ snapshots:
 
   '@types/estree-jsx@1.0.5':
     dependencies:
-      '@types/estree': 1.0.6
-
-  '@types/estree@1.0.6': {}
+      '@types/estree': 1.0.7
 
   '@types/estree@1.0.7': {}
 
@@ -3473,7 +3468,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@uiw/react-md-editor@4.0.5(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@uiw/react-md-editor@4.0.6(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@babel/runtime': 7.24.0
       '@uiw/react-markdown-preview': 5.0.7(@types/react@19.1.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -4587,7 +4582,7 @@ snapshots:
 
   hast-util-to-jsx-runtime@2.3.0:
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.7
       '@types/hast': 3.0.4
       '@types/unist': 3.0.2
       comma-separated-tokens: 2.0.3
