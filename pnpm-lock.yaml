@@ -21,8 +21,8 @@ importers:
         specifier: 0.5.16
         version: 0.5.16(tailwindcss@3.4.17)
       '@uiw/react-md-editor':
-        specifier: 4.0.6
-        version: 4.0.6(@types/react@19.1.5)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: 4.0.7
+        version: 4.0.7(@types/react@19.1.5)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       autoprefixer:
         specifier: 10.4.21
         version: 10.4.21(postcss@8.5.3)
@@ -663,8 +663,8 @@ packages:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
 
-  '@uiw/react-md-editor@4.0.6':
-    resolution: {integrity: sha512-yS/FVY/IrwAbT9wGMCyjGCEzIVRD/VC4q3GsfseKNWKeKQZITa0v1KHpTxhb+DIbo+BcFOyHvnzutOEwS8M1IQ==}
+  '@uiw/react-md-editor@4.0.7':
+    resolution: {integrity: sha512-fKUJDo/f6ty1R5CRfYCIgt2eWNCWnwkEZhj65zv3cLsywAw13rsOL0/TuG8khpcV9mSnDHPWAz43xgKcjk5VJA==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -3479,7 +3479,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@uiw/react-md-editor@4.0.6(@types/react@19.1.5)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@uiw/react-md-editor@4.0.7(@types/react@19.1.5)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@babel/runtime': 7.24.0
       '@uiw/react-markdown-preview': 5.0.7(@types/react@19.1.5)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
