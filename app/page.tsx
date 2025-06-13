@@ -385,7 +385,7 @@ export default async function Index() {
                   <a title="Spotify" href="https://open.spotify.com/user/songraper">
                     <SiSpotify width="24" height="24" className="fill-current"/>
                   </a>
-                  <a title="Youtube" href="https://www.youtube.com/@alexprogrammerde">
+                  <a title="Youtube" href="https://www.youtube.com/channel/UC86szSBHNiuIXC7hIfrMYtg">
                     <SiYoutube width="24" height="24" className="fill-current"/>
                   </a>
                   <a title="SpigotMC" href="https://www.spigotmc.org/resources/authors/pistonmaster.847485/">
