@@ -3,7 +3,7 @@ import RepositoryCard from "../components/RepositoryCard";
 import Image from 'next/image';
 import AboutMeBlock from "../components/AboutMeBlock";
 import * as motion from "motion/react-client"
-import {SiBluesky, SiGithub, SiNamemc, SiSpigotmc, SiSpotify, SiYoutube} from "@icons-pack/react-simple-icons";
+import {SiBluesky, SiGithub, SiModrinth, SiNamemc, SiSpotify, SiYoutube} from "@icons-pack/react-simple-icons";
 import {ArrowDownIcon} from "lucide-react";
 import {cn} from "~/lib/utils";
 
@@ -388,8 +388,8 @@ export default async function Index() {
                   <a title="Youtube" href="https://www.youtube.com/channel/UC86szSBHNiuIXC7hIfrMYtg">
                     <SiYoutube width="24" height="24" className="fill-current"/>
                   </a>
-                  <a title="SpigotMC" href="https://www.spigotmc.org/resources/authors/pistonmaster.847485/">
-                    <SiSpigotmc width="24" height="24" className="fill-current"/>
+                  <a title="Modrinth" href="https://modrinth.com/user/pistonmaster">
+                    <SiModrinth width="24" height="24" className="fill-current"/>
                   </a>
                   <a title="NameMC" href="https://namemc.com/profile/Pistonmaster.1">
                     <SiNamemc width="24" height="24" className="fill-current"/>
