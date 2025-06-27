@@ -1,13 +1,14 @@
 @import 'tailwindcss';
+@plugin "@tailwindcss/typography";
 
 @theme {
-    --color-background: "#222433";
-    --color-brighter: "#1d1e2c";
-    --color-section: "#c74d5f";
-    --color-section-dark: "#963747";
-    --color-sectionDarkest: "#85333f";
-    --color-content: "#2EB086";
-    --color-text: "#EEE6CE";
+    --color-background: #222433;
+    --color-brighter: #1d1e2c;
+    --color-section: #c74d5f;
+    --color-section-dark: #963747;
+    --color-sectionDarkest: #85333f;
+    --color-content: #2EB086;
+    --color-text: #EEE6CE;
 }
 
 @layer components {
