@@ -232,7 +232,9 @@ export default async function Index() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-6 md:mt-20 mb-4 md:mb-14">
               {
                 repositories.map((repo, index) => (
-                    <div key={index} className={index > 3 ? "hidden md:block" : ""}>
+                    <div key={repo.url} className={cn({
+                      "hidden md:block": index > 3,
+                    })}>
                       <RepositoryCard repo={repo}/>
                     </div>
                 ))
