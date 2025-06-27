@@ -13,7 +13,6 @@
     "@octokit/auth-app": "8.0.1",
     "@octokit/core": "7.0.2",
     "@tailwindcss/postcss": "^4.1.11",
-    "@tailwindcss/typography": "0.5.16",
     "@uiw/react-md-editor": "4.0.7",
     "clsx": "^2.1.1",
     "lucide-react": "^0.525.0",
@@ -31,6 +30,7 @@
   },
   "devDependencies": {
     "@next/env": "^15.0.0",
+    "@tailwindcss/typography": "0.5.16",
     "@types/markdown-it": "^14.1.2",
     "@types/node": "22.15.33",
     "@types/react": "19.1.8",

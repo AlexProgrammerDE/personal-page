@@ -20,9 +20,6 @@ importers:
       '@tailwindcss/postcss':
         specifier: ^4.1.11
         version: 4.1.11
-      '@tailwindcss/typography':
-        specifier: 0.5.16
-        version: 0.5.16(tailwindcss@4.1.11)
       '@uiw/react-md-editor':
         specifier: 4.0.7
         version: 4.0.7(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -69,6 +66,9 @@ importers:
       '@next/env':
         specifier: ^15.0.0
         version: 15.3.4
+      '@tailwindcss/typography':
+        specifier: 0.5.16
+        version: 0.5.16(tailwindcss@4.1.11)
       '@types/markdown-it':
         specifier: ^14.1.2
         version: 14.1.2

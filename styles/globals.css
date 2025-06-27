@@ -100,22 +100,22 @@
     .footer-size {
         min-height: calc(100vh - 3rem);
     }
-}
 
-.emoji {
-    @apply mx-1 h-6 w-6;
-}
+    .emoji {
+        @apply mx-1 h-6 w-6;
+    }
 
-.push-out {
-    min-width: calc(100vw + 20rem);
-}
+    .push-out {
+        min-width: calc(100vw + 20rem);
+    }
 
-.counted {
-    @apply block;
-    line-height: 1.5rem;
-    counter-increment: line;
-}
+    .counted {
+        @apply block;
+        line-height: 1.5rem;
+        counter-increment: line;
+    }
 
-.w-md-editor-bar {
-    @apply hidden;
+    .w-md-editor-bar {
+        @apply hidden;
+    }
 }
