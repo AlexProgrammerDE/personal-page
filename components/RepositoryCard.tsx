@@ -59,16 +59,16 @@ export default function RepositoryCard({repo}: { repo: Repository }) {
                 },
             }}
             className="flex flex-col justify-center cursor-pointer">
-            <div className="h-40 rounded-xl bg-sectionDark shadow-lg flex flex-col">
+            <div className="h-40 rounded-xl bg-section-dark shadow-lg flex flex-col">
                 <a href={repo.url}>
-                    <div className="flex flex-row px-3 py-1 rounded-xl bg-sectionDarkest">
+                    <div className="flex flex-row px-3 py-1 rounded-xl bg-section-darkest">
                         <ArchiveIcon className="h-6 w-6 mr-2 my-auto"/>
                         <h4 className="text-lg md:text-2xl font-bold">{repo.name}</h4>
                     </div>
                 </a>
-                <div className="flex-grow p-4 text-sm md:text-xl flex flex-col">
+                <div className="grow p-4 text-sm md:text-xl flex flex-col">
                     <p>{repo.description}</p>
-                    <div className="flex-grow flex flex-col justify-end">
+                    <div className="grow flex flex-col justify-end">
                         <div className="flex flex-row mt-2">
                             <div className="flex flex-row mr-2">
                                 <StarIcon className="h-6 w-6 my-auto mr-1 text-yellow-300"/>

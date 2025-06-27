@@ -1,71 +1,90 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-html {
+@config '../tailwind.config.ts';
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility landing-diagonal-md {
+  clip-path: polygon(100% 50%, 0% 100%, 100% 100%);
+}
+
+@utility landing-diagonal {
+  clip-path: polygon(100% 80%, 0% 100%, 100% 100%);
+}
+
+@utility footer-size-md {
+  min-height: calc(100vh - 2.5rem);
+}
+
+@layer utilities {
+  html {
     @apply bg-background scroll-smooth;
     overflow-y: scroll;
     /*noinspection CssUnknownProperty*/
     scrollbar-color: #119f6f #222433;
     scroll-behavior: smooth;
-}
+  }
 
-html::-webkit-scrollbar-track-piece {
+  html::-webkit-scrollbar-track-piece {
     background-color: #222433;
-}
+  }
 
-::-webkit-scrollbar {
+  ::-webkit-scrollbar {
     height: 12px;
     width: 12px;
     background: #222433;
-}
+  }
 
-::-webkit-scrollbar-thumb {
+  ::-webkit-scrollbar-thumb {
     background: #119f6f;
-}
+  }
 
-::-webkit-scrollbar-corner {
+  ::-webkit-scrollbar-corner {
     @apply py-2;
     background: #222433;
-}
+  }
 
-.container {
-    @apply max-w-screen-xl mx-auto;
-}
+  .container {
+    @apply max-w-(--breakpoint-xl) mx-auto;
+  }
 
-.diagonal-shadow {
+  .diagonal-shadow {
     filter: drop-shadow(25px 50px -12px rgba(0 0 0 / 0.25));
+  }
 }
 
 @layer utilities {
-    .landing-diagonal-md {
-        clip-path: polygon(100% 50%, 0% 100%, 100% 100%);
-    }
-    .landing-diagonal {
-        clip-path: polygon(100% 80%, 0% 100%, 100% 100%);
-    }
-}
-
-.section2-diagonal {
+  .section2-diagonal {
     clip-path: polygon(0 0, 0 25%, 100% 0);
-}
+  }
 
-a {
+  a {
     @apply no-underline text-inherit;
-}
+  }
 
-.header-size {
+  .header-size {
     min-height: calc(100vh - 5rem);
-}
+  }
 
-.footer-size {
+  .footer-size {
     min-height: calc(100vh - 3rem);
-}
-
-@layer components {
-    .footer-size-md {
-        min-height: calc(100vh - 2.5rem);
-    }
+  }
 }
 
 .emoji {

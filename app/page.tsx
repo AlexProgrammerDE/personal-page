@@ -208,7 +208,7 @@ export default async function Index() {
   return (
       <main className="w-full flex-col">
         <header className="header-size w-full flex flex-col justify-center">
-          <div className="flex-grow flex justify-center text-center">
+          <div className="grow flex justify-center text-center">
             <div className="flex flex-col justify-center z-20">
               <h1 className="text-2xl md:text-5xl font-extrabold mb-4">Hi 👋, I&apos;m Alex</h1>
               <p className="text-lg md:text-xl font-extrabold mb-4">Freelance Student and Open-Source Developer</p>
@@ -238,7 +238,7 @@ export default async function Index() {
                 ))
               }
             </div>
-            <div className="flex-grow flex flex-row justify-center mb-2">
+            <div className="grow flex flex-row justify-center mb-2">
               <motion.a
                   whileHover={{
                     scale: 1.05,
@@ -254,7 +254,7 @@ export default async function Index() {
                   }}
                   transition={{type: "spring", stiffness: 300, damping: 10}}
                   href="https://github.com/AlexProgrammerDE?tab=repositories"
-                  className="px-4 py-1.5 font-bold shadow-md bg-sectionDark hover:bg-sectionDarkest rounded-md text-2xl">
+                  className="px-4 py-1.5 font-bold shadow-md bg-section-dark hover:bg-section-darkest rounded-md text-2xl">
                 And more!
               </motion.a>
             </div>
