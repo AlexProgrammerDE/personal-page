@@ -32,7 +32,7 @@
     "@next/env": "^15.0.0",
     "@tailwindcss/typography": "0.5.16",
     "@types/markdown-it": "^14.1.2",
-    "@types/node": "22.15.33",
+    "@types/node": "22.15.34",
     "@types/react": "19.1.8",
     "eslint": "8.57.1",
     "eslint-config-next": "15.3.4",
