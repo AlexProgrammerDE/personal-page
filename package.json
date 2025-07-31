@@ -15,7 +15,7 @@
     "@tailwindcss/postcss": "^4.1.11",
     "@uiw/react-md-editor": "4.0.8",
     "clsx": "^2.1.1",
-    "lucide-react": "^0.534.0",
+    "lucide-react": "^0.535.0",
     "markdown-it": "^14.1.0",
     "motion": "^12.3.1",
     "next": "15.4.5",
@@ -36,7 +36,7 @@
     "@types/react": "19.1.9",
     "eslint": "8.57.1",
     "eslint-config-next": "15.4.5",
-    "typescript": "5.8.3"
+    "typescript": "5.9.2"
   },
-  "packageManager": "pnpm@10.13.1"
+  "packageManager": "pnpm@10.14.0"
 }
