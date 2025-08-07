@@ -15,7 +15,7 @@
     "@tailwindcss/postcss": "^4.1.11",
     "@uiw/react-md-editor": "4.0.8",
     "clsx": "^2.1.1",
-    "lucide-react": "^0.536.0",
+    "lucide-react": "^0.537.0",
     "markdown-it": "^14.1.0",
     "motion": "^12.3.1",
     "next": "15.4.6",
