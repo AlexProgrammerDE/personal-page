@@ -26,7 +26,7 @@
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "tailwind-merge": "^3.0.1",
-    "tailwindcss": "4.1.11"
+    "tailwindcss": "4.1.12"
   },
   "devDependencies": {
     "@next/env": "^15.0.0",
