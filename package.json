@@ -26,17 +26,17 @@
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "tailwind-merge": "^3.0.1",
-    "tailwindcss": "4.1.12"
+    "tailwindcss": "4.1.13"
   },
   "devDependencies": {
     "@next/env": "^15.0.0",
     "@tailwindcss/typography": "0.5.16",
     "@types/markdown-it": "^14.1.2",
-    "@types/node": "22.18.0",
+    "@types/node": "22.18.1",
     "@types/react": "19.1.12",
     "eslint": "8.57.1",
     "eslint-config-next": "15.5.2",
     "typescript": "5.9.2"
   },
-  "packageManager": "pnpm@10.15.0"
+  "packageManager": "pnpm@10.15.1"
 }
