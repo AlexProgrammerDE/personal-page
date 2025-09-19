@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@next/env": "^15.0.0",
-    "@tailwindcss/typography": "0.5.16",
+    "@tailwindcss/typography": "0.5.18",
     "@types/markdown-it": "^14.1.2",
     "@types/node": "22.18.6",
     "@types/react": "19.1.13",
