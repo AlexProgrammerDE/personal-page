@@ -33,7 +33,7 @@
     "@tailwindcss/typography": "0.5.19",
     "@types/markdown-it": "^14.1.2",
     "@types/node": "22.18.6",
-    "@types/react": "19.1.14",
+    "@types/react": "19.1.15",
     "eslint": "8.57.1",
     "eslint-config-next": "15.5.4",
     "typescript": "5.9.2"
