@@ -1,5 +1,4 @@
 import '../styles/globals.css'
-import '../styles/markdown-editor.css'
 import PlausibleProvider from "next-plausible";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
