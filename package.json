@@ -34,8 +34,7 @@
     "@types/markdown-it": "^14.1.2",
     "@types/node": "22.18.8",
     "@types/react": "19.1.16",
-    "eslint": "8.57.1",
-    "eslint-config-next": "15.5.4",
+    "biome": "^0.3.3",
     "typescript": "5.9.3"
   },
   "packageManager": "pnpm@10.17.1"
