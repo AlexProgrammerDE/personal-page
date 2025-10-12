@@ -1,13 +1,12 @@
 "use client";
 
-import {useState} from "react";
-import dynamic from "next/dynamic";
+import { CodeIcon, EyeIcon } from "lucide-react";
 import markdown_it from "markdown-it";
-import {CodeIcon, EyeIcon} from "lucide-react";
+import dynamic from "next/dynamic";
+import { useState } from "react";
 import { cn } from "~/lib/utils";
 
-const AboutMeEditor = dynamic(() => import('./AboutMeEditor'),
-    {ssr: false})
+const AboutMeEditor = dynamic(() => import("./AboutMeEditor"), { ssr: false });
 
 const md = markdown_it({
   html: false,
@@ -51,38 +50,53 @@ datacenters and configured DDoS protection. I've also worked on a few projects w
 [extra gif 2]: <> (https://media.tenor.com/3VK7UIf_5R8AAAAj/good-morning.gif)
 [extra gif 3]: <> (https://media1.tenor.com/m/D79VE1UsarUAAAAd/meaw.gif)
 [extra gif 4]: <> (https://media1.tenor.com/m/QkINQgRwWgUAAAAd/cat-rave.gif)
-[extra gif 5]: <> (https://media.tenor.com/HGWcMb_HJo8AAAAi/cat-cat-meme.gif)`
+[extra gif 5]: <> (https://media.tenor.com/HGWcMb_HJo8AAAAi/cat-cat-meme.gif)`;
 
 export default function AboutMeBlock() {
   const [text, setText] = useState<string>(defaultText);
   const [isEditing, setIsEditing] = useState<boolean>(false);
 
   return (
-      <div className="grow rounded-2xl bg-gray-900 border border-gray-700 h-full w-full flex flex-col">
-        <div className="h-20 bg-gray-800 rounded-t-2xl flex flex-row">
-          <button
-              className={cn("flex flex-row justify-center w-32 md:w-40 text-lg md:text-xl font-bold p-2 rounded-tl-2xl", {"bg-gray-900": !isEditing})}
-              onMouseDown={() => setIsEditing(false)}>
-            <EyeIcon className="h-4 md:h-6 w-4 md:w-6 my-auto mr-2"/>
-            <p className="my-auto">Preview</p>
-          </button>
-          <button
-              className={cn("flex flex-row justify-center w-32 md:w-40 text-lg md:text-xl rounded-tr-none font-bold p-2", {"bg-gray-900": isEditing})}
-              onMouseDown={() => setIsEditing(true)}>
-            <CodeIcon className="h-4 md:h-6 w-4 md:w-6 my-auto mr-2"/>
-            <p className="my-auto">Edit File</p>
-          </button>
-        </div>
-        <div className="grow flex flex-row">
-          <div className="grow p-2 pb-0 md:p-6 md:pb-0 flex flex-col">
-            <div className={cn("flex flex-col grow", {"hidden": !isEditing})}>
-              <AboutMeEditor text={text} setText={setText}/>
-            </div>
-            <div className={cn("grow overflow-x-auto mb-2 md:mb-6", {"hidden": isEditing})}>
-              <div className="prose prose-invert" dangerouslySetInnerHTML={{__html: md.render(text)}}/>
-            </div>
+    <div className="grow rounded-2xl bg-gray-900 border border-gray-700 h-full w-full flex flex-col">
+      <div className="h-20 bg-gray-800 rounded-t-2xl flex flex-row">
+        <button
+          className={cn(
+            "flex flex-row justify-center w-32 md:w-40 text-lg md:text-xl font-bold p-2 rounded-tl-2xl",
+            { "bg-gray-900": !isEditing },
+          )}
+          onMouseDown={() => setIsEditing(false)}
+        >
+          <EyeIcon className="h-4 md:h-6 w-4 md:w-6 my-auto mr-2" />
+          <p className="my-auto">Preview</p>
+        </button>
+        <button
+          className={cn(
+            "flex flex-row justify-center w-32 md:w-40 text-lg md:text-xl rounded-tr-none font-bold p-2",
+            { "bg-gray-900": isEditing },
+          )}
+          onMouseDown={() => setIsEditing(true)}
+        >
+          <CodeIcon className="h-4 md:h-6 w-4 md:w-6 my-auto mr-2" />
+          <p className="my-auto">Edit File</p>
+        </button>
+      </div>
+      <div className="grow flex flex-row">
+        <div className="grow p-2 pb-0 md:p-6 md:pb-0 flex flex-col">
+          <div className={cn("flex flex-col grow", { hidden: !isEditing })}>
+            <AboutMeEditor text={text} setText={setText} />
+          </div>
+          <div
+            className={cn("grow overflow-x-auto mb-2 md:mb-6", {
+              hidden: isEditing,
+            })}
+          >
+            <div
+              className="prose prose-invert"
+              dangerouslySetInnerHTML={{ __html: md.render(text) }}
+            />
           </div>
         </div>
       </div>
-  )
+    </div>
+  );
 }

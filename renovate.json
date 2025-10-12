@@ -1,17 +1,8 @@
 {
-  "extends": [
-    "config:recommended",
-    "group:allNonMajor",
-    ":semanticCommits"
-  ],
+  "extends": ["config:recommended", "group:allNonMajor", ":semanticCommits"],
   "packageRules": [
     {
-      "matchUpdateTypes": [
-        "minor",
-        "patch",
-        "pin",
-        "digest"
-      ],
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true
     }
   ]

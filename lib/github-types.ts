@@ -14,9 +14,9 @@ export interface Repository {
 }
 
 export interface UserData {
-  avatar: string,
-  name: string,
-  bio: string,
-  repoCount: number,
-  followers: number,
+  avatar: string;
+  name: string;
+  bio: string;
+  repoCount: number;
+  followers: number;
 }

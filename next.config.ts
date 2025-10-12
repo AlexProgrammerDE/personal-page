@@ -1,8 +1,8 @@
-import {type NextConfig} from "next";
-import {withPlausibleProxy} from "next-plausible";
+import * as fs from "node:fs";
+import * as path from "node:path";
+import type { NextConfig } from "next";
+import { withPlausibleProxy } from "next-plausible";
 import next_remove_imports from "next-remove-imports";
-import * as fs from 'fs';
-import * as path from 'path';
 
 function getFoldersWithPageFiles(dir: string): string[] {
   const foldersWithPageFiles: string[] = [];
@@ -11,8 +11,8 @@ function getFoldersWithPageFiles(dir: string): string[] {
   const items = fs.readdirSync(dir);
 
   // Check if the current directory contains either 'page.mdx' or 'page.tsx'
-  const containsPageFile = items.some(item =>
-      item === 'page.mdx' || item === 'page.tsx'
+  const containsPageFile = items.some(
+    (item) => item === "page.mdx" || item === "page.tsx",
   );
 
   if (containsPageFile) {
@@ -39,46 +39,52 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   env: {
     SITEMAP_PAGES: getFoldersWithPageFiles("app")
-        .map(folder => folder.substring("app".length))
-        .join("|")
+      .map((folder) => folder.substring("app".length))
+      .join("|"),
   },
   images: {
     dangerouslyAllowSVG: true,
-    contentDispositionType: 'attachment',
+    contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    remotePatterns: [{
-      protocol: 'https',
-      hostname: 'discord.com',
-    }, {
-      protocol: 'https',
-      hostname: 'avatars.githubusercontent.com',
-    }, {
-      protocol: 'https',
-      hostname: 'github-readme-stats.vercel.app',
-    }, {
-      protocol: 'https',
-      hostname: 'spotify-recently-played-readme.vercel.app',
-    }, {
-      protocol: 'https',
-      hostname: 'img.shields.io',
-    }],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "discord.com",
+      },
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+      },
+      {
+        protocol: "https",
+        hostname: "github-readme-stats.vercel.app",
+      },
+      {
+        protocol: "https",
+        hostname: "spotify-recently-played-readme.vercel.app",
+      },
+      {
+        protocol: "https",
+        hostname: "img.shields.io",
+      },
+    ],
   },
   redirects: async () => {
     return [
       {
-        source: '/discord',
-        destination: 'https://discord.gg/X4uV74BTKb',
+        source: "/discord",
+        destination: "https://discord.gg/X4uV74BTKb",
         permanent: false,
       },
       {
-        source: '/github',
-        destination: 'https://github.com/AlexProgrammerDE',
+        source: "/github",
+        destination: "https://github.com/AlexProgrammerDE",
         permanent: false,
       },
-    ]
-  }
-}
+    ];
+  },
+};
 
 export default withPlausibleProxy({
-  customDomain: process.env.PLAUSIBLE_URL
-})(removeImports(nextConfig))
+  customDomain: process.env.PLAUSIBLE_URL,
+})(removeImports(nextConfig));
