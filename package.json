@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build --experimental-build-mode compile --turbopack",
     "start": "next start",
-    "lint": "next lint"
+    "typecheck": "tsc --noEmit",
+    "fix": "biome check --write --unsafe",
+    "check": "biome check"
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^13.0.0",
@@ -29,12 +31,12 @@
     "tailwindcss": "4.1.14"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.2.5",
     "@next/env": "^15.0.0",
     "@tailwindcss/typography": "0.5.19",
     "@types/markdown-it": "^14.1.2",
     "@types/node": "22.18.10",
     "@types/react": "19.2.2",
-    "biome": "^0.3.3",
     "typescript": "5.9.3"
   },
   "packageManager": "pnpm@10.18.2"
