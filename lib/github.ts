@@ -48,8 +48,8 @@ export async function getRepositories(username: string): Promise<Repository[]> {
     repoData.push({
       name: repoReply.data.name,
       url: repoReply.data.html_url,
-      description: repoReply.data.description!,
-      language: repoReply.data.language!,
+      description: repoReply.data.description ?? "",
+      language: repoReply.data.language ?? "Unknown",
       stars: repoReply.data.stargazers_count,
       forks: repoReply.data.forks_count,
     });
@@ -67,9 +67,9 @@ export async function getOrganizations(
 
   return organizations.data.map((org) => {
     return {
-      login: org.login!,
-      avatar: org.avatar_url!,
-      description: org.description!,
+      login: org.login ?? "",
+      avatar: org.avatar_url ?? "",
+      description: org.description ?? "",
     };
   });
 }
