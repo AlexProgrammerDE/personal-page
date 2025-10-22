@@ -1,19 +1,29 @@
 "use client";
 
 import { CodeIcon, EyeIcon } from "lucide-react";
-import markdown_it from "markdown-it";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { cn } from "~/lib/utils";
 
 const AboutMeEditor = dynamic(() => import("./AboutMeEditor"), { ssr: false });
 
-const md = markdown_it({
-  html: false,
-  xhtmlOut: false,
-  linkify: true,
-  typographer: true,
-});
+const MarkdownPreview = dynamic(
+  () =>
+    import("@uiw/react-md-editor").then((module) => {
+      const Markdown = module.default.Markdown;
+
+      return function MarkdownPreviewWrapper({
+        className,
+        source,
+      }: {
+        className?: string;
+        source: string;
+      }) {
+        return <Markdown className={className} source={source} />;
+      };
+    }),
+  { ssr: false },
+);
 
 const defaultText = `# About Me
 
@@ -60,6 +70,7 @@ export default function AboutMeBlock() {
     <div className="grow rounded-2xl bg-gray-900 border border-gray-700 h-full w-full flex flex-col">
       <div className="h-20 bg-gray-800 rounded-t-2xl flex flex-row">
         <button
+          type="button"
           className={cn(
             "flex flex-row justify-center w-32 md:w-40 text-lg md:text-xl font-bold p-2 rounded-tl-2xl",
             { "bg-gray-900": !isEditing },
@@ -70,6 +81,7 @@ export default function AboutMeBlock() {
           <p className="my-auto">Preview</p>
         </button>
         <button
+          type="button"
           className={cn(
             "flex flex-row justify-center w-32 md:w-40 text-lg md:text-xl rounded-tr-none font-bold p-2",
             { "bg-gray-900": isEditing },
@@ -90,10 +102,7 @@ export default function AboutMeBlock() {
               hidden: isEditing,
             })}
           >
-            <div
-              className="prose prose-invert"
-              dangerouslySetInnerHTML={{ __html: md.render(text) }}
-            />
+            <MarkdownPreview className="prose prose-invert" source={text} />
           </div>
         </div>
       </div>
