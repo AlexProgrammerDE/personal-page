@@ -31,7 +31,7 @@
     "tailwindcss": "4.1.15"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.6",
+    "@biomejs/biome": "2.2.7",
     "@next/env": "^16.0.0",
     "@tailwindcss/typography": "0.5.19",
     "@types/markdown-it": "^14.1.2",
