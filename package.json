@@ -17,7 +17,7 @@
     "@tailwindcss/postcss": "^4.1.11",
     "@uiw/react-md-editor": "4.0.8",
     "clsx": "^2.1.1",
-    "lucide-react": "^0.546.0",
+    "lucide-react": "^0.547.0",
     "motion": "^12.3.1",
     "next": "16.0.0",
     "next-plausible": "^3.12.0",
@@ -30,7 +30,7 @@
     "tailwindcss": "4.1.16"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.7",
+    "@biomejs/biome": "2.3.0",
     "@next/env": "^16.0.0",
     "@tailwindcss/typography": "0.5.19",
     "@types/node": "22.18.12",
