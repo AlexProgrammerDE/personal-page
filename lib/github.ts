@@ -2,7 +2,7 @@ import { createAppAuth } from "@octokit/auth-app";
 import { Octokit } from "@octokit/core";
 import type { Organization, Repository, UserData } from "./github-types";
 
-const octokit = new Octokit({
+const octokit = new Octokit(process.env.GITHUB_APP_ID ? {
   authStrategy: createAppAuth,
   auth: {
     appId: process.env.GITHUB_APP_ID,
@@ -11,7 +11,7 @@ const octokit = new Octokit({
     clientSecret: process.env.GITHUB_CLIENT_SECRET,
     installationId: process.env.GITHUB_INSTALLATION_ID,
   },
-});
+} : undefined);
 
 const repositories = [
   "balena-minecraft-server",
