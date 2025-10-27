@@ -4,6 +4,8 @@ import { Inter } from "next/font/google";
 import PlausibleProvider from "next-plausible";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
+import "@uiw/react-md-editor/markdown-editor.css";
+import "@uiw/react-markdown-preview/markdown.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://pistonmaster.net"),
