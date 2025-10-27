@@ -2,16 +2,20 @@ import { createAppAuth } from "@octokit/auth-app";
 import { Octokit } from "@octokit/core";
 import type { Organization, Repository, UserData } from "./github-types";
 
-const octokit = new Octokit(process.env.GITHUB_APP_ID ? {
-  authStrategy: createAppAuth,
-  auth: {
-    appId: process.env.GITHUB_APP_ID,
-    privateKey: process.env.GITHUB_PRIVATE_KEY?.replace(/\\n/g, "\n"),
-    clientId: process.env.GITHUB_CLIENT_ID,
-    clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    installationId: process.env.GITHUB_INSTALLATION_ID,
-  },
-} : undefined);
+const octokit = new Octokit(
+  process.env.GITHUB_APP_ID
+    ? {
+        authStrategy: createAppAuth,
+        auth: {
+          appId: process.env.GITHUB_APP_ID,
+          privateKey: process.env.GITHUB_PRIVATE_KEY?.replace(/\\n/g, "\n"),
+          clientId: process.env.GITHUB_CLIENT_ID,
+          clientSecret: process.env.GITHUB_CLIENT_SECRET,
+          installationId: process.env.GITHUB_INSTALLATION_ID,
+        },
+      }
+    : undefined,
+);
 
 const repositories = [
   "balena-minecraft-server",
@@ -23,6 +27,14 @@ const repositories = [
 ];
 
 export async function getUserData(username: string): Promise<UserData> {
+  // if (true) return {
+  //   avatar: "https://avatars.githubusercontent.com/u/46647189?v=4",
+  //   name: "Alex McFarlane",
+  //   bio: "Software Engineer | Minecraft Enthusiast | Open Source Contributor",
+  //   repoCount: 42,
+  //   followers: 128,
+  // };
+
   const userReply = await octokit.request("GET /users/{username}", {
     username: username,
   });
@@ -37,6 +49,8 @@ export async function getUserData(username: string): Promise<UserData> {
 }
 
 export async function getRepositories(username: string): Promise<Repository[]> {
+  // if (true) return []
+
   const repoData: Repository[] = [];
 
   for (const repoName of repositories) {

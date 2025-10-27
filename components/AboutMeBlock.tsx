@@ -3,27 +3,10 @@
 import { CodeIcon, EyeIcon } from "lucide-react";
 import dynamic from "next/dynamic";
 import { useState } from "react";
+import Markdown from "react-markdown";
 import { cn } from "~/lib/utils";
 
-const AboutMeEditor = dynamic(() => import("./AboutMeEditor"), { ssr: false });
-
-const MarkdownPreview = dynamic(
-  () =>
-    import("@uiw/react-md-editor").then((module) => {
-      const Markdown = module.default.Markdown;
-
-      return function MarkdownPreviewWrapper({
-        className,
-        source,
-      }: {
-        className?: string;
-        source: string;
-      }) {
-        return <Markdown className={className} source={source} />;
-      };
-    }),
-  { ssr: false },
-);
+const MDEditor = dynamic(() => import("@uiw/react-md-editor"), { ssr: false });
 
 const defaultText = `# About Me
 
@@ -95,14 +78,25 @@ export default function AboutMeBlock() {
       <div className="grow flex flex-row">
         <div className="grow p-2 pb-0 md:p-6 md:pb-0 flex flex-col">
           <div className={cn("flex flex-col grow", { hidden: !isEditing })}>
-            <AboutMeEditor text={text} setText={setText} />
+            <MDEditor
+              className="grow w-full h-full mb-2 md:mb-6"
+              hideToolbar
+              preview="edit"
+              value={text}
+              onChange={(value) => {
+                if (value) setText(value);
+              }}
+            />
           </div>
           <div
-            className={cn("grow overflow-x-auto mb-2 md:mb-6", {
-              hidden: isEditing,
-            })}
+            className={cn(
+              "grow overflow-x-auto mb-2 md:mb-6 prose prose-invert",
+              {
+                hidden: isEditing,
+              },
+            )}
           >
-            <MarkdownPreview className="prose prose-invert" source={text} />
+            <Markdown>{text}</Markdown>
           </div>
         </div>
       </div>
