@@ -255,7 +255,7 @@ export default async function Index() {
         </div>
         <div className="w-screen max-w-full absolute z-10 header-size bg-section landing-diagonal md:landing-diagonal-md" />
       </header>
-
+      {/* biome-ignore lint/correctness/useUniqueElementIds: static IDs for navigation */}
       <section id="projects" className="w-full min-h-screen bg-section">
         <div className="container h-full p-2 pt-4 z-20 flex flex-col">
           <h2 className="text-2xl md:text-5xl font-bold mt-4">Projects</h2>
@@ -294,7 +294,7 @@ export default async function Index() {
           </div>
         </div>
       </section>
-
+      {/* biome-ignore lint/correctness/useUniqueElementIds: static IDs for navigation */}
       <section
         id="about-me"
         className="w-full min-h-screen bg-content flex flex-col"
@@ -304,7 +304,7 @@ export default async function Index() {
           <AboutMeBlock />
         </div>
       </section>
-
+      {/* biome-ignore lint/correctness/useUniqueElementIds: static IDs for navigation */}
       <section id="stats" className="w-full min-h-screen bg-section shadow-2xl">
         <div className="container p-6">
           <div className="flex flex-col gap-4 my-auto mx-auto">
@@ -416,7 +416,7 @@ export default async function Index() {
           </div>
         </div>
       </section>
-
+      {/* biome-ignore lint/correctness/useUniqueElementIds: static IDs for navigation */}
       <section id="contact" className="w-full footer-size md:footer-size-md">
         <div className="container footer-size md:footer-size-md flex flex-col justify-center">
           <div className="flex flex-col md:flex-row justify-center">
