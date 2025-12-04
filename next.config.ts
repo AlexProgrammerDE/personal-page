@@ -35,6 +35,34 @@ function getFoldersWithPageFiles(dir: string): string[] {
 
 const removeImports = next_remove_imports();
 
+const securityHeaders = [
+  {
+    key: "X-DNS-Prefetch-Control",
+    value: "on",
+  },
+  {
+    key: "X-XSS-Protection",
+    value: "0",
+  },
+  {
+    key: "X-Frame-Options",
+    value: "SAMEORIGIN",
+  },
+  {
+    key: "X-Content-Type-Options",
+    value: "nosniff",
+  },
+  {
+    key: "Content-Security-Policy",
+    value:
+      "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://challenges.cloudflare.com https://*.posthog.com; style-src 'self' 'unsafe-inline' https://*.posthog.com; object-src 'none'; base-uri 'self'; connect-src 'self' https://challenges.cloudflare.com https://*.posthog.com; font-src 'self' https://*.posthog.com; frame-src 'self' https://challenges.cloudflare.com; img-src 'self' data: https://*.posthog.com; manifest-src 'self'; media-src 'self' data: https://*.posthog.com; worker-src 'self' blob: data:; form-action 'self'; upgrade-insecure-requests;",
+  },
+  {
+    key: "X-Accel-Buffering",
+    value: "no",
+  },
+];
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   env: {
@@ -80,6 +108,14 @@ const nextConfig: NextConfig = {
         source: "/github",
         destination: "https://github.com/AlexProgrammerDE",
         permanent: false,
+      },
+    ];
+  },
+  async headers() {
+    return [
+      {
+        source: "/:path*{/}?",
+        headers: securityHeaders,
       },
     ];
   },
