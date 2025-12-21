@@ -41,3 +41,4 @@ yarn-error.log*
 public/sitemap*
 
 .yarn
+next-env.d.ts
