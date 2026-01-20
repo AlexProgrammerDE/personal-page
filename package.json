@@ -36,7 +36,7 @@
     "@next/env": "^16.0.0",
     "@tailwindcss/typography": "0.5.19",
     "@types/node": "24.10.9",
-    "@types/react": "19.2.8",
+    "@types/react": "19.2.9",
     "typescript": "5.9.3"
   },
   "packageManager": "pnpm@10.28.1"
