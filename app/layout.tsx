@@ -1,7 +1,6 @@
 import "../styles/globals.css";
-import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
-import PlausibleProvider from "next-plausible";
+import type {Metadata, Viewport} from "next";
+import {Inter} from "next/font/google";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import "@uiw/react-md-editor/markdown-editor.css";
@@ -51,11 +50,11 @@ export default function Layout({ children }) {
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning>
       <head>
-        <PlausibleProvider
-          trackOutboundLinks
-          trackFileDownloads
-          domain="pistonmaster.net"
-        />
+        <script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="Li9Zohcg8tS+MWVE76W/4Q"
+          async
+        ></script>
       </head>
       <body>
         <div

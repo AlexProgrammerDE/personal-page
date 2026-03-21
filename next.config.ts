@@ -52,11 +52,11 @@ const securityHeaders = [
     key: "X-Content-Type-Options",
     value: "nosniff",
   },
-  {
-    key: "Content-Security-Policy",
-    value:
-      "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://challenges.cloudflare.com https://*.posthog.com; style-src 'self' 'unsafe-inline' https://*.posthog.com; object-src 'none'; base-uri 'self'; connect-src 'self' https://challenges.cloudflare.com https://*.posthog.com; font-src 'self' https://*.posthog.com; frame-src 'self' https://challenges.cloudflare.com; img-src 'self' data: https://*.posthog.com https://github-readme-stats.vercel.app https://forthebadge.com https://media1.tenor.com; manifest-src 'self'; media-src 'self' data: https://*.posthog.com; worker-src 'self' blob: data:; form-action 'self'; upgrade-insecure-requests;",
-  },
+  // {
+  //   key: "Content-Security-Policy",
+  //   value:
+  //     "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://challenges.cloudflare.com https://*.posthog.com; style-src 'self' 'unsafe-inline' https://*.posthog.com; object-src 'none'; base-uri 'self'; connect-src 'self' https://challenges.cloudflare.com https://*.posthog.com; font-src 'self' https://*.posthog.com; frame-src 'self' https://challenges.cloudflare.com; img-src 'self' data: https://*.posthog.com https://github-readme-stats.vercel.app https://forthebadge.com https://media1.tenor.com; manifest-src 'self'; media-src 'self' data: https://*.posthog.com; worker-src 'self' blob: data:; form-action 'self'; upgrade-insecure-requests;",
+  // },
   {
     key: "X-Accel-Buffering",
     value: "no",
