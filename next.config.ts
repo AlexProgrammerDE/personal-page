@@ -1,7 +1,6 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
 import type { NextConfig } from "next";
-import { withPlausibleProxy } from "next-plausible";
 import next_remove_imports from "next-remove-imports";
 
 function getFoldersWithPageFiles(dir: string): string[] {
@@ -121,6 +120,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default withPlausibleProxy({
-  customDomain: process.env.PLAUSIBLE_URL,
-})(removeImports(nextConfig));
+export default removeImports(nextConfig);
