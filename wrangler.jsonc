@@ -3,9 +3,7 @@
   "main": ".open-next/worker.js",
   "name": "personal-page",
   "compatibility_date": "2026-04-13",
-  "compatibility_flags": [
-    "nodejs_compat"
-  ],
+  "compatibility_flags": ["nodejs_compat"],
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
@@ -26,6 +24,10 @@
     "binding": "IMAGES"
   },
   "observability": {
-    "enabled": true
+    "enabled": true,
+    "traces": {
+      "enabled": true,
+      "head_sampling_rate": 0.05
+    }
   }
 }
