@@ -21,28 +21,28 @@
     "@opennextjs/cloudflare": "^1.19.1",
     "@tailwindcss/postcss": "^4.1.11",
     "@uiw/react-markdown-preview": "^5.1.5",
-    "@uiw/react-md-editor": "4.1.0",
+    "@uiw/react-md-editor": "4.1.1",
     "clsx": "^2.1.1",
     "lucide-react": "^1.0.0",
     "motion": "^12.3.1",
-    "next": "16.2.3",
+    "next": "16.2.11",
     "next-remove-imports": "1.0.13",
-    "postcss": "8.5.9",
+    "postcss": "8.5.22",
     "raw-loader": "4.0.2",
-    "react": "19.2.5",
-    "react-dom": "19.2.5",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
     "react-markdown": "^10.1.0",
     "tailwind-merge": "^3.0.1",
-    "tailwindcss": "4.2.2"
+    "tailwindcss": "4.3.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.11",
+    "@biomejs/biome": "2.5.5",
     "@next/env": "^16.0.0",
-    "@tailwindcss/typography": "0.5.19",
-    "@types/node": "24.12.2",
-    "@types/react": "19.2.14",
+    "@tailwindcss/typography": "0.5.20",
+    "@types/node": "24.13.3",
+    "@types/react": "19.2.17",
     "typescript": "7.0.2",
     "wrangler": "^4.82.1"
   },
-  "packageManager": "pnpm@11.15.0"
+  "packageManager": "pnpm@11.17.0"
 }
