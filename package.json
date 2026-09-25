@@ -24,7 +24,7 @@
     "@uiw/react-md-editor": "4.1.0",
     "clsx": "^2.1.1",
     "lucide-react": "^1.0.0",
-    "motion": "^12.3.1",
+    "motion": "^13.0.0",
     "next": "16.2.3",
     "next-remove-imports": "1.0.13",
     "postcss": "8.5.9",
