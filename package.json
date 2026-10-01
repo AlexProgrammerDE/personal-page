@@ -3,10 +3,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "next build --turbopack",
+    "build": "pnpm run cloudflare:config && next build --turbopack",
     "dev": "pnpm run cloudflare:config && next dev --turbopack",
     "start": "next start",
-    "typecheck": "pnpm run cf-typegen && next typegen && tsc --noEmit",
+    "typecheck": "pnpm run cloudflare:config && pnpm run cf-typegen && next typegen && tsc --noEmit",
     "fix": "biome check --write --unsafe",
     "check": "biome check",
     "preview": "pnpm run build:worker && opennextjs-cloudflare populateCache local --config .cloudflare/open-next/wrangler.json && wrangler dev --experimental-new-config",
