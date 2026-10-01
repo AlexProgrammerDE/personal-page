@@ -3,19 +3,19 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "pnpm run cloudflare:config && next build --turbopack",
-    "dev": "pnpm run cloudflare:config && next dev --turbopack",
+    "build": "bun run cloudflare:config && next build --turbopack",
+    "dev": "bun run cloudflare:config && next dev --turbopack",
     "start": "next start",
-    "typecheck": "pnpm run cloudflare:config && pnpm run cf-typegen && next typegen && tsc --noEmit",
+    "typecheck": "bun run cloudflare:config && bun run cf-typegen && next typegen && tsc --noEmit",
     "fix": "biome check --write --unsafe",
     "check": "biome check",
-    "preview": "pnpm run build:worker && opennextjs-cloudflare populateCache local --config .cloudflare/open-next/wrangler.json && wrangler dev --experimental-new-config",
-    "deploy": "CLOUDFLARE_BUILD_MODE=prod pnpm run build:worker && opennextjs-cloudflare populateCache remote --config .cloudflare/open-next/wrangler.json && cf deploy --prebuilt --mode prod",
-    "upload": "CLOUDFLARE_BUILD_MODE=prod pnpm run build:worker && opennextjs-cloudflare populateCache remote --config .cloudflare/open-next/wrangler.json && cf workers versions create --prebuilt --mode prod",
+    "preview": "bun run build:worker && opennextjs-cloudflare populateCache local --config .cloudflare/open-next/wrangler.json && wrangler dev --experimental-new-config",
+    "deploy": "CLOUDFLARE_BUILD_MODE=prod bun run build:worker && opennextjs-cloudflare populateCache remote --config .cloudflare/open-next/wrangler.json && cf deploy --prebuilt --mode prod",
+    "upload": "CLOUDFLARE_BUILD_MODE=prod bun run build:worker && opennextjs-cloudflare populateCache remote --config .cloudflare/open-next/wrangler.json && cf workers versions create --prebuilt --mode prod",
     "cf-typegen": "cf workers types",
     "cloudflare:config": "node scripts/open-next-cloudflare-config.mjs",
-    "build:worker": "pnpm run cloudflare:config && opennextjs-cloudflare build --config .cloudflare/open-next/wrangler.json && wrangler build --experimental-new-config --experimental-cf-build-output --env \"${CLOUDFLARE_BUILD_MODE:-development}\"",
-    "deploy:dry-run": "pnpm run build:worker && cf deploy --prebuilt --mode development --dry-run"
+    "build:worker": "bun run cloudflare:config && opennextjs-cloudflare build --config .cloudflare/open-next/wrangler.json && wrangler build --experimental-new-config --experimental-cf-build-output --env \"${CLOUDFLARE_BUILD_MODE:-development}\"",
+    "deploy:dry-run": "bun run build:worker && cf deploy --prebuilt --mode development --dry-run"
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^13.0.0",
@@ -49,5 +49,14 @@
     "typescript": "6.0.3",
     "wrangler": "4.145.0"
   },
-  "packageManager": "pnpm@11.15.0"
+  "packageManager": "bun@1.4.0",
+  "engines": {
+    "node": "24"
+  },
+  "trustedDependencies": [
+    "@tailwindcss/oxide",
+    "esbuild",
+    "sharp",
+    "workerd"
+  ]
 }

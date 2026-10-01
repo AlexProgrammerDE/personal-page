@@ -1,6 +1,6 @@
 # personal-page
 
-This is my new personal page written in nextjs and hosted via vercel.
+This is my new personal page built with Next.js and hosted on Cloudflare Workers.
 
 Deployed to: https://pistonmaster.net/
 
@@ -15,8 +15,16 @@ OpenNext still reads the legacy configuration format. The `cloudflare:config`
 script generates its ignored adapter configuration from `cloudflare.config.ts`.
 The deployment scripts populate the OpenNext cache before uploading the Worker.
 
-Before the first production build, copy the existing public Worker variables
-into the build environment. The `prod` mode rejects missing values so a deploy
-cannot silently remove dashboard variables. Keep secret values in Cloudflare.
+Install dependencies with `bun install --frozen-lockfile`. `bunfig.toml` uses
+hoisted dependency installation.
 
-Run `pnpm run deploy:dry-run` to build and validate without uploading.
+GitHub app authentication is optional. To enable it, supply `GITHUB_APP_ID`,
+`GITHUB_CLIENT_ID`, and `GITHUB_INSTALLATION_ID` in the build environment.
+Store `GITHUB_PRIVATE_KEY` and `GITHUB_CLIENT_SECRET` as Worker secrets.
+Without an app ID, the site uses anonymous GitHub requests.
+Next.js generates `SITEMAP_PAGES` from the routes.
+
+In Workers Builds, leave the build command empty and use `bun run deploy` as
+the production deploy command. Use `bun run upload` for preview uploads.
+
+Run `bun run deploy:dry-run` to build and validate without uploading.
