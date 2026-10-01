@@ -1,15 +1,6 @@
 import { bindings, defineConfig } from "cf/config";
 
-function publicVariable(name: string, mode: string | undefined) {
-  const value = process.env[name];
-  if (mode === "prod" && !value)
-    throw new Error(
-      `${name} is required for a production build. Copy the existing Worker variable into the build environment before migrating.`,
-    );
-  return value ?? "";
-}
-
-export default defineConfig(({ mode }) => ({
+export default defineConfig({
   worker: {
     name: "personal-page",
     compatibilityDate: "2026-04-13",
@@ -23,15 +14,17 @@ export default defineConfig(({ mode }) => ({
       },
     },
     env: {
-      GITHUB_PRIVATE_KEY: bindings.secret(),
-      GITHUB_CLIENT_SECRET: bindings.secret(),
-      SITEMAP_PAGES: bindings.text(publicVariable("SITEMAP_PAGES", mode)),
-      GITHUB_APP_ID: bindings.text(publicVariable("GITHUB_APP_ID", mode)),
-      GITHUB_CLIENT_ID: bindings.text(publicVariable("GITHUB_CLIENT_ID", mode)),
-      GITHUB_INSTALLATION_ID: bindings.text(
-        publicVariable("GITHUB_INSTALLATION_ID", mode),
-      ),
-
+      ...(process.env.GITHUB_APP_ID
+        ? {
+            GITHUB_PRIVATE_KEY: bindings.secret(),
+            GITHUB_CLIENT_SECRET: bindings.secret(),
+            GITHUB_APP_ID: bindings.text(process.env.GITHUB_APP_ID),
+            GITHUB_CLIENT_ID: bindings.text(process.env.GITHUB_CLIENT_ID ?? ""),
+            GITHUB_INSTALLATION_ID: bindings.text(
+              process.env.GITHUB_INSTALLATION_ID ?? "",
+            ),
+          }
+        : {}),
       NEXT_INC_CACHE_R2_BUCKET: bindings.r2({
         name: "personal-page-opennext-cache",
       }),
@@ -42,4 +35,4 @@ export default defineConfig(({ mode }) => ({
       ASSETS: bindings.assets(),
     },
   },
-}));
+});
