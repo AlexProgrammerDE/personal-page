@@ -122,4 +122,9 @@ const nextConfig: NextConfig = {
 
 export default removeImports(nextConfig);
 
-import('@opennextjs/cloudflare').then(m => m.initOpenNextCloudflareForDev());
+import("@opennextjs/cloudflare").then((m) =>
+  m.initOpenNextCloudflareForDev({
+    configPath: ".cloudflare/open-next/wrangler.json",
+    persist: false,
+  }),
+);

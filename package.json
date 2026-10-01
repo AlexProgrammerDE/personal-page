@@ -4,15 +4,18 @@
   "type": "module",
   "scripts": {
     "build": "next build --turbopack",
-    "dev": "next dev --turbopack",
+    "dev": "pnpm run cloudflare:config && next dev --turbopack",
     "start": "next start",
-    "typecheck": "next typegen && tsc --noEmit",
+    "typecheck": "pnpm run cf-typegen && next typegen && tsc --noEmit",
     "fix": "biome check --write --unsafe",
     "check": "biome check",
-    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
-    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
-    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+    "preview": "pnpm run build:worker && opennextjs-cloudflare populateCache local --config .cloudflare/open-next/wrangler.json && wrangler dev --experimental-new-config",
+    "deploy": "CLOUDFLARE_BUILD_MODE=prod pnpm run build:worker && opennextjs-cloudflare populateCache remote --config .cloudflare/open-next/wrangler.json && cf deploy --prebuilt --mode prod",
+    "upload": "CLOUDFLARE_BUILD_MODE=prod pnpm run build:worker && opennextjs-cloudflare populateCache remote --config .cloudflare/open-next/wrangler.json && cf workers versions create --prebuilt --mode prod",
+    "cf-typegen": "cf workers types",
+    "cloudflare:config": "node scripts/open-next-cloudflare-config.mjs",
+    "build:worker": "pnpm run cloudflare:config && opennextjs-cloudflare build --config .cloudflare/open-next/wrangler.json && wrangler build --experimental-new-config --experimental-cf-build-output --env \"${CLOUDFLARE_BUILD_MODE:-development}\"",
+    "deploy:dry-run": "pnpm run build:worker && cf deploy --prebuilt --mode development --dry-run"
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^13.0.0",
@@ -37,12 +40,14 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.11",
+    "@cloudflare/config": "0.22.0",
     "@next/env": "^16.0.0",
     "@tailwindcss/typography": "0.5.19",
     "@types/node": "24.12.2",
     "@types/react": "19.2.14",
-    "typescript": "7.0.2",
-    "wrangler": "^4.82.1"
+    "cf": "1.0.0-beta.7",
+    "typescript": "6.0.3",
+    "wrangler": "4.145.0"
   },
   "packageManager": "pnpm@11.15.0"
 }
