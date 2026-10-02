@@ -7,6 +7,9 @@ export default defineConfig({
     compatibilityFlags: ["nodejs_compat"],
     entrypoint: ".open-next/worker.js",
     observability: {
+      issues: {
+        enabled: true,
+      },
       enabled: true,
       traces: {
         enabled: true,
