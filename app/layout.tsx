@@ -1,6 +1,6 @@
 import "../styles/globals.css";
-import type {Metadata, Viewport} from "next";
-import {Inter} from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import "@uiw/react-md-editor/markdown-editor.css";
