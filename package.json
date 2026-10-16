@@ -40,14 +40,14 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.15",
-    "@cloudflare/config": "0.26.0",
+    "@cloudflare/config": "0.27.0",
     "@next/env": "^16.0.0",
     "@tailwindcss/typography": "0.5.20",
     "@types/node": "24.19.2",
     "@types/react": "19.3.0",
-    "cf": "1.0.0-beta.17",
+    "cf": "1.0.0-beta.18",
     "typescript": "6.0.3",
-    "wrangler": "4.151.0"
+    "wrangler": "4.151.1"
   },
   "packageManager": "bun@1.4.3",
   "engines": {
