@@ -39,17 +39,17 @@
     "tailwindcss": "4.3.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.15",
-    "@cloudflare/config": "0.27.0",
+    "@biomejs/biome": "2.6.2",
+    "@cloudflare/config": "0.28.0",
     "@next/env": "^16.0.0",
     "@tailwindcss/typography": "0.5.20",
     "@types/node": "24.19.2",
     "@types/react": "19.3.0",
     "cf": "1.0.0-beta.20",
     "typescript": "6.0.3",
-    "wrangler": "4.151.3"
+    "wrangler": "4.152.0"
   },
-  "packageManager": "bun@1.4.3",
+  "packageManager": "bun@1.4.4",
   "engines": {
     "node": "24"
   },
