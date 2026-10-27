@@ -24,13 +24,13 @@
     "@opennextjs/cloudflare": "^1.19.1",
     "@tailwindcss/postcss": "^4.1.11",
     "@uiw/react-markdown-preview": "^5.1.5",
-    "@uiw/react-md-editor": "4.1.5",
+    "@uiw/react-md-editor": "4.1.6",
     "clsx": "^2.1.1",
     "lucide-react": "^1.0.0",
     "motion": "^12.3.1",
     "next": "16.4.3",
     "next-remove-imports": "1.0.13",
-    "postcss": "8.5.31",
+    "postcss": "8.5.32",
     "raw-loader": "4.0.2",
     "react": "19.3.1",
     "react-dom": "19.3.1",
@@ -40,14 +40,14 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.6.3",
-    "@cloudflare/config": "0.28.0",
+    "@cloudflare/config": "0.28.1",
     "@next/env": "^16.0.0",
     "@tailwindcss/typography": "0.5.20",
     "@types/node": "24.19.2",
     "@types/react": "19.3.0",
-    "cf": "1.0.0-beta.21",
+    "cf": "1.0.0-beta.23",
     "typescript": "6.0.3",
-    "wrangler": "4.152.0"
+    "wrangler": "4.153.0"
   },
   "packageManager": "bun@1.4.4",
   "engines": {
