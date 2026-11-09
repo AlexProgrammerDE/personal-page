@@ -1,12 +1,10 @@
-"use client";
-
+import { ClientOnly } from "@tanstack/react-router";
 import { CodeIcon, EyeIcon } from "lucide-react";
-import dynamic from "next/dynamic";
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import Markdown from "react-markdown";
 import { cn } from "~/lib/utils";
 
-const MDEditor = dynamic(() => import("@uiw/react-md-editor"), { ssr: false });
+const MDEditor = lazy(() => import("@uiw/react-md-editor"));
 
 const defaultText = `# About Me
 
@@ -78,15 +76,19 @@ export default function AboutMeBlock() {
       <div className="grow flex flex-row">
         <div className="grow p-2 pb-0 md:p-6 md:pb-0 flex flex-col">
           <div className={cn("flex flex-col grow", { hidden: !isEditing })}>
-            <MDEditor
-              className="grow w-full h-full mb-2 md:mb-6"
-              hideToolbar
-              preview="edit"
-              value={text}
-              onChange={(value) => {
-                if (value) setText(value);
-              }}
-            />
+            <ClientOnly>
+              <Suspense fallback={null}>
+                <MDEditor
+                  className="grow w-full h-full mb-2 md:mb-6"
+                  hideToolbar
+                  preview="edit"
+                  value={text}
+                  onChange={(value) => {
+                    if (value) setText(value);
+                  }}
+                />
+              </Suspense>
+            </ClientOnly>
           </div>
           <div
             className={cn(

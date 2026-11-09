@@ -1,21 +1,24 @@
+import "@tanstack/react-start/server-only";
 import { createAppAuth } from "@octokit/auth-app";
 import { Octokit } from "@octokit/core";
 import type { Organization, Repository, UserData } from "./github-types";
 
-const octokit = new Octokit(
-  process.env.GITHUB_APP_ID
-    ? {
-        authStrategy: createAppAuth,
-        auth: {
-          appId: process.env.GITHUB_APP_ID,
-          privateKey: process.env.GITHUB_PRIVATE_KEY?.replace(/\\n/g, "\n"),
-          clientId: process.env.GITHUB_CLIENT_ID,
-          clientSecret: process.env.GITHUB_CLIENT_SECRET,
-          installationId: process.env.GITHUB_INSTALLATION_ID,
-        },
-      }
-    : undefined,
-);
+function getOctokit() {
+  return new Octokit(
+    process.env.GITHUB_APP_ID
+      ? {
+          authStrategy: createAppAuth,
+          auth: {
+            appId: process.env.GITHUB_APP_ID,
+            privateKey: process.env.GITHUB_PRIVATE_KEY?.replace(/\\n/g, "\n"),
+            clientId: process.env.GITHUB_CLIENT_ID,
+            clientSecret: process.env.GITHUB_CLIENT_SECRET,
+            installationId: process.env.GITHUB_INSTALLATION_ID,
+          },
+        }
+      : undefined,
+  );
+}
 
 const repositories = [
   "balena-minecraft-server",
@@ -35,7 +38,7 @@ export async function getUserData(username: string): Promise<UserData> {
   //   followers: 128,
   // };
 
-  const userReply = await octokit.request("GET /users/{username}", {
+  const userReply = await getOctokit().request("GET /users/{username}", {
     username: username,
   });
 
@@ -54,7 +57,7 @@ export async function getRepositories(username: string): Promise<Repository[]> {
   const repoData: Repository[] = [];
 
   for (const repoName of repositories) {
-    const repoReply = await octokit.request("GET /repos/{owner}/{repo}", {
+    const repoReply = await getOctokit().request("GET /repos/{owner}/{repo}", {
       owner: username,
       repo: repoName,
     });
@@ -75,9 +78,12 @@ export async function getRepositories(username: string): Promise<Repository[]> {
 export async function getOrganizations(
   username: string,
 ): Promise<Organization[]> {
-  const organizations = await octokit.request("GET /users/{username}/orgs", {
-    username: username,
-  });
+  const organizations = await getOctokit().request(
+    "GET /users/{username}/orgs",
+    {
+      username: username,
+    },
+  );
 
   return organizations.data.map((org) => {
     return {

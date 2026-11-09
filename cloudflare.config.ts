@@ -1,11 +1,13 @@
 import { bindings, defineConfig } from "cf/config";
+import * as entrypoint from "./src/server.ts" with { type: "cf-worker" };
 
 export default defineConfig({
   worker: {
     name: "personal-page",
     compatibilityDate: "2026-04-13",
     compatibilityFlags: ["nodejs_compat"],
-    entrypoint: ".open-next/worker.js",
+    entrypoint,
+    assets: { htmlHandling: "drop-trailing-slash" },
     observability: {
       issues: {
         enabled: true,
@@ -28,14 +30,6 @@ export default defineConfig({
             ),
           }
         : {}),
-      NEXT_INC_CACHE_R2_BUCKET: bindings.r2({
-        name: "personal-page-opennext-cache",
-      }),
-      WORKER_SELF_REFERENCE: bindings.worker({
-        worker: "personal-page",
-      }),
-      IMAGES: bindings.images({}),
-      ASSETS: bindings.assets(),
     },
   },
 });

@@ -53,3 +53,11 @@ next-env.d.ts
 !.env.example
 
 .cloudflare/
+
+# TanStack Start and Vite
+dist/
+.output/
+.tanstack/
+.cloudflare/
+src/routeTree.gen.ts
+worker-configuration.d.ts

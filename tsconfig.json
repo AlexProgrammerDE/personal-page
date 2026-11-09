@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
+    "target": "ES2022",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -13,22 +13,13 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
     "paths": {
-      "~/*": ["./*"]
-    }
+      "~/*": ["./src/*"]
+    },
+    "types": ["vite/client", "node"],
+    "allowImportingTsExtensions": true,
+    "strictNullChecks": true
   },
-  "include": [
-    "next-env.d.ts",
-    ".next/types/**/*.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/dev/types/**/*.ts",
-    ".cloudflare/types/index.d.ts"
-  ],
-  "exclude": ["node_modules"]
+  "include": ["**/*.ts", "**/*.tsx", ".cloudflare/types/index.d.ts"],
+  "exclude": ["node_modules", "dist", "out", ".output", ".cloudflare/output"]
 }

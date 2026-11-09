@@ -8,8 +8,7 @@ import {
 } from "@icons-pack/react-simple-icons";
 import { ArrowDownIcon } from "lucide-react";
 import * as motion from "motion/react-client";
-import Image from "next/image";
-import { getRepositories, getUserData } from "~/lib/github";
+import type { Repository, UserData } from "~/lib/github-types";
 import { cn } from "~/lib/utils";
 import AboutMeBlock from "../components/AboutMeBlock";
 import RepositoryCard from "../components/RepositoryCard";
@@ -225,11 +224,13 @@ const badges = [
   },
 ];
 
-const user = "AlexProgrammerDE";
-export default async function Index() {
-  const userData = await getUserData(user);
-  const repositories = await getRepositories(user);
-
+export default function Index({
+  userData,
+  repositories,
+}: {
+  userData: UserData;
+  repositories: Repository[];
+}) {
   return (
     <main className="w-full flex-col">
       <header className="header-size w-full flex flex-col justify-center">
@@ -309,18 +310,16 @@ export default async function Index() {
         <div className="container p-6">
           <div className="flex flex-col gap-4 my-auto mx-auto">
             <div className="flex flex-col md:flex-row mx-auto">
-              <Image
+              <img
                 width={300}
                 height={165}
-                unoptimized
                 className="mx-auto md:mr-2"
                 alt="AlexProgrammer GitHub language stats"
                 src="https://github-readme-stats.vercel.app/api/top-langs/?username=alexprogrammerde&layout=compact&theme=dark"
               />
-              <Image
+              <img
                 width={450}
                 height={165}
-                unoptimized
                 className="mx-auto mt-2 md:mt-0 md:ml-2"
                 alt="AlexProgrammer GitHub general stats"
                 src="https://github-readme-stats.vercel.app/api?username=alexprogrammerde&hide_title=true&theme=dark"
@@ -331,7 +330,7 @@ export default async function Index() {
                 className="mr-2"
                 href="https://open.spotify.com/user/songraper"
               >
-                <Image
+                <img
                   width={400}
                   height={330}
                   alt="Spotify Recently Played Songs"
@@ -340,7 +339,7 @@ export default async function Index() {
               </a>
               <div className="h-full rounded-md bg-[#24292E] flex flex-row p-2 mt-4 md:mt-0 md:ml-2">
                 <div className="inline-flex mx-auto rounded-md border-8 border-[#24292E]">
-                  <Image
+                  <img
                     title={userData.bio}
                     src={userData.avatar}
                     width={110}
@@ -404,7 +403,7 @@ export default async function Index() {
                     },
                   }}
                 >
-                  <Image
+                  <img
                     alt="AlexProgrammerDE badge"
                     width={badge.width}
                     height={badge.height}
@@ -469,7 +468,7 @@ export default async function Index() {
                 </a>
               </div>
               <a href="https://discord.gg/B7mW9b3KhS" title="Discord Server">
-                <Image
+                <img
                   width={320}
                   height={76}
                   alt="Discord Server Invite Banner"
