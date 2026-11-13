@@ -28,7 +28,7 @@
     "@uiw/react-md-editor": "4.2.3",
     "clsx": "^2.1.1",
     "lucide-react": "^1.0.0",
-    "motion": "^12.3.1",
+    "motion": "^14.0.0",
     "react": "19.3.1",
     "react-dom": "19.3.1",
     "react-markdown": "^10.1.0",
