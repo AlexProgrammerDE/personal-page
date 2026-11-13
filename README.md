@@ -16,3 +16,9 @@ Run `bun run deploy` to build and deploy. Run `bun run upload` to upload a versi
 Routes live in `src/routes/`. Page components live in `src/pages/`.
 The site retains `/discord`, `/github`, `/robots.txt`, and `/sitemap.xml`.
 The markdown editor loads only in the browser.
+
+## Git hooks
+
+`bun install` installs Lefthook for this checkout and preserves the existing preparation steps.
+Run `bun run pre-commit` to run the commit checks manually.
+The hooks use the existing project tools. Before pushing, they run the relevant project checks for changed files.
