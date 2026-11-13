@@ -42,7 +42,7 @@
     "@biomejs/biome": "2.6.7",
     "@cloudflare/config": "0.32.1",
     "@tailwindcss/typography": "0.5.20",
-    "@types/node": "24.19.2",
+    "@types/node": "26.6.6",
     "@types/react": "19.3.0",
     "cf": "1.0.0-beta.32",
     "typescript": "7.0.2",
@@ -56,7 +56,7 @@
   },
   "packageManager": "bun@1.4.4",
   "engines": {
-    "node": "24"
+    "node": "26"
   },
   "trustedDependencies": [
     "@tailwindcss/oxide",
