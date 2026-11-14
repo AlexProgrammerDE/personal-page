@@ -1,11 +1,13 @@
 import "@tanstack/react-start/server-only";
 import { createAppAuth } from "@octokit/auth-app";
 import { Octokit } from "@octokit/core";
-import type { Organization, Repository, UserData } from "./github-types";
+import { loadGithubProfile } from "./github-profile";
+import type { Organization, UserData } from "./github-types";
 
 function getOctokit() {
-  return new Octokit(
-    process.env.GITHUB_APP_ID
+  return new Octokit({
+    request: { signal: AbortSignal.timeout(4_000) },
+    ...(process.env.GITHUB_APP_ID
       ? {
           authStrategy: createAppAuth,
           auth: {
@@ -16,28 +18,34 @@ function getOctokit() {
             installationId: process.env.GITHUB_INSTALLATION_ID,
           },
         }
-      : undefined,
+      : {}),
+  });
+}
+
+export async function getProfile() {
+  return loadGithubProfile(
+    () => getUserData("AlexProgrammerDE"),
+    async (repository) => {
+      const [owner, repo] = new URL(repository.url).pathname
+        .slice(1)
+        .split("/");
+      const { data } = await getOctokit().request("GET /repos/{owner}/{repo}", {
+        owner,
+        repo,
+      });
+      return {
+        name: data.name,
+        url: data.html_url,
+        description: data.description ?? "",
+        language: data.language ?? "Unknown",
+        stars: data.stargazers_count,
+        forks: data.forks_count,
+      };
+    },
   );
 }
 
-const repositories = [
-  "balena-minecraft-server",
-  "SoulFire",
-  "SoulFireClient",
-  "PistonMOTD",
-  "PistonQueue",
-  "PistonPost-frontend",
-];
-
 export async function getUserData(username: string): Promise<UserData> {
-  // if (true) return {
-  //   avatar: "https://avatars.githubusercontent.com/u/46647189?v=4",
-  //   name: "Alex McFarlane",
-  //   bio: "Software Engineer | Minecraft Enthusiast | Open Source Contributor",
-  //   repoCount: 42,
-  //   followers: 128,
-  // };
-
   const userReply = await getOctokit().request("GET /users/{username}", {
     username: username,
   });
@@ -49,30 +57,6 @@ export async function getUserData(username: string): Promise<UserData> {
     repoCount: Number(userReply.data.public_repos),
     followers: Number(userReply.data.followers),
   };
-}
-
-export async function getRepositories(username: string): Promise<Repository[]> {
-  // if (true) return []
-
-  const repoData: Repository[] = [];
-
-  for (const repoName of repositories) {
-    const repoReply = await getOctokit().request("GET /repos/{owner}/{repo}", {
-      owner: username,
-      repo: repoName,
-    });
-
-    repoData.push({
-      name: repoReply.data.name,
-      url: repoReply.data.html_url,
-      description: repoReply.data.description ?? "",
-      language: repoReply.data.language ?? "Unknown",
-      stars: repoReply.data.stargazers_count,
-      forks: repoReply.data.forks_count,
-    });
-  }
-
-  return repoData;
 }
 
 export async function getOrganizations(
