@@ -39,7 +39,7 @@
     "@fontsource-variable/inter": "^5.2.8"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.6.7",
+    "@biomejs/biome": "2.6.8",
     "@cloudflare/config": "0.32.1",
     "@tailwindcss/typography": "0.5.20",
     "@types/node": "26.6.6",
