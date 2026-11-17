@@ -41,7 +41,7 @@ jobs:
 
       - name: Run check
         run: |
-          bunx biome ci
+          bun run check
 
       - name: Run build
         run: |

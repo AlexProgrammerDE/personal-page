@@ -1,0 +1,56 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": [
+    "typescript",
+    "unicorn",
+    "oxc",
+    "import",
+    "promise",
+    "react",
+    "jsx-a11y"
+  ],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error"
+  },
+  "options": {
+    "typeAware": true,
+    "reportUnusedDisableDirectives": "error"
+  },
+  "env": {
+    "builtin": true,
+    "browser": true
+  },
+  "ignorePatterns": [
+    "src/routeTree.gen.ts",
+    ".cloudflare/**",
+    ".tanstack/**",
+    ".output/**",
+    "dist/**"
+  ],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "import/no-unassigned-import": [
+      "error",
+      {
+        "allow": [
+          "**/*.css",
+          "@fontsource-variable/*",
+          "@tanstack/react-start/server-only"
+        ]
+      }
+    ],
+    "typescript/no-floating-promises": [
+      "error",
+      {
+        "allowForKnownSafeCalls": [
+          {
+            "from": "package",
+            "name": ["test", "describe", "it"],
+            "package": "node:test"
+          }
+        ]
+      }
+    ]
+  }
+}

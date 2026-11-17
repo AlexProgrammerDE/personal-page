@@ -2,9 +2,13 @@ lefthook: bunx --no-install lefthook
 min_version: 2.2.2
 
 pre-commit:
-  commands:
-    biome:
-      run: bunx --no-install biome check --write --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}
+  jobs:
+    - name: oxlint
+      glob: "*.{js,jsx,mjs,cjs,ts,tsx,mts,cts}"
+      run: bunx --no-install oxlint --fix --deny-warnings --no-error-on-unmatched-pattern {staged_files}
+      stage_fixed: true
+    - name: oxfmt
+      run: bunx --no-install oxfmt --no-error-on-unmatched-pattern {staged_files}
       stage_fixed: true
 
 pre-push:

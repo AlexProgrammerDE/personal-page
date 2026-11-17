@@ -8,8 +8,10 @@ import {
 } from "@icons-pack/react-simple-icons";
 import { ArrowDownIcon } from "lucide-react";
 import * as motion from "motion/react-client";
+
 import type { Repository, UserData } from "~/lib/github-types";
 import { cn } from "~/lib/utils";
+
 import AboutMeBlock from "../components/AboutMeBlock";
 import RepositoryCard from "../components/RepositoryCard";
 
@@ -233,34 +235,33 @@ export default function Index({
 }) {
   return (
     <main className="w-full flex-col">
-      <header className="header-size w-full flex flex-col justify-center">
-        <div className="grow flex justify-center text-center">
-          <div className="flex flex-col justify-center z-20">
-            <h1 className="text-2xl md:text-5xl font-extrabold mb-4">
+      <header className="header-size flex w-full flex-col justify-center">
+        <div className="flex grow justify-center text-center">
+          <div className="z-20 flex flex-col justify-center">
+            <h1 className="mb-4 text-2xl font-extrabold md:text-5xl">
               Hi 👋, I&apos;m Alex
             </h1>
-            <p className="text-lg md:text-xl font-extrabold mb-4">
+            <p className="mb-4 text-lg font-extrabold md:text-xl">
               Freelance Student and Open-Source Developer
             </p>
           </div>
         </div>
-        <div className="flex flex-row justify-center mb-4">
+        <div className="mb-4 flex flex-row justify-center">
           <a
             href="#projects"
-            className="z-20 rounded-full animate-bounce bg-brighter h-12 w-12 flex flex-col justify-center"
+            className="z-20 flex h-12 w-12 animate-bounce flex-col justify-center rounded-full bg-brighter"
           >
             <div className="flex flex-row justify-center">
               <ArrowDownIcon className="h-8 w-8" />
             </div>
           </a>
         </div>
-        <div className="w-screen max-w-full absolute z-10 header-size bg-section landing-diagonal md:landing-diagonal-md" />
+        <div className="header-size absolute z-10 w-screen max-w-full bg-section landing-diagonal md:landing-diagonal-md" />
       </header>
-      {/* biome-ignore lint/correctness/useUniqueElementIds: static IDs for navigation */}
-      <section id="projects" className="w-full min-h-screen bg-section">
-        <div className="container h-full p-2 pt-4 z-20 flex flex-col">
-          <h2 className="text-2xl md:text-5xl font-bold mt-4">Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-6 md:mt-20 mb-4 md:mb-14">
+      <section id="projects" className="min-h-screen w-full bg-section">
+        <div className="z-20 container flex h-full flex-col p-2 pt-4">
+          <h2 className="mt-4 text-2xl font-bold md:text-5xl">Projects</h2>
+          <div className="mt-6 mb-4 grid grid-cols-1 gap-4 md:mt-20 md:mb-14 md:grid-cols-2 md:gap-8">
             {repositories.map((repo, index) => (
               <div
                 key={repo.url}
@@ -272,7 +273,7 @@ export default function Index({
               </div>
             ))}
           </div>
-          <div className="grow flex flex-row justify-center mb-2">
+          <div className="mb-2 flex grow flex-row justify-center">
             <motion.a
               whileHover={{
                 scale: 1.05,
@@ -288,28 +289,26 @@ export default function Index({
               }}
               transition={{ type: "spring", stiffness: 300, damping: 10 }}
               href="https://github.com/AlexProgrammerDE?tab=repositories"
-              className="px-4 py-1.5 font-bold shadow-md bg-section-dark hover:bg-section-darkest rounded-md text-2xl"
+              className="hover:bg-section-darkest rounded-md bg-section-dark px-4 py-1.5 text-2xl font-bold shadow-md"
             >
               And more!
             </motion.a>
           </div>
         </div>
       </section>
-      {/* biome-ignore lint/correctness/useUniqueElementIds: static IDs for navigation */}
       <section
         id="about-me"
-        className="w-full min-h-screen bg-content flex flex-col"
+        className="flex min-h-screen w-full flex-col bg-content"
       >
-        <div className="h-screen w-screen max-w-full absolute z-10 bg-section section2-diagonal" />
-        <div className="container min-h-screen p-2 pb-8 flex flex-col z-20 mt-24">
+        <div className="section2-diagonal absolute z-10 h-screen w-screen max-w-full bg-section" />
+        <div className="z-20 container mt-24 flex min-h-screen flex-col p-2 pb-8">
           <AboutMeBlock />
         </div>
       </section>
-      {/* biome-ignore lint/correctness/useUniqueElementIds: static IDs for navigation */}
-      <section id="stats" className="w-full min-h-screen bg-section shadow-2xl">
+      <section id="stats" className="min-h-screen w-full bg-section shadow-2xl">
         <div className="container p-6">
-          <div className="flex flex-col gap-4 my-auto mx-auto">
-            <div className="flex flex-col md:flex-row mx-auto">
+          <div className="mx-auto my-auto flex flex-col gap-4">
+            <div className="mx-auto flex flex-col md:flex-row">
               <img
                 width={300}
                 height={165}
@@ -325,7 +324,7 @@ export default function Index({
                 src="https://github-readme-stats.vercel.app/api?username=alexprogrammerde&hide_title=true&theme=dark"
               />
             </div>
-            <div className="flex flex-col md:flex-row mx-auto">
+            <div className="mx-auto flex flex-col md:flex-row">
               <a
                 className="mr-2"
                 href="https://open.spotify.com/user/songraper"
@@ -337,8 +336,8 @@ export default function Index({
                   src="https://spotify-recently-played-readme.vercel.app/api?user=songraper"
                 />
               </a>
-              <div className="h-full rounded-md bg-[#24292E] flex flex-row p-2 mt-4 md:mt-0 md:ml-2">
-                <div className="inline-flex mx-auto rounded-md border-8 border-[#24292E]">
+              <div className="mt-4 flex h-full flex-row rounded-md bg-[#24292E] p-2 md:mt-0 md:ml-2">
+                <div className="mx-auto inline-flex rounded-md border-8 border-[#24292E]">
                   <img
                     title={userData.bio}
                     src={userData.avatar}
@@ -348,7 +347,7 @@ export default function Index({
                     className="rounded-md"
                   />
                 </div>
-                <div className="flex flex-col my-auto md:ml-2 mr-2">
+                <div className="my-auto mr-2 flex flex-col md:ml-2">
                   <div className="inline-flex flex-row">
                     <h4 className="text-lg font-bold">
                       {userData.followers} Followers
@@ -362,8 +361,8 @@ export default function Index({
                 </div>
               </div>
             </div>
-            <h3 className="text-3xl font-bold mx-auto mt-4">Me in badges</h3>
-            <div className="flex flex-wrap justify-center items-center gap-y-4 gap-x-1">
+            <h3 className="mx-auto mt-4 text-3xl font-bold">Me in badges</h3>
+            <div className="flex flex-wrap items-center justify-center gap-x-1 gap-y-4">
               {badges.map((badge, index) => (
                 <motion.div
                   key={badge.badge}
@@ -415,27 +414,26 @@ export default function Index({
           </div>
         </div>
       </section>
-      {/* biome-ignore lint/correctness/useUniqueElementIds: static IDs for navigation */}
-      <section id="contact" className="w-full footer-size md:footer-size-md">
-        <div className="container footer-size md:footer-size-md flex flex-col justify-center">
-          <div className="flex flex-col md:flex-row justify-center">
-            <div className="flex flex-col mx-4 mb-3 md:mb-0">
-              <p className="font-bold text-3xl mb-2">Like my work?</p>
+      <section id="contact" className="footer-size w-full md:footer-size-md">
+        <div className="footer-size container flex flex-col justify-center md:footer-size-md">
+          <div className="flex flex-col justify-center md:flex-row">
+            <div className="mx-4 mb-3 flex flex-col md:mb-0">
+              <p className="mb-2 text-3xl font-bold">Like my work?</p>
               <div className="flex flex-row md:justify-center">
                 <a
                   href="https://github.com/AlexProgrammerDE"
-                  className="bg-[#24292E] font-bold rounded-md px-4 py-2.5 flex flex-row shadow-lg"
+                  className="flex flex-row rounded-md bg-[#24292E] px-4 py-2.5 font-bold shadow-lg"
                 >
-                  <p className="flex flex-col justify-center mr-2">
+                  <p className="mr-2 flex flex-col justify-center">
                     Follow me on
                   </p>
                   <SiGithub className="h-8 w-fit fill-current" />
                 </a>
               </div>
             </div>
-            <div className="mx-4 md:mx-0 w-[90vw] md:w-0.5 border" />
-            <div className="mt-3 md:mt-0 mx-4 flex flex-col">
-              <div className="flex gap-2 flex-wrap mb-2">
+            <div className="mx-4 w-[90vw] border md:mx-0 md:w-0.5" />
+            <div className="mx-4 mt-3 flex flex-col md:mt-0">
+              <div className="mb-2 flex flex-wrap gap-2">
                 <a
                   title="Bluesky"
                   href="https://bsky.app/profile/pistondev.bsky.social"
