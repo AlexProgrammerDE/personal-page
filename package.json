@@ -46,7 +46,6 @@
     "@types/react": "19.3.0",
     "cf": "1.0.0-rc.0",
     "typescript": "7.0.2",
-    "wrangler": "4.163.0",
     "@tanstack/router-generator": "^1.168.0",
     "@tailwindcss/vite": "4.3.5",
     "@vitejs/plugin-react": "^6.2.1",
