@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer className="w-full mx-auto mb-4 container flex flex-col md:flex-row justify-center h-12 md:h-6">
-      <p className="mx-auto md:mx-0.5 flex flex-row justify-center">
+    <footer className="container mx-auto mb-4 flex h-12 w-full flex-col justify-center md:h-6 md:flex-row">
+      <p className="mx-auto flex flex-row justify-center md:mx-0.5">
         Powered by ❤️ and{" "}
         <a
           className="ml-1 text-fuchsia-400"
@@ -11,7 +11,7 @@ export default function Footer() {
         </a>
         !
       </p>
-      <p className="mx-auto md:mx-0.5 flex flex-row">Made in 🇩🇪</p>
+      <p className="mx-auto flex flex-row md:mx-0.5">Made in 🇩🇪</p>
     </footer>
   );
 }

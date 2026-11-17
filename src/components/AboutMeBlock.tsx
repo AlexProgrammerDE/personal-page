@@ -2,6 +2,7 @@ import { ClientOnly } from "@tanstack/react-router";
 import { CodeIcon, EyeIcon } from "lucide-react";
 import { lazy, Suspense, useState } from "react";
 import Markdown from "react-markdown";
+
 import { cn } from "~/lib/utils";
 
 const MDEditor = lazy(() => import("@uiw/react-md-editor"));
@@ -48,38 +49,38 @@ export default function AboutMeBlock() {
   const [isEditing, setIsEditing] = useState<boolean>(false);
 
   return (
-    <div className="grow rounded-2xl bg-gray-900 border border-gray-700 h-full w-full flex flex-col">
-      <div className="h-20 bg-gray-800 rounded-t-2xl flex flex-row">
+    <div className="flex h-full w-full grow flex-col rounded-2xl border border-gray-700 bg-gray-900">
+      <div className="flex h-20 flex-row rounded-t-2xl bg-gray-800">
         <button
           type="button"
           className={cn(
-            "flex flex-row justify-center w-32 md:w-40 text-lg md:text-xl font-bold p-2 rounded-tl-2xl",
+            "flex w-32 flex-row justify-center rounded-tl-2xl p-2 text-lg font-bold md:w-40 md:text-xl",
             { "bg-gray-900": !isEditing },
           )}
           onMouseDown={() => setIsEditing(false)}
         >
-          <EyeIcon className="h-4 md:h-6 w-4 md:w-6 my-auto mr-2" />
+          <EyeIcon className="my-auto mr-2 h-4 w-4 md:h-6 md:w-6" />
           <p className="my-auto">Preview</p>
         </button>
         <button
           type="button"
           className={cn(
-            "flex flex-row justify-center w-32 md:w-40 text-lg md:text-xl rounded-tr-none font-bold p-2",
+            "flex w-32 flex-row justify-center rounded-tr-none p-2 text-lg font-bold md:w-40 md:text-xl",
             { "bg-gray-900": isEditing },
           )}
           onMouseDown={() => setIsEditing(true)}
         >
-          <CodeIcon className="h-4 md:h-6 w-4 md:w-6 my-auto mr-2" />
+          <CodeIcon className="my-auto mr-2 h-4 w-4 md:h-6 md:w-6" />
           <p className="my-auto">Edit File</p>
         </button>
       </div>
-      <div className="grow flex flex-row">
-        <div className="grow p-2 pb-0 md:p-6 md:pb-0 flex flex-col">
-          <div className={cn("flex flex-col grow", { hidden: !isEditing })}>
+      <div className="flex grow flex-row">
+        <div className="flex grow flex-col p-2 pb-0 md:p-6 md:pb-0">
+          <div className={cn("flex grow flex-col", { hidden: !isEditing })}>
             <ClientOnly>
               <Suspense fallback={null}>
                 <MDEditor
-                  className="grow w-full h-full mb-2 md:mb-6"
+                  className="mb-2 h-full w-full grow md:mb-6"
                   hideToolbar
                   preview="edit"
                   value={text}
@@ -92,7 +93,7 @@ export default function AboutMeBlock() {
           </div>
           <div
             className={cn(
-              "grow overflow-x-auto mb-2 md:mb-6 prose prose-invert",
+              "prose mb-2 grow overflow-x-auto prose-invert md:mb-6",
               {
                 hidden: isEditing,
               },

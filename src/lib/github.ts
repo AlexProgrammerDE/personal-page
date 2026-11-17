@@ -1,6 +1,7 @@
 import "@tanstack/react-start/server-only";
 import { createAppAuth } from "@octokit/auth-app";
 import { Octokit } from "@octokit/core";
+
 import { loadGithubProfile } from "./github-profile";
 import type { Organization, UserData } from "./github-types";
 
@@ -51,11 +52,11 @@ export async function getUserData(username: string): Promise<UserData> {
   });
 
   return {
-    avatar: String(userReply.data.avatar_url),
+    avatar: userReply.data.avatar_url,
     name: String(userReply.data.name),
     bio: String(userReply.data.bio),
-    repoCount: Number(userReply.data.public_repos),
-    followers: Number(userReply.data.followers),
+    repoCount: userReply.data.public_repos,
+    followers: userReply.data.followers,
   };
 }
 

@@ -1,5 +1,6 @@
 import { ArchiveIcon, CodeIcon, GitForkIcon, StarIcon } from "lucide-react";
 import * as motion from "motion/react-client";
+
 import type { Repository } from "~/lib/github-types";
 
 function getColorForLanguage(language: string) {
@@ -58,29 +59,29 @@ export default function RepositoryCard({ repo }: { repo: Repository }) {
           },
         },
       }}
-      className="flex flex-col justify-center cursor-pointer"
+      className="flex cursor-pointer flex-col justify-center"
     >
-      <div className="h-40 rounded-xl bg-section-dark shadow-lg flex flex-col">
+      <div className="flex h-40 flex-col rounded-xl bg-section-dark shadow-lg">
         <a href={repo.url}>
-          <div className="flex flex-row px-3 py-1 rounded-xl bg-section-darkest">
-            <ArchiveIcon className="h-6 w-6 mr-2 my-auto" />
-            <h4 className="text-lg md:text-2xl font-bold">{repo.name}</h4>
+          <div className="bg-section-darkest flex flex-row rounded-xl px-3 py-1">
+            <ArchiveIcon className="my-auto mr-2 h-6 w-6" />
+            <h4 className="text-lg font-bold md:text-2xl">{repo.name}</h4>
           </div>
         </a>
-        <div className="grow p-4 text-sm md:text-xl flex flex-col">
+        <div className="flex grow flex-col p-4 text-sm md:text-xl">
           <p>{repo.description}</p>
-          <div className="grow flex flex-col justify-end">
-            <div className="flex flex-row mt-2">
-              <div className="flex flex-row mr-2">
-                <StarIcon className="h-6 w-6 my-auto mr-1 text-yellow-300" />
+          <div className="flex grow flex-col justify-end">
+            <div className="mt-2 flex flex-row">
+              <div className="mr-2 flex flex-row">
+                <StarIcon className="my-auto mr-1 h-6 w-6 text-yellow-300" />
                 <p className="my-auto font-bold">{repo.stars}</p>
               </div>
-              <div className="flex flex-row mr-2">
-                <GitForkIcon className="h-6 w-7 my-auto" />
+              <div className="mr-2 flex flex-row">
+                <GitForkIcon className="my-auto h-6 w-7" />
                 <p className="my-auto font-bold">{repo.forks}</p>
               </div>
-              <div className="flex flex-row mr-2">
-                <CodeIcon className="h-6 w-6 my-auto mr-1" />
+              <div className="mr-2 flex flex-row">
+                <CodeIcon className="my-auto mr-1 h-6 w-6" />
                 <p
                   className="my-auto font-bold"
                   style={{ color: getColorForLanguage(repo.language) }}

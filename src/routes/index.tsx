@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { createServerFn } from "@tanstack/react-start";
+
 import { getProfile } from "~/lib/github";
 import Home from "~/pages/home";
 

@@ -8,9 +8,11 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+
 import Footer from "~/components/Footer";
 import NavBar from "~/components/NavBar";
 import NotFound from "~/pages/not-found";
+
 import appCss from "~/styles/globals.css?url";
 
 export const Route = createRootRoute({
@@ -62,7 +64,7 @@ function RootDocument({ children }: { children: ReactNode }) {
         />
       </head>
       <body>
-        <div className="min-h-screen min-w-screen flex flex-col z-50 bg-background text-text scroller font-sans">
+        <div className="scroller z-50 flex min-h-screen min-w-screen flex-col bg-background font-sans text-text">
           <NavBar />
           {children}
           <Footer />

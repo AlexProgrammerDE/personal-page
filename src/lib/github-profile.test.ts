@@ -1,12 +1,14 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
+
 import { loadGithubProfile } from "./github-profile";
 import snapshot from "./github-profile.json" with { type: "json" };
 
+const unavailable = async () => {
+  throw new Error("GitHub is unavailable");
+};
+
 test("keeps the verified profile and projects when GitHub is unavailable", async () => {
-  const unavailable = async () => {
-    throw new Error("GitHub is unavailable");
-  };
   assert.deepEqual(await loadGithubProfile(unavailable, unavailable), snapshot);
 });
 

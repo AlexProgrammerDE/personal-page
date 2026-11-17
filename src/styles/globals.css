@@ -49,7 +49,7 @@
 
 @layer utilities {
   html {
-    @apply bg-background scroll-smooth;
+    @apply scroll-smooth bg-background;
     overflow-y: scroll;
     /*noinspection CssUnknownProperty*/
     scrollbar-color: #119f6f #222433;
@@ -76,7 +76,7 @@
   }
 
   .container {
-    @apply max-w-(--breakpoint-xl) mx-auto;
+    @apply mx-auto max-w-(--breakpoint-xl);
   }
 
   .diagonal-shadow {
@@ -90,7 +90,7 @@
   }
 
   a {
-    @apply no-underline text-inherit;
+    @apply text-inherit no-underline;
   }
 
   .header-size {
