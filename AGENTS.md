@@ -33,3 +33,11 @@
 
 - Use `cf` for direct Cloudflare CLI commands. Prefer existing package scripts for project workflows.
 - For new Cloudflare configuration, prefer `cloudflare.config.ts`. Preserve existing configuration formats during unrelated work.
+
+## Effect
+
+- Server-side side effects use Effect v4 (`effect`). Keep React components plain.
+- `src/lib/github-profile.ts` defines the `GithubClient` service, the tagged errors (`Data.TaggedError`), and the `loadGithubProfile` program. Each lookup falls back to the snapshot in `github-profile.json`.
+- `src/lib/github.ts` is server-only. Its `githubClientLayer` reads the GitHub App settings with `Config`, calls Octokit with a 4 second timeout, and checks responses with `Schema`.
+- Run programs only at the edge. The `/` route's server function provides the layer and calls `Effect.runPromise`. Tests provide a fake `GithubClient` with `Effect.provideService`.
+- Oxlint runs the `effecttsgo` rules. `bun install` patches Oxlint through the `prepare` script.

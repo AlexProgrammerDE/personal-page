@@ -1,9 +1,3 @@
-export interface Organization {
-  login: string;
-  avatar: string;
-  description: string;
-}
-
 export interface Repository {
   name: string;
   url: string;

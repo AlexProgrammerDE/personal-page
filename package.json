@@ -20,7 +20,7 @@
     "deploy:dry-run": "bun run deploy --dry-run",
     "generate:routes": "bun scripts/generate-routes.ts",
     "postinstall": "bun run generate:routes",
-    "prepare": "lefthook install",
+    "prepare": "lefthook install && effect-tsgo patch --no-typescript --oxlint",
     "pre-commit": "lefthook run pre-commit"
   },
   "dependencies": {
@@ -33,6 +33,7 @@
     "@uiw/react-markdown-preview": "^5.1.5",
     "@uiw/react-md-editor": "4.2.4",
     "clsx": "^2.1.1",
+    "effect": "4.1.4",
     "lucide-react": "^1.0.0",
     "motion": "^14.0.0",
     "react": "19.3.1",
@@ -44,6 +45,7 @@
   "devDependencies": {
     "@cloudflare/config": "0.32.1",
     "@cloudflare/vite-plugin": "2.0.0-rc.1",
+    "@effect/tsgo": "0.70.0",
     "@tailwindcss/typography": "0.5.20",
     "@tailwindcss/vite": "4.3.5",
     "@tanstack/router-generator": "^1.168.0",

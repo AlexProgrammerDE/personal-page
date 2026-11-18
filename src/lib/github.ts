@@ -1,80 +1,140 @@
 import "@tanstack/react-start/server-only";
 import { createAppAuth } from "@octokit/auth-app";
 import { Octokit } from "@octokit/core";
+import { Config, Effect, Layer, Option, Redacted, Schema } from "effect";
 
-import { loadGithubProfile } from "./github-profile";
-import type { Organization, UserData } from "./github-types";
+import {
+  GithubClient,
+  GithubConfigError,
+  GithubRequestError,
+  GithubResponseError,
+} from "./github-profile";
 
-function getOctokit() {
-  return new Octokit({
-    request: { signal: AbortSignal.timeout(4_000) },
-    ...(process.env.GITHUB_APP_ID
-      ? {
-          authStrategy: createAppAuth,
-          auth: {
-            appId: process.env.GITHUB_APP_ID,
-            privateKey: process.env.GITHUB_PRIVATE_KEY?.replaceAll("\\n", "\n"),
-            clientId: process.env.GITHUB_CLIENT_ID,
-            clientSecret: process.env.GITHUB_CLIENT_SECRET,
-            installationId: process.env.GITHUB_INSTALLATION_ID,
-          },
-        }
-      : {}),
+const optional = (name: string) => Config.option(Config.String(name));
+const optionalSecret = (name: string) => Config.option(Config.Redacted(name));
+
+const githubAppConfig = Config.all({
+  appId: optional("GITHUB_APP_ID"),
+  privateKey: optionalSecret("GITHUB_PRIVATE_KEY"),
+  clientId: optional("GITHUB_CLIENT_ID"),
+  clientSecret: optionalSecret("GITHUB_CLIENT_SECRET"),
+  installationId: optional("GITHUB_INSTALLATION_ID"),
+});
+
+const GithubUser = Schema.Struct({
+  login: Schema.String,
+  avatar_url: Schema.String,
+  name: Schema.NullOr(Schema.String),
+  bio: Schema.NullOr(Schema.String),
+  public_repos: Schema.Int,
+  followers: Schema.Int,
+});
+
+const GithubRepository = Schema.Struct({
+  name: Schema.String,
+  html_url: Schema.String,
+  description: Schema.NullOr(Schema.String),
+  language: Schema.NullOr(Schema.String),
+  stargazers_count: Schema.Int,
+  forks_count: Schema.Int,
+});
+
+const makeOctokit = Effect.fn("GithubClient.makeOctokit")(function* () {
+  const config = yield* githubAppConfig;
+  return yield* Effect.try({
+    try: () =>
+      new Octokit(
+        Option.match(config.appId, {
+          onNone: () => ({}),
+          onSome: (appId) => ({
+            authStrategy: createAppAuth,
+            auth: {
+              appId,
+              privateKey: Option.getOrUndefined(
+                Option.map(config.privateKey, (key) =>
+                  Redacted.value(key).replaceAll("\\n", "\n"),
+                ),
+              ),
+              clientId: Option.getOrUndefined(config.clientId),
+              clientSecret: Option.getOrUndefined(
+                Option.map(config.clientSecret, Redacted.value),
+              ),
+              installationId: Option.getOrUndefined(config.installationId),
+            },
+          }),
+        }),
+      ),
+    catch: (cause) => new GithubConfigError({ cause }),
   });
-}
+});
 
-export async function getProfile() {
-  return loadGithubProfile(
-    () => getUserData("AlexProgrammerDE"),
-    async (repository) => {
-      const [owner, repo] = new URL(repository.url).pathname
-        .slice(1)
-        .split("/");
-      const { data } = await getOctokit().request("GET /repos/{owner}/{repo}", {
-        owner,
-        repo,
-      });
-      return {
-        name: data.name,
-        url: data.html_url,
-        description: data.description ?? "",
-        language: data.language ?? "Unknown",
-        stars: data.stargazers_count,
-        forks: data.forks_count,
-      };
-    },
-  );
-}
+// Build the client on first use. A config failure fails each lookup,
+// so each lookup falls back to the snapshot.
+export const githubClientLayer = Layer.effect(
+  GithubClient,
+  Effect.gen(function* () {
+    const octokit = yield* Effect.cached(
+      makeOctokit().pipe(
+        Effect.catchTag("ConfigError", (cause) =>
+          Effect.fail(new GithubConfigError({ cause })),
+        ),
+      ),
+    );
 
-export async function getUserData(username: string): Promise<UserData> {
-  const userReply = await getOctokit().request("GET /users/{username}", {
-    username: username,
-  });
+    const get = <A>(
+      route: string,
+      params: Record<string, string>,
+      schema: Schema.Decoder<A>,
+    ) =>
+      octokit.pipe(
+        Effect.flatMap((client) =>
+          Effect.tryPromise({
+            try: (signal) =>
+              client.request(route, { ...params, request: { signal } }),
+            catch: (cause) => new GithubRequestError({ route, cause }),
+          }).pipe(
+            // Abort the request, including any token request, after 4 seconds.
+            Effect.timeout("4 seconds"),
+            Effect.catchTag("TimeoutError", (cause) =>
+              Effect.fail(new GithubRequestError({ route, cause })),
+            ),
+          ),
+        ),
+        Effect.flatMap(({ data }) =>
+          Schema.decodeUnknownEffect(schema)(data).pipe(
+            Effect.mapError(
+              (cause) => new GithubResponseError({ route, cause }),
+            ),
+          ),
+        ),
+      );
 
-  return {
-    avatar: userReply.data.avatar_url,
-    name: String(userReply.data.name),
-    bio: String(userReply.data.bio),
-    repoCount: userReply.data.public_repos,
-    followers: userReply.data.followers,
-  };
-}
-
-export async function getOrganizations(
-  username: string,
-): Promise<Organization[]> {
-  const organizations = await getOctokit().request(
-    "GET /users/{username}/orgs",
-    {
-      username: username,
-    },
-  );
-
-  return organizations.data.map((org) => {
     return {
-      login: org.login ?? "",
-      avatar: org.avatar_url ?? "",
-      description: org.description ?? "",
+      getUser: (username) =>
+        get("GET /users/{username}", { username }, GithubUser).pipe(
+          Effect.map((user) => ({
+            avatar: user.avatar_url,
+            name: user.name ?? user.login,
+            bio: user.bio ?? "",
+            repoCount: user.public_repos,
+            followers: user.followers,
+          })),
+        ),
+      getRepository: (owner, repo) =>
+        get(
+          "GET /repos/{owner}/{repo}",
+          { owner, repo },
+          GithubRepository,
+        ).pipe(
+          Effect.map((data) => ({
+            name: data.name,
+            url: data.html_url,
+            description: data.description ?? "",
+            language: data.language ?? "Unknown",
+            stars: data.stargazers_count,
+            forks: data.forks_count,
+          })),
+        ),
     };
-  });
-}
+  }),
+);
