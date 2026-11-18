@@ -49,7 +49,7 @@ export default function AboutMeBlock() {
   const [isEditing, setIsEditing] = useState<boolean>(false);
 
   return (
-    <div className="flex h-full w-full grow flex-col rounded-2xl border border-gray-700 bg-gray-900">
+    <div className="flex size-full grow flex-col rounded-2xl border border-gray-700 bg-gray-900">
       <div className="flex h-20 flex-row rounded-t-2xl bg-gray-800">
         <button
           type="button"
@@ -59,7 +59,7 @@ export default function AboutMeBlock() {
           )}
           onMouseDown={() => setIsEditing(false)}
         >
-          <EyeIcon className="my-auto mr-2 h-4 w-4 md:h-6 md:w-6" />
+          <EyeIcon className="my-auto mr-2 size-4 md:size-6" />
           <p className="my-auto">Preview</p>
         </button>
         <button
@@ -70,7 +70,7 @@ export default function AboutMeBlock() {
           )}
           onMouseDown={() => setIsEditing(true)}
         >
-          <CodeIcon className="my-auto mr-2 h-4 w-4 md:h-6 md:w-6" />
+          <CodeIcon className="my-auto mr-2 size-4 md:size-6" />
           <p className="my-auto">Edit File</p>
         </button>
       </div>
@@ -80,7 +80,7 @@ export default function AboutMeBlock() {
             <ClientOnly>
               <Suspense fallback={null}>
                 <MDEditor
-                  className="mb-2 h-full w-full grow md:mb-6"
+                  className="mb-2 size-full grow md:mb-6"
                   hideToolbar
                   preview="edit"
                   value={text}

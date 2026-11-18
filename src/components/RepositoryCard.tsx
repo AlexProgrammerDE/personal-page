@@ -63,8 +63,8 @@ export default function RepositoryCard({ repo }: { repo: Repository }) {
     >
       <div className="flex h-40 flex-col rounded-xl bg-section-dark shadow-lg">
         <a href={repo.url}>
-          <div className="bg-section-darkest flex flex-row rounded-xl px-3 py-1">
-            <ArchiveIcon className="my-auto mr-2 h-6 w-6" />
+          <div className="flex flex-row rounded-xl bg-section-darkest px-3 py-1">
+            <ArchiveIcon className="my-auto mr-2 size-6" />
             <h4 className="text-lg font-bold md:text-2xl">{repo.name}</h4>
           </div>
         </a>
@@ -73,7 +73,7 @@ export default function RepositoryCard({ repo }: { repo: Repository }) {
           <div className="flex grow flex-col justify-end">
             <div className="mt-2 flex flex-row">
               <div className="mr-2 flex flex-row">
-                <StarIcon className="my-auto mr-1 h-6 w-6 text-yellow-300" />
+                <StarIcon className="my-auto mr-1 size-6 text-yellow-300" />
                 <p className="my-auto font-bold">{repo.stars}</p>
               </div>
               <div className="mr-2 flex flex-row">
@@ -81,7 +81,7 @@ export default function RepositoryCard({ repo }: { repo: Repository }) {
                 <p className="my-auto font-bold">{repo.forks}</p>
               </div>
               <div className="mr-2 flex flex-row">
-                <CodeIcon className="my-auto mr-1 h-6 w-6" />
+                <CodeIcon className="my-auto mr-1 size-6" />
                 <p
                   className="my-auto font-bold"
                   style={{ color: getColorForLanguage(repo.language) }}

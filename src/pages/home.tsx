@@ -249,10 +249,10 @@ export default function Index({
         <div className="mb-4 flex flex-row justify-center">
           <a
             href="#projects"
-            className="z-20 flex h-12 w-12 animate-bounce flex-col justify-center rounded-full bg-brighter"
+            className="z-20 flex size-12 animate-bounce flex-col justify-center rounded-full bg-brighter"
           >
             <div className="flex flex-row justify-center">
-              <ArrowDownIcon className="h-8 w-8" />
+              <ArrowDownIcon className="size-8" />
             </div>
           </a>
         </div>
@@ -289,7 +289,7 @@ export default function Index({
               }}
               transition={{ type: "spring", stiffness: 300, damping: 10 }}
               href="https://github.com/AlexProgrammerDE?tab=repositories"
-              className="hover:bg-section-darkest rounded-md bg-section-dark px-4 py-1.5 text-2xl font-bold shadow-md"
+              className="rounded-md bg-section-dark px-4 py-1.5 text-2xl font-bold shadow-md hover:bg-section-darkest"
             >
               And more!
             </motion.a>
@@ -307,7 +307,7 @@ export default function Index({
       </section>
       <section id="stats" className="min-h-screen w-full bg-section shadow-2xl">
         <div className="container p-6">
-          <div className="mx-auto my-auto flex flex-col gap-4">
+          <div className="m-auto flex flex-col gap-4">
             <div className="mx-auto flex flex-col md:flex-row">
               <img
                 width={300}

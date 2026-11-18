@@ -1,16 +1,9 @@
 import "@fontsource-variable/inter";
 import "@uiw/react-md-editor/markdown-editor.css";
 import "@uiw/react-markdown-preview/markdown.css";
-import {
-  createRootRoute,
-  HeadContent,
-  Outlet,
-  Scripts,
-} from "@tanstack/react-router";
-import type { ReactNode } from "react";
+import { createRootRoute, Outlet } from "@tanstack/react-router";
 
-import Footer from "~/components/Footer";
-import NavBar from "~/components/NavBar";
+import RootDocument from "~/components/RootDocument";
 import NotFound from "~/pages/not-found";
 
 import appCss from "~/styles/globals.css?url";
@@ -51,26 +44,3 @@ export const Route = createRootRoute({
   shellComponent: RootDocument,
   notFoundComponent: NotFound,
 });
-
-function RootDocument({ children }: { children: ReactNode }) {
-  return (
-    <html lang="en" dir="ltr" suppressHydrationWarning>
-      <head>
-        <HeadContent />
-        <script
-          src="https://analytics.ahrefs.com/analytics.js"
-          data-key="Li9Zohcg8tS+MWVE76W/4Q"
-          async
-        />
-      </head>
-      <body>
-        <div className="scroller z-50 flex min-h-screen min-w-screen flex-col bg-background font-sans text-text">
-          <NavBar />
-          {children}
-          <Footer />
-        </div>
-        <Scripts />
-      </body>
-    </html>
-  );
-}
