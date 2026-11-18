@@ -19,14 +19,16 @@ export default defineConfig({
         headSamplingRate: 0.05,
       },
     },
-    env: process.env.GITHUB_APP_ID
+    env: process.env["GITHUB_APP_ID"]
       ? {
           GITHUB_PRIVATE_KEY: bindings.secret(),
           GITHUB_CLIENT_SECRET: bindings.secret(),
-          GITHUB_APP_ID: bindings.text(process.env.GITHUB_APP_ID),
-          GITHUB_CLIENT_ID: bindings.text(process.env.GITHUB_CLIENT_ID ?? ""),
+          GITHUB_APP_ID: bindings.text(process.env["GITHUB_APP_ID"]),
+          GITHUB_CLIENT_ID: bindings.text(
+            process.env["GITHUB_CLIENT_ID"] ?? "",
+          ),
           GITHUB_INSTALLATION_ID: bindings.text(
-            process.env.GITHUB_INSTALLATION_ID ?? "",
+            process.env["GITHUB_INSTALLATION_ID"] ?? "",
           ),
         }
       : {},

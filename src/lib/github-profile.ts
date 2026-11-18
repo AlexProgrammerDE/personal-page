@@ -64,6 +64,9 @@ export const loadGithubProfile = Effect.fn("GithubProfile.load")(function* () {
           const [owner, repo] = new URL(repository.url).pathname
             .slice(1)
             .split("/");
+          if (owner === undefined || repo === undefined) {
+            return Effect.succeed(repository);
+          }
           return github
             .getRepository(owner, repo)
             .pipe(Effect.orElseSucceed(() => repository));
