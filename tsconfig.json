@@ -24,7 +24,11 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": true
+    "noImplicitOverride": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "verbatimModuleSyntax": true,
+    "erasableSyntaxOnly": true
   },
   "include": ["**/*.ts", "**/*.tsx", ".cloudflare/types/index.d.ts"],
   "exclude": ["node_modules", "dist", "out", ".output", ".cloudflare/output"]
