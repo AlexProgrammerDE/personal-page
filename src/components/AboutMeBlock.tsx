@@ -57,7 +57,9 @@ export default function AboutMeBlock() {
             "flex w-32 flex-row justify-center rounded-tl-2xl p-2 text-lg font-bold md:w-40 md:text-xl",
             { "bg-gray-900": !isEditing },
           )}
-          onMouseDown={() => setIsEditing(false)}
+          onMouseDown={() => {
+            setIsEditing(false);
+          }}
         >
           <EyeIcon className="my-auto mr-2 size-4 md:size-6" />
           <p className="my-auto">Preview</p>
@@ -68,7 +70,9 @@ export default function AboutMeBlock() {
             "flex w-32 flex-row justify-center rounded-tr-none p-2 text-lg font-bold md:w-40 md:text-xl",
             { "bg-gray-900": isEditing },
           )}
-          onMouseDown={() => setIsEditing(true)}
+          onMouseDown={() => {
+            setIsEditing(true);
+          }}
         >
           <CodeIcon className="my-auto mr-2 size-4 md:size-6" />
           <p className="my-auto">Edit File</p>

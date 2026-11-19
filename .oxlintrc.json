@@ -15,7 +15,8 @@
   "categories": {
     "correctness": "error",
     "suspicious": "error",
-    "perf": "error"
+    "perf": "error",
+    "pedantic": "error"
   },
   "options": {
     "typeAware": true,
@@ -59,7 +60,9 @@
     "better-tailwindcss/enforce-canonical-classes": "error",
     "better-tailwindcss/no-unknown-classes": [
       "error",
-      { "ignore": ["^header-size$", "^footer-size$", "^section2-diagonal$"] }
+      {
+        "ignore": ["^header-size$", "^footer-size$", "^section2-diagonal$"]
+      }
     ],
     "import/no-unassigned-import": [
       "error",
@@ -141,6 +144,26 @@
     "react/no-danger": "error",
     "react/jsx-no-useless-fragment": "error",
     "react/no-unknown-property": "error",
-    "react/only-export-components": "error"
+    "react/only-export-components": "error",
+    "typescript/prefer-readonly-parameter-types": "off",
+    "eslint/max-lines": "off",
+    "eslint/max-lines-per-function": "off",
+    "eslint/max-depth": "off",
+    "eslint/max-nested-callbacks": "off",
+    "eslint/max-classes-per-file": "off",
+    "import/max-dependencies": "off",
+    "eslint/no-inline-comments": "off",
+    "eslint/no-warning-comments": "off",
+    "eslint/no-negated-condition": "off",
+    "unicorn/no-negated-condition": "off",
+    "eslint/require-await": "off",
+    "typescript/strict-boolean-expressions": "off",
+    "typescript/consistent-type-definitions": ["error", "interface"],
+    "typescript/array-type": "error",
+    "typescript/no-inferrable-types": "error",
+    "typescript/prefer-function-type": "error",
+    "typescript/consistent-indexed-object-style": "error",
+    "unicorn/switch-case-braces": "error",
+    "eslint/no-useless-assignment": "error"
   }
 }

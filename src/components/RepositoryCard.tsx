@@ -5,22 +5,30 @@ import type { Repository } from "~/lib/github-types";
 
 function getColorForLanguage(language: string) {
   switch (language) {
-    case "TypeScript":
+    case "TypeScript": {
       return "#1f9edb";
-    case "JavaScript":
+    }
+    case "JavaScript": {
       return "#f1e05a";
-    case "HTML":
+    }
+    case "HTML": {
       return "#e34c26";
-    case "CSS":
+    }
+    case "CSS": {
       return "#563d7c";
-    case "Shell":
+    }
+    case "Shell": {
       return "#89e051";
-    case "Python":
+    }
+    case "Python": {
       return "#3572A5";
-    case "Java":
+    }
+    case "Java": {
       return "#b07219";
-    default:
+    }
+    default: {
       return "#FFFFFF";
+    }
   }
 }
 

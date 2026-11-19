@@ -8,7 +8,7 @@ const redirects: Record<string, string> = {
 export default {
   async fetch(request: Request) {
     const url = new URL(request.url);
-    const target = redirects[url.pathname.replace(/\/$/, "")];
+    const target = redirects[url.pathname.replace(/\/$/u, "")];
     if (target) return Response.redirect(target, 307);
     const original = await handler.fetch(request);
     const response = new Response(original.body, original);
