@@ -11,6 +11,7 @@ import appCss from "~/styles/globals.css?url";
 export const Route = createRootRoute({
   head: () => ({
     meta: [
+      // oxlint-disable-next-line unicorn/text-encoding-identifier-case -- HTML charset declarations use utf-8.
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "AlexProgrammerDE" },

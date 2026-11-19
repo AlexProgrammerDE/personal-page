@@ -1,31 +1,39 @@
-import { Context, Data, Effect } from "effect";
+import { Context, Effect, Schema } from "effect";
+import { TaggedError as taggedErrorClass } from "effect/Schema";
 
 import snapshot from "./github-profile.json" with { type: "json" };
 import type { Repository, UserData } from "./github-types";
 
-export class GithubConfigError extends Data.TaggedError("GithubConfigError")<{
-  readonly cause: unknown;
-}> {
+export class GithubConfigError extends taggedErrorClass<
+  GithubConfigError,
+  { readonly brand: unique symbol }
+>()("GithubConfigError", {
+  cause: Schema.Unknown,
+}) {
   override get message() {
     return "Could not create the GitHub client";
   }
 }
 
-export class GithubRequestError extends Data.TaggedError("GithubRequestError")<{
-  readonly route: string;
-  readonly cause: unknown;
-}> {
+export class GithubRequestError extends taggedErrorClass<
+  GithubRequestError,
+  { readonly brand: unique symbol }
+>()("GithubRequestError", {
+  route: Schema.String,
+  cause: Schema.Unknown,
+}) {
   override get message() {
     return `GitHub request failed: ${this.route}`;
   }
 }
 
-export class GithubResponseError extends Data.TaggedError(
-  "GithubResponseError",
-)<{
-  readonly route: string;
-  readonly cause: unknown;
-}> {
+export class GithubResponseError extends taggedErrorClass<
+  GithubResponseError,
+  { readonly brand: unique symbol }
+>()("GithubResponseError", {
+  route: Schema.String,
+  cause: Schema.Unknown,
+}) {
   override get message() {
     return `Unexpected GitHub response: ${this.route}`;
   }

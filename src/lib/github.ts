@@ -52,7 +52,7 @@ const makeOctokit = Effect.fn("GithubClient.makeOctokit")(function* () {
               appId,
               privateKey: Option.getOrUndefined(
                 Option.map(config.privateKey, (key) =>
-                  Redacted.value(key).replaceAll("\\n", "\n"),
+                  Redacted.value(key).replaceAll(String.raw`\n`, "\n"),
                 ),
               ),
               clientId: Option.getOrUndefined(config.clientId),
