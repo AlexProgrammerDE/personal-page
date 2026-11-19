@@ -89,7 +89,7 @@ export default function AboutMeBlock() {
                   preview="edit"
                   value={text}
                   onChange={(value) => {
-                    if (value) setText(value);
+                    if (value !== undefined && value !== "") setText(value);
                   }}
                 />
               </Suspense>

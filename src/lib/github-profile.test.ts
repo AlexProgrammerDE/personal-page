@@ -13,7 +13,7 @@ import type { Repository, UserData } from "./github-types";
 
 const unavailable = (route: string) =>
   Effect.fail(
-    new GithubRequestError({
+    GithubRequestError.make({
       route,
       cause: new Error("GitHub is unavailable"),
     }),

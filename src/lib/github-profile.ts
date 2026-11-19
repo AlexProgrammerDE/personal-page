@@ -55,7 +55,7 @@ export class GithubClient extends Context.Service<
       repo: string,
     ) => Effect.Effect<Repository, GithubError>;
   }
->()("personal-page/GithubClient") {}
+>()("personal-page/lib/github-profile/GithubClient") {}
 
 // Each lookup falls back to the verified snapshot on its own,
 // so one failed request never hides the other refreshed data.

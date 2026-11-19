@@ -64,7 +64,7 @@ const makeOctokit = Effect.fn("GithubClient.makeOctokit")(function* () {
           }),
         }),
       ),
-    catch: (cause) => new GithubConfigError({ cause }),
+    catch: (cause) => GithubConfigError.make({ cause }),
   });
 });
 
@@ -76,7 +76,7 @@ export const githubClientLayer = Layer.effect(
     const octokit = yield* Effect.cached(
       makeOctokit().pipe(
         Effect.catchTag("ConfigError", (cause) =>
-          Effect.fail(new GithubConfigError({ cause })),
+          Effect.fail(GithubConfigError.make({ cause })),
         ),
       ),
     );
@@ -91,19 +91,19 @@ export const githubClientLayer = Layer.effect(
           Effect.tryPromise({
             try: (signal) =>
               client.request(route, { ...params, request: { signal } }),
-            catch: (cause) => new GithubRequestError({ route, cause }),
+            catch: (cause) => GithubRequestError.make({ route, cause }),
           }).pipe(
             // Abort the request, including any token request, after 4 seconds.
             Effect.timeout("4 seconds"),
             Effect.catchTag("TimeoutError", (cause) =>
-              Effect.fail(new GithubRequestError({ route, cause })),
+              Effect.fail(GithubRequestError.make({ route, cause })),
             ),
           ),
         ),
         Effect.flatMap(({ data }) =>
           Schema.decodeUnknownEffect(schema)(data).pipe(
-            Effect.mapError(
-              (cause) => new GithubResponseError({ route, cause }),
+            Effect.mapError((cause) =>
+              GithubResponseError.make({ route, cause }),
             ),
           ),
         ),

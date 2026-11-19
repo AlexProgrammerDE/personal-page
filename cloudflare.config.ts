@@ -2,6 +2,8 @@ import { bindings, defineConfig } from "cf/config";
 
 import * as entrypoint from "./src/server.ts" with { type: "cf-worker" };
 
+const githubAppId = process.env["GITHUB_APP_ID"];
+
 export default defineConfig({
   worker: {
     name: "personal-page",
@@ -19,18 +21,19 @@ export default defineConfig({
         headSamplingRate: 0.05,
       },
     },
-    env: process.env["GITHUB_APP_ID"]
-      ? {
-          GITHUB_PRIVATE_KEY: bindings.secret(),
-          GITHUB_CLIENT_SECRET: bindings.secret(),
-          GITHUB_APP_ID: bindings.text(process.env["GITHUB_APP_ID"]),
-          GITHUB_CLIENT_ID: bindings.text(
-            process.env["GITHUB_CLIENT_ID"] ?? "",
-          ),
-          GITHUB_INSTALLATION_ID: bindings.text(
-            process.env["GITHUB_INSTALLATION_ID"] ?? "",
-          ),
-        }
-      : {},
+    env:
+      githubAppId !== undefined && githubAppId !== ""
+        ? {
+            GITHUB_PRIVATE_KEY: bindings.secret(),
+            GITHUB_CLIENT_SECRET: bindings.secret(),
+            GITHUB_APP_ID: bindings.text(githubAppId),
+            GITHUB_CLIENT_ID: bindings.text(
+              process.env["GITHUB_CLIENT_ID"] ?? "",
+            ),
+            GITHUB_INSTALLATION_ID: bindings.text(
+              process.env["GITHUB_INSTALLATION_ID"] ?? "",
+            ),
+          }
+        : {},
   },
 });

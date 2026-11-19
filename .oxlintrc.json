@@ -1,6 +1,9 @@
 {
   "$schema": "./node_modules/@effect/tsgo/oxlint-schema.json",
-  "extends": ["./node_modules/@effect/tsgo/oxlint-presets/strict.json"],
+  "extends": [
+    "./node_modules/@effect/tsgo/oxlint-presets/antipattern.json",
+    "./node_modules/@effect/tsgo/oxlint-presets/strict.json"
+  ],
   "plugins": [
     "typescript",
     "unicorn",
@@ -41,6 +44,28 @@
     "dist/**"
   ],
   "rules": {
+    "effecttsgo/deterministic-keys": "error",
+    "effecttsgo/effect-do-notation": "error",
+    "effecttsgo/effect-try-without-catch": "error",
+    "effecttsgo/for-loop-push-to-for-each": "error",
+    "effecttsgo/map-map-error-to-map-both": "error",
+    "effecttsgo/missed-pipeable-opportunity": "error",
+    "effecttsgo/missing-concurrency-option": "error",
+    "effecttsgo/missing-effect-service-dependency": "error",
+    "effecttsgo/missing-pipeable-signature": "error",
+    "effecttsgo/nested-effect-gen-yield": "error",
+    "effecttsgo/new-schema-class": "error",
+    "effecttsgo/prefer-barrel-import": "error",
+    "effecttsgo/prefer-namespace-import": "error",
+    "effecttsgo/prefer-schema-type-property": "error",
+    "effecttsgo/provide-merge-all-to-array": "error",
+    "effecttsgo/schema-union-of-literals": "error",
+    "effecttsgo/service-not-as-class": "error",
+    "effecttsgo/strict-boolean-expressions": "error",
+    "effecttsgo/strict-effect-provide": "error",
+    "effecttsgo/type-union-to-schema-union": "error",
+    "effecttsgo/unnecessary-arrow-block": "error",
+
     "typescript/no-unsafe-type-assertion": "error",
     "typescript/use-unknown-in-catch-callback-variable": "error",
     "typescript/no-invalid-void-type": "error",
@@ -157,7 +182,9 @@
     "eslint/no-console": "error",
     "eslint/no-await-in-loop": "off",
     "import/no-duplicates": "error",
-    "import/no-cycle": "error",
+    "import/no-cycle": ["error", { "ignoreTypes": true }],
+    "typescript/consistent-return": "error",
+    "unicorn/no-useless-undefined": "off",
     "promise/catch-or-return": "error",
     "unicorn/prefer-at": "error",
     "unicorn/prefer-string-replace-all": "error",
@@ -209,5 +236,27 @@
     "typescript/consistent-indexed-object-style": "error",
     "unicorn/switch-case-braces": "error",
     "eslint/no-useless-assignment": "error"
-  }
+  },
+  "overrides": [
+    {
+      "files": [
+        "src/server.ts",
+        "src/lib/github.ts",
+        "src/lib/github-profile.ts",
+        "src/routes/*.ts",
+        "scripts/**/*.ts"
+      ],
+      "rules": {
+        "effecttsgo/global-date": "error",
+        "effecttsgo/global-json": "error",
+        "effecttsgo/global-fetch": "error",
+        "effecttsgo/global-timers": "error",
+        "effecttsgo/global-random": "error",
+        "effecttsgo/crypto-random-uuid": "error",
+        "effecttsgo/process-env": "error",
+        "effecttsgo/global-console": "error",
+        "effecttsgo/node-builtin-import": "error"
+      }
+    }
+  ]
 }
