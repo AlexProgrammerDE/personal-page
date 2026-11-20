@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "@cloudflare/config": "0.32.1",
-    "@cloudflare/vite-plugin": "2.0.0-rc.2",
+    "@cloudflare/vite-plugin": "2.0.0-rc.3",
     "@effect/tsgo": "0.73.2",
     "@tailwindcss/typography": "0.5.20",
     "@tailwindcss/vite": "4.3.5",
